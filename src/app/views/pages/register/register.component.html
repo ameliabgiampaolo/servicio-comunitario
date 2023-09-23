@@ -5,32 +5,32 @@
         <c-card class="mx-4">
           <c-card-body class="p-4">
             <form cForm>
-              <h1>Register</h1>
-              <p class="text-medium-emphasis">Create your account</p>
+              <h1>Registro</h1>
+              <p class="text-medium-emphasis">Crea tu cuenta</p>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilUser"></svg>
                 </span>
-                <input autoComplete="name" cFormControl placeholder="Username" />
+                <input autoComplete="name" cFormControl placeholder="Usuario" />
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>@</span>
-                <input autoComplete="email" cFormControl placeholder="Email" />
+                <input autoComplete="email" cFormControl placeholder="Correo" />
               </c-input-group>
               <c-input-group class="mb-3">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Password" type="password" />
+                <input autoComplete="new-password" cFormControl placeholder="Contraseña" type="password" />
               </c-input-group>
               <c-input-group class="mb-4">
                 <span cInputGroupText>
                   <svg cIcon name="cilLockLocked"></svg>
                 </span>
-                <input autoComplete="new-password" cFormControl placeholder="Repeat password" type="password" />
+                <input autoComplete="new-password" cFormControl placeholder="Repetir Contraseña" type="password" />
               </c-input-group>
               <div class="d-grid">
-                <button cButton color="success">Create Account</button>
+                <button (click)="redirectTo()" cButton color="success">Crear cuenta</button>
               </div>
             </form>
           </c-card-body>

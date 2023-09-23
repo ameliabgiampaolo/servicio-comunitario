@@ -12,18 +12,68 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
+    name: 'Usuarios'
+  },
+  {
+    name: 'Gestion de usuarios',
+    url: '/consult/users',
+    iconComponent: { name: 'cil-user' }
+  },
+  {
+    name: 'Consultas',
+    iconComponent: { name: 'cil-notes' },
+    children: [
+      {
+        name: 'Notas',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Horario de clases',
+        url: '/base/accordion'
+      },
+    ]
+  },
+  {
+    name: 'Administración Escolar',
+    iconComponent: { name: 'cil-settings' },
+    children: [
+      {
+        name: 'Ciclos Escolares',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Secciones',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Alumnos',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Horarios de clases',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Notas',
+        url: '/base/accordion'
+      },
+      {
+        name: 'Asignaturas',
+        url: '/base/accordion'
+      },
+    ]
+  },
+
+
+
+  {
+    title: true,
     name: 'Theme'
   },
   {
     name: 'Colors',
     url: '/theme/colors',
     iconComponent: { name: 'cil-drop' }
-  },
-  {
-    name: 'Typography',
-    url: '/theme/typography',
-    linkProps: { fragment: 'someAnchor' },
-    iconComponent: { name: 'cil-pencil' }
   },
   {
     name: 'Components',
@@ -223,14 +273,6 @@ export const navItems: INavData[] = [
     url: '/login',
     iconComponent: { name: 'cil-star' },
     children: [
-      {
-        name: 'Login',
-        url: '/login'
-      },
-      {
-        name: 'Register',
-        url: '/register'
-      },
       {
         name: 'Error 404',
         url: '/404'
