@@ -6,6 +6,7 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+import { ConsultUserComponent } from './views/pages/consult/users/consult-users';
 
 const routes: Routes = [
   {
@@ -98,6 +99,13 @@ const routes: Routes = [
     component: RegisterComponent,
     data: {
       title: 'Register Page'
+    }
+  },
+  {
+    path: 'consult/users',
+    component: ConsultUserComponent,
+    data: {
+      title: 'Gestion de Usuarios'
     }
   },
   {path: '**', redirectTo: 'dashboard'}

@@ -9,6 +9,7 @@ import { Page500Component } from './page500/page500.component';
 import { ButtonModule, CardModule, FormModule, GridModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { AppConfig } from '../../../app/data/services/tools/app-config.service';
+import { ConsultUserComponent } from './consult/users/consult-users';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AppConfig } from '../../../app/data/services/tools/app-config.service';
     LoginComponent,
     RegisterComponent,
     Page404Component,
-    Page500Component
+    Page500Component,
+    ConsultUserComponent
   ],
   imports: [
     CommonModule,
