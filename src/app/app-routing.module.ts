@@ -6,7 +6,7 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
-import { ConsultUserComponent } from './views/pages/consult/users/consult-users';
+import { ConsultUsersComponent } from './views/pages/consult/users/consult-users';
 
 const routes: Routes = [
   {
@@ -103,7 +103,7 @@ const routes: Routes = [
   },
   {
     path: 'consult/users',
-    component: ConsultUserComponent,
+    component: ConsultUsersComponent,
     data: {
       title: 'Gestion de Usuarios'
     }
