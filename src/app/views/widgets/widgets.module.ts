@@ -13,7 +13,7 @@ import {
 import { IconModule } from '@coreui/icons-angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
 
-import { DocsComponentsModule } from '@docs-components/docs-components.module';
+import { DocsComponentsModule } from '../../../../src/components/docs-components.module';
 
 import { WidgetsRoutingModule } from './widgets-routing.module';
 import { WidgetsComponent } from './widgets/widgets.component';
