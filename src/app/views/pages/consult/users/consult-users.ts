@@ -43,9 +43,9 @@ export class ConsultUsersComponent implements OnInit {
     this.usersService.getProducts().then((data) => (this.products = data));
 
     this.statuses = [
-      { label: 'INSTOCK', value: 'instock' },
-      { label: 'LOWSTOCK', value: 'lowstock' },
-      { label: 'OUTOFSTOCK', value: 'outofstock' },
+      { label: 'ACTIVO', value: 'instock' },
+      { label: 'INACTIVO', value: 'lowstock' },
+      { label: 'BLOQUEADO', value: 'outofstock' },
     ];
   }
 
@@ -156,11 +156,11 @@ export class ConsultUsersComponent implements OnInit {
 
   getSeverity(status: string) {
     switch (status) {
-      case 'INSTOCK':
+      case 'ACTIVO':
         return 'success';
-      case 'LOWSTOCK':
+      case 'BLOQUEADO':
         return 'warning';
-      case 'OUTOFSTOCK':
+      case 'INACTIVO':
         return 'danger';
     }
   }

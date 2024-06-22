@@ -5,14 +5,14 @@
             <p-button 
                 pRipple 
                 severity="success" 
-                label="New" 
+                label="Nuevo usuario" 
                 icon="pi pi-plus" 
                 class="mr-2" 
                 (click)="openNew()" />
             <p-button 
                 pRipple 
                 severity="danger" 
-                label="Delete" 
+                label="Desactivar usuario" 
                 icon="pi pi-trash" 
                 (click)="deleteSelectedProducts()" 
                 [disabled]="!selectedProducts || !selectedProducts.length" />
@@ -29,12 +29,12 @@
         [(selection)]="selectedProducts"
         [rowHover]="true"
         dataKey="id"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} entradas"
         [showCurrentPageReport]="true"
     >
         <ng-template pTemplate="caption">
             <div class="flex align-items-center justify-content-between">
-                <h5 class="m-0">Manage Products</h5>
+                <h5 class="m-0">Gestión de Usuarios</h5>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input 
@@ -51,13 +51,13 @@
                     <p-tableHeaderCheckbox />
                 </th>
                 <th pSortableColumn="name" style="min-width:15rem">
-                    Name <p-sortIcon field="name" />
+                    Nombre <p-sortIcon field="name" />
                 </th>
                 <th pSortableColumn="category" style="min-width:10rem">
-                    Category <p-sortIcon field="category" />
+                    Rol <p-sortIcon field="category" />
                 </th>
                 <th pSortableColumn="inventoryStatus" style="min-width:10rem">
-                    Status <p-sortIcon field="inventoryStatus" />
+                    Estatus <p-sortIcon field="inventoryStatus" />
                 </th>
                 <th></th>
             </tr>
@@ -120,18 +120,6 @@
                     </small>
                 </div>
                 <div class="field">
-                    <label for="description">Description</label>
-                    <textarea 
-                        id="description" 
-                        pInputTextarea 
-                        [(ngModel)]="product.description" 
-                        required 
-                        rows="3" 
-                        cols="20">
-                    </textarea>
-                </div>
-
-                <div class="field">
                     <label for="inventoryStatus">Inventory Status</label>
                     <p-dropdown 
                         [(ngModel)]="product.inventoryStatus" 
@@ -159,7 +147,7 @@
                                 name="category" 
                                 value="Accessories" 
                                 [(ngModel)]="product.category" />
-                            <label for="category1">Accessories</label>
+                            <label for="category1">Estudiante</label>
                         </div>
                         <div class="field-radiobutton col-6">
                             <p-radioButton 
@@ -167,7 +155,7 @@
                                 name="category" 
                                 value="Clothing" 
                                 [(ngModel)]="product.category" />
-                            <label for="category2">Clothing</label>
+                            <label for="category2">Maestro</label>
                         </div>
                         <div class="field-radiobutton col-6">
                             <p-radioButton 
@@ -175,7 +163,7 @@
                                 name="category" 
                                 value="Electronics" 
                                 [(ngModel)]="product.category" />
-                            <label for="category3">Electronics</label>
+                            <label for="category3">Suplentes</label>
                         </div>
                         <div class="field-radiobutton col-6">
                             <p-radioButton 
@@ -183,7 +171,7 @@
                                 name="category" 
                                 value="Fitness" 
                                 [(ngModel)]="product.category" />
-                            <label for="category4">Fitness</label>
+                            <label for="category4">Personal Administrativo</label>
                         </div>
                     </div>
                 </div>
@@ -192,13 +180,13 @@
             <ng-template pTemplate="footer">
                 <p-button 
                     pRipple 
-                    label="Cancel" 
+                    label="Cancelar" 
                     icon="pi pi-times" 
                     [text]="true" 
                     (click)="hideDialog()" />
                 <p-button 
                     pRipple 
-                    label="Save" 
+                    label="Guardar" 
                     icon="pi pi-check" 
                     [text]="true" 
                     (click)="saveProduct()" />

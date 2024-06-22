@@ -15,6 +15,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TagModule } from 'primeng/tag';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ToolbarModule,
     TableModule,
     DialogModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TagModule,
+    InputTextModule
   ],
   providers: [AppConfig],
 })
