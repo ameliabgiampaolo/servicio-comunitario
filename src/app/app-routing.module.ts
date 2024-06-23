@@ -55,9 +55,14 @@ const routes: Routes = [
           import('./views/pages/pages.module').then((m) => m.PagesModule)
       },
       {
-        path: 'user-management',
+        path: '',
         loadChildren: () =>
           import('./views/user-management/user-management.module').then((m) => m.UserManagementModule)
+      },
+      {
+        path: 'consult',
+        loadChildren: () =>
+          import('./views/consult/consult.module').then((m) => m.ConsultModule)
       },
     ]
   },

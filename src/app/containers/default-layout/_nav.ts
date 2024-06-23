@@ -30,7 +30,7 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Notas',
-        url: '/404'
+        url: '/consult/grades'
       },
       {
         name: 'Horario de clases',

@@ -1,27 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserManagementComponent } from './user-management';
 
+import { GradesComponent } from './grades/grades.component';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Gestión de Usuarios'
+      title: 'Consultas'
     },
     children: [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'user-management'
+        redirectTo: 'grades'
       },
       {
-        path: 'user-management',
-        component: UserManagementComponent,
+        path: 'grades',
+        component: GradesComponent,
         data: {
-          title: 'Gestión de Usuarios'
+          title: 'Notas'
         }
       },
+      //TODO: Agregar schedule
     ]
   }
 ];
@@ -30,5 +31,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserManagementRoutingModule {
+export class ConsultRoutingModule {
 }
