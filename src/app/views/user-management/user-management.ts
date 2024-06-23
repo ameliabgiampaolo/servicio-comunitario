@@ -4,7 +4,7 @@ import { UsersService } from '../../data/services/users/users.service'
 export interface User {
     id?: string;
     name?: string;
-    inventoryStatus?: string;
+    status?: string;
     category?: string;
 }
 
@@ -43,9 +43,9 @@ export class UserManagementComponent implements OnInit {
     this.usersService.getUsers().then((data) => (this.users = data));
 
     this.statuses = [
-      { label: 'ACTIVO', value: 'activo' },
-      { label: 'INACTIVO', value: 'inactivo' },
-      { label: 'BLOQUEADO', value: 'bloqueado' },
+      { label: 'ACTIVO', value: 'ACTIVO' },
+      { label: 'INACTIVO', value: 'INACTIVO' },
+      { label: 'BLOQUEADO', value: 'BLOQUEADO' },
     ];
   }
 
