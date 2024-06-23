@@ -363,7 +363,7 @@ export class GradesService {
     ];
   }
 
-  getCustomersXLarge() {
+  getGrades() {
     return Promise.resolve(this.getData());
   }
 }

@@ -40,7 +40,7 @@ export class GradesComponent implements OnInit{
     constructor(private gradesService: GradesService) {}
 
     ngOnInit() {
-        this.gradesService.getCustomersXLarge().then((data) => {
+        this.gradesService.getGrades().then((data) => {
             this.customers = data;
         });
     }
