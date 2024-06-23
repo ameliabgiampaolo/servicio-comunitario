@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { UsersService } from '../../../../data/services/users/users.service';
+import { UsersService } from '../../data/services/users/users.service'
 export interface User {
     id?: string;
     name?: string;
@@ -9,8 +9,8 @@ export interface User {
 }
 
 @Component({
-  selector: 'consult-users',
-  templateUrl: 'consult-users.html',
+  selector: 'user-management',
+  templateUrl: 'user-management.html',
   providers: [MessageService, ConfirmationService, UsersService],
   styles: [
     `:host ::ng-deep .p-dialog .product-image {
@@ -20,7 +20,7 @@ export interface User {
         }`,
   ],
 })
-export class ConsultUsersComponent implements OnInit {
+export class UserManagementComponent implements OnInit {
   userDialog: boolean = false;
 
   users!: User[];

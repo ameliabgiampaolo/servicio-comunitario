@@ -5,7 +5,6 @@ import { DefaultLayoutComponent } from './containers';
 import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
-import { ConsultUsersComponent } from './views/pages/consult/users/consult-users';
 
 const routes: Routes = [
   {
@@ -55,6 +54,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./views/pages/pages.module').then((m) => m.PagesModule)
       },
+      {
+        path: 'user-management',
+        loadChildren: () =>
+          import('./views/user-management/user-management.module').then((m) => m.UserManagementModule)
+      },
     ]
   },
   {
@@ -76,13 +80,6 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Login Page'
-    }
-  },
-  {
-    path: 'consult/users',
-    component: ConsultUsersComponent,
-    data: {
-      title: 'Gestion de Usuarios'
     }
   },
   {path: '**', redirectTo: 'dashboard'}

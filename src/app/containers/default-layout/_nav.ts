@@ -12,7 +12,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Gestion de usuarios',
-    url: '/consult/users',
+    url: '/user-management',
     iconComponent: { name: 'cil-user' },
   },
   {

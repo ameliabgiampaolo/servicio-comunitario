@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PagesRoutingModule } from './pages-routing.module';
-import { LoginComponent } from './login/login.component';
-import { Page404Component } from './page404/page404.component';
-import { Page500Component } from './page500/page500.component';
-import { ButtonModule, CardModule, FormModule, GridModule } from '@coreui/angular';
+import { CardModule, FormModule, GridModule } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
-import { AppConfig } from '../../../app/data/services/tools/app-config.service';
+
+import { UserManagementComponent } from './user-management';
+import { UserManagementRoutingModule } from './user-management-routing.module';
 
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -20,20 +18,16 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
-  declarations: [
-    LoginComponent,
-    Page404Component,
-    Page500Component,
-  ],
   imports: [
-    CommonModule,
-    PagesRoutingModule,
+    UserManagementRoutingModule,
     CardModule,
-    ButtonModule,
     GridModule,
     IconModule,
+    CommonModule,
     FormModule,
+    ToastModule,
     ToastModule,
     ToolbarModule,
     TableModule,
@@ -45,12 +39,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RadioButtonModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   exports: [
     RadioButtonModule,
     DropdownModule,
   ],
-  providers: [AppConfig],
+  declarations: [
+    UserManagementComponent
+  ]
 })
-export class PagesModule {
+export class UserManagementModule {
 }
