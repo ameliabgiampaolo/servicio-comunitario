@@ -17,6 +17,9 @@ import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TagModule } from 'primeng/tag';
 import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,15 @@ import { InputTextModule } from 'primeng/inputtext';
     DialogModule,
     ConfirmDialogModule,
     TagModule,
-    InputTextModule
+    InputTextModule,
+    DropdownModule,
+    RadioButtonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    RadioButtonModule,
+    DropdownModule,
   ],
   providers: [AppConfig],
 })

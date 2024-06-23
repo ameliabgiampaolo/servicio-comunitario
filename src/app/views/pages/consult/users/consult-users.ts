@@ -21,13 +21,13 @@ export interface User {
   ],
 })
 export class ConsultUsersComponent implements OnInit {
-  productDialog: boolean = false;
+  userDialog: boolean = false;
 
-  products!: User[];
+  users!: User[];
 
-  product!: User;
+  user!: User;
 
-  selectedProducts!: User[] | null;
+  selectedUsers!: User[] | null;
 
   submitted: boolean = false;
 
@@ -40,58 +40,58 @@ export class ConsultUsersComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.usersService.getProducts().then((data) => (this.products = data));
+    this.usersService.getUsers().then((data) => (this.users = data));
 
     this.statuses = [
-      { label: 'ACTIVO', value: 'instock' },
-      { label: 'INACTIVO', value: 'lowstock' },
-      { label: 'BLOQUEADO', value: 'outofstock' },
+      { label: 'ACTIVO', value: 'activo' },
+      { label: 'INACTIVO', value: 'inactivo' },
+      { label: 'BLOQUEADO', value: 'bloqueado' },
     ];
   }
 
   openNew() {
-    this.product = {};
+    this.user = {};
     this.submitted = false;
-    this.productDialog = true;
+    this.userDialog = true;
   }
 
-  deleteSelectedProducts() {
+  deleteSelectedUsers() {
     this.confirmationService.confirm({
-      message: 'Are you sure you want to delete the selected products?',
-      header: 'Confirm',
+      message: '¿Está seguro de desactivar a todos los usuarios?',
+      header: 'Confirmar',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.products = this.products.filter(
-          (val) => !this.selectedProducts?.includes(val)
+        this.users = this.users.filter(
+          (val) => !this.selectedUsers?.includes(val)
         );
-        this.selectedProducts = null;
+        this.selectedUsers = null;
         this.messageService.add({
           severity: 'success',
           summary: 'Successful',
-          detail: 'Products Deleted',
+          detail: 'Usuarios desactivados',
           life: 3000,
         });
       },
     });
   }
 
-  editProduct(product: User) {
-    this.product = { ...product };
-    this.productDialog = true;
+  editUser(user: User) {
+    this.user = { ...user };
+    this.userDialog = true;
   }
 
-  deleteProduct(product: User) {
+  deleteUser(user: User) {
     this.confirmationService.confirm({
-      message: 'Are you sure you want to delete ' + product.name + '?',
-      header: 'Confirm',
+      message: '¿Está seguro que desea desactivar al usuario ' + user.name + '?',
+      header: 'Confirmar',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.products = this.products.filter((val) => val.id !== product.id);
-        this.product = {};
+        this.users = this.users.filter((val) => val.id !== user.id);
+        this.user = {};
         this.messageService.add({
           severity: 'success',
           summary: 'Successful',
-          detail: 'Product Deleted',
+          detail: 'Usuario desactivado',
           life: 3000,
         });
       },
@@ -99,43 +99,43 @@ export class ConsultUsersComponent implements OnInit {
   }
 
   hideDialog() {
-    this.productDialog = false;
+    this.userDialog = false;
     this.submitted = false;
   }
 
-  saveProduct() {
+  saveUser() {
     this.submitted = true;
 
-    if (this.product.name?.trim()) {
-      if (this.product.id) {
-        this.products[this.findIndexById(this.product.id)] = this.product;
+    if (this.user.name?.trim()) {
+      if (this.user.id) {
+        this.users[this.findIndexById(this.user.id)] = this.user;
         this.messageService.add({
           severity: 'success',
           summary: 'Successful',
-          detail: 'Product Updated',
+          detail: 'Usuario actualizado',
           life: 3000,
         });
       } else {
-        this.product.id = this.createId();
-        this.products.push(this.product);
+        this.user.id = this.createId();
+        this.users.push(this.user);
         this.messageService.add({
           severity: 'success',
           summary: 'Successful',
-          detail: 'Product Created',
+          detail: 'Usuario creado',
           life: 3000,
         });
       }
 
-      this.products = [...this.products];
-      this.productDialog = false;
-      this.product = {};
+      this.users = [...this.users];
+      this.userDialog = false;
+      this.user = {};
     }
   }
 
   findIndexById(id: string): number {
     let index = -1;
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].id === id) {
+    for (let i = 0; i < this.users.length; i++) {
+      if (this.users[i].id === id) {
         index = i;
         break;
       }

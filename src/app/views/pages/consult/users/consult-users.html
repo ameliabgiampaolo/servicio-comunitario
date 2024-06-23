@@ -14,19 +14,19 @@
                 severity="danger" 
                 label="Desactivar usuario" 
                 icon="pi pi-trash" 
-                (click)="deleteSelectedProducts()" 
-                [disabled]="!selectedProducts || !selectedProducts.length" />
+                (click)="deleteSelectedUsers()" 
+                [disabled]="!selectedUsers || !selectedUsers.length" />
         </ng-template>
     </p-toolbar>
 
     <p-table
         #dt
-        [value]="products"
+        [value]="users"
         [rows]="10"
         [paginator]="true"
         [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
         [tableStyle]="{ 'min-width': '75rem' }"
-        [(selection)]="selectedProducts"
+        [(selection)]="selectedUsers"
         [rowHover]="true"
         dataKey="id"
         currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} entradas"
@@ -41,7 +41,7 @@
                         pInputText 
                         type="text" 
                         (input)="dt.filterGlobal($event.target.value, 'contains')" 
-                        placeholder="Search..." />
+                        placeholder="Buscar..." />
                 </span>
             </div>
         </ng-template>
@@ -56,27 +56,27 @@
                 <th pSortableColumn="category" style="min-width:10rem">
                     Rol <p-sortIcon field="category" />
                 </th>
-                <th pSortableColumn="inventoryStatus" style="min-width:10rem">
-                    Estatus <p-sortIcon field="inventoryStatus" />
+                <th pSortableColumn="status" style="min-width:10rem">
+                    Estatus <p-sortIcon field="status" />
                 </th>
                 <th></th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-product>
+        <ng-template pTemplate="body" let-user>
             <tr>
                 <td>
-                    <p-tableCheckbox [value]="product" />
+                    <p-tableCheckbox [value]="user" />
                 </td>
                 <td>
-                    {{ product.name }}
+                    {{ user.name }}
                 </td>
                 <td>
-                    {{ product.category }}
+                    {{ user.category }}
                 </td>
                 <td>
                     <p-tag 
-                        [value]="product.inventoryStatus" 
-                        [severity]="getSeverity(product.inventoryStatus)" />
+                        [value]="user.status" 
+                        [severity]="getSeverity(user.status)" />
                 </td>
                 <td>
                     <p-button 
@@ -86,49 +86,49 @@
                         [rounded]="true" 
                         [outlined]="true" 
                         severity="success" 
-                        (click)="editProduct(product)" />
+                        (click)="editUser(user)" />
                     <p-button 
                         pRipple 
                         icon="pi pi-trash" 
                         severity="danger" 
                         [rounded]="true" 
                         [outlined]="true" 
-                        (click)="deleteProduct(product)" />
+                        (click)="deleteUser(user)" />
                 </td>
             </tr>
         </ng-template>
     </p-table>
 
     <p-dialog 
-        [(visible)]="productDialog" 
+        [(visible)]="userDialog" 
         [style]="{ width: '450px' }" 
-        header="Product Details" 
+        header="Detalle del usuario" 
         [modal]="true" 
         styleClass="p-fluid">
             <ng-template pTemplate="content">
                 <div class="field">
-                    <label for="name">Name</label>
+                    <label for="name">Nombre</label>
                     <input 
                         type="text" 
                         pInputText 
                         id="name" 
-                        [(ngModel)]="product.name" 
+                        [(ngModel)]="user.name" 
                         required 
                         autofocus />
-                    <small class="p-error" *ngIf="submitted && !product.name">
-                        Name is required.
+                    <small class="p-error" *ngIf="submitted && !user.name">
+                        El nombre es requerido.
                     </small>
                 </div>
                 <div class="field">
-                    <label for="inventoryStatus">Inventory Status</label>
+                    <label for="status">Estatus</label>
                     <p-dropdown 
-                        [(ngModel)]="product.inventoryStatus" 
-                        inputId="inventoryStatus" 
+                        [(ngModel)]="user.status" 
+                        inputId="status" 
                         [options]="statuses">
                             <ng-template pTemplate="selectedItem">
                                 <p-tag 
-                                    [value]="product.inventoryStatus.toUpperCase()"
-                                    [severity]="getSeverity(product.inventoryStatus.toUpperCase())" />
+                                    [value]="user.status.toUpperCase()"
+                                    [severity]="getSeverity(user.status.toUpperCase())" />
                             </ng-template>
                             <ng-template let-option pTemplate="item">
                                 <p-tag 
@@ -139,39 +139,31 @@
                 </div>
 
                 <div class="field">
-                    <label class="mb-3">Category</label>
+                    <label class="mb-3">Rol</label>
                     <div class="formgrid grid">
-                        <div class="field-radiobutton col-6">
+                        <div class="field-radiobutton col-4">
                             <p-radioButton 
                                 id="category1" 
                                 name="category" 
-                                value="Accessories" 
-                                [(ngModel)]="product.category" />
-                            <label for="category1">Estudiante</label>
+                                value="Alumno" 
+                                [(ngModel)]="user.category" />
+                            <label for="category1">Alumno</label>
                         </div>
-                        <div class="field-radiobutton col-6">
+                        <div class="field-radiobutton col-4">
                             <p-radioButton 
                                 id="category2" 
                                 name="category" 
-                                value="Clothing" 
-                                [(ngModel)]="product.category" />
-                            <label for="category2">Maestro</label>
+                                value="Docente" 
+                                [(ngModel)]="user.category" />
+                            <label for="category2">Docente</label>
                         </div>
-                        <div class="field-radiobutton col-6">
-                            <p-radioButton 
-                                id="category3" 
-                                name="category" 
-                                value="Electronics" 
-                                [(ngModel)]="product.category" />
-                            <label for="category3">Suplentes</label>
-                        </div>
-                        <div class="field-radiobutton col-6">
+                        <div class="field-radiobutton col-4">
                             <p-radioButton 
                                 id="category4" 
                                 name="category" 
-                                value="Fitness" 
-                                [(ngModel)]="product.category" />
-                            <label for="category4">Personal Administrativo</label>
+                                value="Administrador" 
+                                [(ngModel)]="user.category" />
+                            <label for="category4">Administrador</label>
                         </div>
                     </div>
                 </div>
@@ -189,7 +181,7 @@
                     label="Guardar" 
                     icon="pi pi-check" 
                     [text]="true" 
-                    (click)="saveProduct()" />
+                    (click)="saveUser()" />
             </ng-template>
     </p-dialog>
 
