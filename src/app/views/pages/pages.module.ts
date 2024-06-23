@@ -26,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     Page404Component,
     Page500Component,
-    ConsultUsersComponent
+    ConsultUsersComponent    
   ],
   imports: [
     CommonModule,

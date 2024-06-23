@@ -2,13 +2,9 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
-    name: 'Dashboard',
+    name: 'Inicio',
     url: '/dashboard',
-    iconComponent: { name: 'cil-speedometer' },
-    badge: {
-      color: 'info',
-      text: 'NEW'
-    }
+    iconComponent: { name: 'cil-speedometer' }
   },
   {
     title: true,
@@ -17,21 +13,35 @@ export const navItems: INavData[] = [
   {
     name: 'Gestion de usuarios',
     url: '/consult/users',
-    iconComponent: { name: 'cil-user' }
+    iconComponent: { name: 'cil-user' },
+  },
+  {
+    title: true,
+    name: 'Alumnos'
   },
   {
     name: 'Consultas',
     iconComponent: { name: 'cil-notes' },
+    url: '/consult',
+    badge: {
+      color: 'info',
+      text: 'NEW'
+    },
     children: [
       {
         name: 'Notas',
-        url: '/base/accordion'
+        url: '/404'
       },
       {
         name: 'Horario de clases',
-        url: '/base/accordion'
+        url: '/404'
       },
     ]
+  },
+  {
+    title: true,
+    name: 'Docentes',
+    url: '/admin'
   },
   {
     name: 'Administración Escolar',
@@ -39,47 +49,28 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Ciclos Escolares',
-        url: '/base/accordion'
-      },
-      {
-        name: 'Secciones',
-        url: '/base/accordion'
-      },
-      {
-        name: 'Alumnos',
-        url: '/base/accordion'
-      },
-      {
-        name: 'Horarios de clases',
-        url: '/base/accordion'
-      },
-      {
-        name: 'Notas',
-        url: '/base/accordion'
-      },
-      {
-        name: 'Asignaturas',
-        url: '/base/accordion'
-      },
-    ]
-  },
-  {
-    title: true,
-    name: 'Extras'
-  },
-  {
-    name: 'Pages',
-    url: '/login',
-    iconComponent: { name: 'cil-star' },
-    children: [
-      {
-        name: 'Error 404',
         url: '/404'
       },
       {
-        name: 'Error 500',
-        url: '/500'
-      }
+        name: 'Secciones',
+        url: '/404'
+      },
+      {
+        name: 'Alumnos',
+        url: '/404'
+      },
+      {
+        name: 'Horarios de clases',
+        url: '/404'
+      },
+      {
+        name: 'Notas',
+        url: '/404'
+      },
+      {
+        name: 'Asignaturas',
+        url: '/404'
+      },
     ]
   },
 ];
