@@ -1,1 +1,52 @@
-<p>grades</p>
+<div class="card">
+    <p-table 
+        [value]="customers" 
+        sortField="representative.name" 
+        sortMode="single" 
+        dataKey="representative.name" 
+        rowGroupMode="subheader" 
+        groupRowsBy="representative.name" 
+        [tableStyle]="{'min-width': '70rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width:33.3%">Materia</th>
+                    <th style="width:33.3%">Nota</th>
+                    <th style="width:33.3%">Fecha</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="groupheader" let-customer let-rowIndex="rowIndex" let-expanded="expanded">
+                <tr>
+                    <td colspan="5">
+                        <button 
+                            type="button" 
+                            pButton 
+                            pRipple 
+                            [pRowToggler]="customer" 
+                            class="p-button-text p-button-rounded p-button-plain mr-2" 
+                            [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
+                            <span class="font-bold ml-2">{{customer.representative.name}}</span>
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="groupfooter" let-customer>
+                <tr class="p-rowgroup-footer">
+                    <td colspan="1" style="text-align: right">Total Notas</td>
+                    <td>{{calculateCustomerTotal(customer.representative.name)}} / 20</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="rowexpansion" let-customer>
+                <tr>
+                    <td>
+                        {{customer.name}}
+                    </td>
+                    <td>
+                        <p-tag [value]="customer.status" [severity]="getSeverity(customer.status)" />
+                    </td>
+                    <td>
+                        {{customer.date}}
+                    </td>
+                </tr>
+            </ng-template>
+    </p-table>
+</div>
