@@ -1,0 +1,43 @@
+[
+    {
+      "course": "Primer Año",
+      "value": "primer_ano",
+      "items": [
+        { "section": "Sección A", "value": "seccion_a_1", "year": "Primer Año"},
+        { "section": "Sección B", "value": "seccion_b_1", "year": "Primer Año" }
+      ]
+    },
+    {
+      "course": "Segundo Año",
+      "value": "segundo_ano",
+      "items": [
+        { "section": "Sección A", "value": "seccion_a_2", "year": "Segundo Año" },
+        { "section": "Sección B", "value": "seccion_b_2", "year": "Segundo Año" }
+      ]
+    },
+    {
+      "course": "Tercer Año",
+      "value": "tercer_ano",
+      "items": [
+        { "section": "Sección A", "value": "seccion_a_3", "year": "Tercer Año" },
+        { "section": "Sección B", "value": "seccion_b_3", "year": "Tercer Año" }
+      ]
+    },
+    {
+      "course": "Cuarto Año",
+      "value": "cuarto_ano",
+      "items": [
+        { "section": "Sección A", "value": "seccion_a_4", "year": "Cuarto Año" },
+        { "section": "Sección B", "value": "seccion_b_4", "year": "Cuarto Año" }
+      ]
+    },
+    {
+      "course": "Quinto Año",
+      "value": "quinto_ano",
+      "items": [
+        { "section": "Sección A", "value": "seccion_a_5", "year": "Quinto Año" },
+        { "section": "Sección B", "value": "seccion_b_6", "year": "Quinto Año" }
+      ]
+    }
+  ]
+  

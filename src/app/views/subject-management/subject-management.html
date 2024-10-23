@@ -1,1 +1,38 @@
-<p>hola</p>
+<div class="card">
+    <p-toast></p-toast>
+    <p-toolbar class="mb-4 gap-2">
+        <div class="flex justify-content-start align-items-center w-full">
+            <p-dropdown 
+                [options]="groupedCourses"  
+                [(ngModel)]="selectedCourse" 
+                placeholder="Selecciona un curso..." 
+                [group]="true"> 
+                 <!-- Template para los grupos (cursos) -->
+                <ng-template let-group pTemplate="group">
+                    <div class="flex align-items-center">
+                        <span>{{ group.course }}</span>
+                    </div>
+                </ng-template>
+
+                 <!-- Template para los ítems (secciones) -->
+                <ng-template let-option pTemplate="item">
+                    <div class="ml-4">
+                        <span>{{ option.section }}</span>
+                    </div>
+                </ng-template>
+
+                <!-- Template para mostrar el elemento seleccionado -->
+                <ng-template pTemplate="selectedItem" let-selected>
+                    <span>{{ selected.year }} - {{ selected.section }}</span>
+                </ng-template>
+            </p-dropdown>
+            <p-button 
+                pRipple 
+                severity="success" 
+                label="Agregar materias" 
+                icon="pi pi-plus" 
+                class="ml-2" />
+        </div>
+    </p-toolbar>
+    <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+</div>
