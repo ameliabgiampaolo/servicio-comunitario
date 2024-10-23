@@ -29,10 +29,87 @@
             <p-button 
                 pRipple 
                 severity="success" 
-                label="Agregar materias" 
+                label="Agregar asignaturas" 
                 icon="pi pi-plus" 
-                class="ml-2" />
+                class="ml-2 mr-2" />
+                <p-button 
+                pRipple 
+                severity="danger" 
+                label="Retirar" 
+                icon="pi pi-trash" 
+                (click)="deleteSelectedSubjects()" 
+                [disabled]="!selectedSubjects || !selectedSubjects.length" />
         </div>
     </p-toolbar>
+
+    <p-table
+    #dt
+    [value]="subjects"
+    [rows]="10"
+    [paginator]="true"
+    [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+    [tableStyle]="{ 'min-width': '75rem' }"
+    [(selection)]="selectedSubjects"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} entradas"
+    [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            <h5 class="m-0">Gestión de Asignaturas</h5>
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input 
+                    pInputText 
+                    type="text" 
+                    (input)="dt.filterGlobal($event.target.value, 'contains')" 
+                    placeholder="Buscar..." />
+            </span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4rem">
+                <p-tableHeaderCheckbox />
+            </th>
+            <th pSortableColumn="name" style="min-width:15rem">
+                Asignatura <p-sortIcon field="name" />
+            </th>
+            <th pSortableColumn="category" style="min-width:10rem">
+                Horas semanales <p-sortIcon field="hours_per_week" />
+            </th>
+            <th pSortableColumn="status" style="min-width:10rem">
+                Horas totales del ciclo escolar <p-sortIcon field="hours_per_year" />
+            </th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-subject>
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="subject" />
+            </td>
+            <td>
+                {{ subject.name }}
+            </td>
+            <td style="text-align: center; padding-right: 100px;">
+                {{ subject.hours_per_week }}
+            </td>
+            <td style="text-align: center; padding-right: 100px;">
+                {{ subject.hours_per_year }}
+            </td>
+            <td>
+                <p-button 
+                    pRipple 
+                    icon="pi pi-trash" 
+                    severity="danger" 
+                    [rounded]="true" 
+                    [outlined]="true" 
+                    (click)="deleteSubject(subject)" />
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
     <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
 </div>
