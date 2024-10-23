@@ -69,7 +69,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Asignaturas',
-        url: '/404'
+        url: '/subject-management'
       },
     ]
   },

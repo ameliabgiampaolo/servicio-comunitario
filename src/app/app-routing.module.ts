@@ -60,6 +60,11 @@ const routes: Routes = [
           import('./views/user-management/user-management.module').then((m) => m.UserManagementModule)
       },
       {
+        path: '',
+        loadChildren: () =>
+          import('./views/subject-management/subject-management.module').then((m) => m.SubjectManagementModule)
+      },
+      {
         path: 'consult',
         loadChildren: () =>
           import('./views/consult/consult.module').then((m) => m.ConsultModule)
