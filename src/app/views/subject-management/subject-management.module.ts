@@ -16,6 +16,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubjectManagementComponent } from './subject-management';
 import { SubjectManagementRoutingModule } from './subject-management-routing.module';
+import { SkeletonModule } from 'primeng/skeleton';
 
 
 @NgModule({
@@ -37,8 +38,8 @@ import { SubjectManagementRoutingModule } from './subject-management-routing.mod
     DropdownModule,
     RadioButtonModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    SkeletonModule
   ],
   exports: [
     RadioButtonModule,

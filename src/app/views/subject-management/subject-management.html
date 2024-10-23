@@ -3,29 +3,27 @@
     <p-toolbar class="mb-4 gap-2">
         <div class="flex justify-content-start align-items-center w-full">
             <p-dropdown 
-                [options]="groupedCourses"  
-                [(ngModel)]="selectedCourse" 
-                placeholder="Selecciona un curso..." 
-                [group]="true"> 
-                 <!-- Template para los grupos (cursos) -->
-                <ng-template let-group pTemplate="group">
-                    <div class="flex align-items-center">
-                        <span>{{ group.course }}</span>
-                    </div>
-                </ng-template>
-
-                 <!-- Template para los ítems (secciones) -->
-                <ng-template let-option pTemplate="item">
-                    <div class="ml-4">
-                        <span>{{ option.section }}</span>
-                    </div>
-                </ng-template>
-
-                <!-- Template para mostrar el elemento seleccionado -->
-                <ng-template pTemplate="selectedItem" let-selected>
-                    <span>{{ selected.year }} - {{ selected.section }}</span>
-                </ng-template>
-            </p-dropdown>
+            [options]="groupedCourses"  
+            [(ngModel)]="selectedCourse" 
+            placeholder="Selecciona un curso..." 
+            (onChange)="filterSubjects()" 
+            [group]="true">
+            <ng-template let-group pTemplate="group">
+                <div class="flex align-items-center">
+                    <span>{{ group.course }}</span>
+                </div>
+            </ng-template>
+        
+            <ng-template let-option pTemplate="item">
+                <div class="ml-4">
+                    <span>{{ option.section }}</span>
+                </div>
+            </ng-template>
+        
+            <ng-template pTemplate="selectedItem" let-selected>
+                <span>{{ selected.year }} - {{ selected.section }}</span>
+            </ng-template>
+        </p-dropdown>
             <p-button 
                 pRipple 
                 severity="success" 
@@ -46,7 +44,7 @@
     #dt
     [value]="subjects"
     [rows]="10"
-    [paginator]="true"
+    [paginator]="selectedCourse"
     [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
     [tableStyle]="{ 'min-width': '75rem' }"
     [(selection)]="selectedSubjects"
@@ -70,7 +68,10 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width: 4rem">
-                <p-tableHeaderCheckbox />
+                <p-tableHeaderCheckbox *ngIf="selectedCourse; else skeleton"/>
+                <ng-template #skeleton>
+                    <p-skeleton />
+                </ng-template>
             </th>
             <th pSortableColumn="name" style="min-width:15rem">
                 Asignatura <p-sortIcon field="name" />
@@ -87,25 +88,48 @@
     <ng-template pTemplate="body" let-subject>
         <tr>
             <td>
-                <p-tableCheckbox [value]="subject" />
+                <p-tableCheckbox [value]="subject" *ngIf="selectedCourse; else skeleton"/>
+                <ng-template #skeleton>
+                    <p-skeleton />
+                </ng-template>
             </td>
             <td>
-                {{ subject.name }}
+                <div *ngIf="selectedCourse; else skeleton">
+                    {{ subject.name }}
+                </div>
+                <ng-template #skeleton>
+                    <p-skeleton />
+                </ng-template>
             </td>
             <td style="text-align: center; padding-right: 100px;">
-                {{ subject.hours_per_week }}
+                <div *ngIf="selectedCourse; else skeleton">
+                    {{ subject.hours_per_week }}
+                </div>
+                <ng-template #skeleton>
+                    <p-skeleton />
+                </ng-template>
             </td>
             <td style="text-align: center; padding-right: 100px;">
-                {{ subject.hours_per_year }}
+                <div *ngIf="selectedCourse; else skeleton">
+                    {{ subject.hours_per_year }}
+                </div>
+                <ng-template #skeleton>
+                    <p-skeleton />
+                </ng-template>
             </td>
+            
             <td>
-                <p-button 
+                <p-button *ngIf="selectedCourse; else skelebutton"
                     pRipple 
                     icon="pi pi-trash" 
                     severity="danger" 
                     [rounded]="true" 
                     [outlined]="true" 
                     (click)="deleteSubject(subject)" />
+                    <ng-template #skelebutton>
+                        <p-skeleton size="3rem" styleClass="mr-3"/>
+                    </ng-template>
+
             </td>
         </tr>
     </ng-template>

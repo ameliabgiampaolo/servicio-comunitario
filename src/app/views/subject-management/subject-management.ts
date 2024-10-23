@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppConfig } from '../../../app/data/services/tools/app-config.service'
 import { SubjectService } from '../../../app/data/services/subjects/subjects.service';
+import { SkeletonModule } from 'primeng/skeleton';
            
 export interface Subject {
     id?: string;
     name?: string;
     hours_per_week?: number;
     hours_per_year?: number;
+    course?: number;
 }
 @Component({
   selector: 'subject-management',
@@ -23,6 +25,7 @@ export class SubjectManagementComponent implements OnInit   {
     subjects!: Subject[];
     subject!: Subject;
     selectedSubjects!: Subject[] | null;
+    allSubjects!: Subject[]; 
 
     subjectDialog: boolean = false;
 
@@ -38,12 +41,16 @@ export class SubjectManagementComponent implements OnInit   {
 
     
   ngOnInit() {
-    this.subjectService.getsubject().then((data) => (this.subjects = data));
+    this.subjectService.getsubject().then((data) => {
+        this.subjects = data;
+        this.allSubjects = data;
+    });
+    this.filterSubjects();
   }
 
   deleteSelectedSubjects() {
     this.confirmationService.confirm({
-      message: '¿Está seguro de retirar las asignaturas del curso?',
+      message: '¿Está seguro de retirar todas las asignaturas del curso?',
       header: 'Confirmar',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
@@ -99,6 +106,7 @@ export class SubjectManagementComponent implements OnInit   {
         });
 
       this.subjects = [...this.subjects];
+      this.allSubjects = [...this.subjects];
       this.subjectDialog = false;
       this.subject = {};
     }
@@ -113,4 +121,32 @@ export class SubjectManagementComponent implements OnInit   {
     }
     return id;
   }
+
+    filterSubjects() {
+        if (this.selectedCourse) {
+            const courseNumber = this.getCourseNumberFromValue(this.selectedCourse);
+            this.subjects = this.allSubjects.filter(subject => subject.course === courseNumber);
+        } else {
+            this.subjects = [];
+        }
+    }
+
+    getCourseNumberFromValue(courseValue: string): number {
+        const courseMap: { [key: string]: number } = {
+            'seccion_a_1': 1,
+            'seccion_b_1': 1,
+            'seccion_a_2': 2,
+            'seccion_b_2': 2,
+            'seccion_a_3': 3,
+            'seccion_b_3': 3,
+            'seccion_a_4': 4,
+            'seccion_b_4': 4,
+            'seccion_a_5': 5,
+            'seccion_b_5': 5,
+
+        };
+        return courseMap[courseValue] || 0;
+    }
+
+
 }

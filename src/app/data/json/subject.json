@@ -36,7 +36,7 @@
       "value": "quinto_ano",
       "items": [
         { "section": "Sección A", "value": "seccion_a_5", "year": "Quinto Año" },
-        { "section": "Sección B", "value": "seccion_b_6", "year": "Quinto Año" }
+        { "section": "Sección B", "value": "seccion_b_5", "year": "Quinto Año" }
       ]
     }
   ]
