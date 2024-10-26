@@ -29,9 +29,7 @@ export class SubjectManagementComponent implements OnInit   {
 
     submitted: boolean = false;
 
-    // multiple autocomplete variables
     subjectsSuggestions!: any[];
-    selectedSubjectsSuggestions!: any[];
 
     constructor(private appConfig: AppConfig,
                 private subjectService: SubjectService,
