@@ -17,8 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubjectManagementComponent } from './subject-management';
 import { SubjectManagementRoutingModule } from './subject-management-routing.module';
 import { SkeletonModule } from 'primeng/skeleton';
-
-
+import { MultiSelectModule } from 'primeng/multiselect';
 @NgModule({
   imports: [
     SubjectManagementRoutingModule,
@@ -39,7 +38,8 @@ import { SkeletonModule } from 'primeng/skeleton';
     RadioButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    SkeletonModule
+    SkeletonModule,
+    MultiSelectModule
   ],
   exports: [
     RadioButtonModule,

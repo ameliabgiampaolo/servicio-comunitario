@@ -67,11 +67,13 @@ export class UserManagementComponent implements OnInit {
         this.selectedUsers = null;
         this.messageService.add({
           severity: 'success',
-          summary: 'Successful',
+          summary: 'Éxito',
           detail: 'Usuarios desactivados',
           life: 3000,
         });
       },
+      acceptLabel: 'Sí',   
+      rejectLabel: 'No',    
     });
   }
 
@@ -90,11 +92,13 @@ export class UserManagementComponent implements OnInit {
         this.user = {};
         this.messageService.add({
           severity: 'success',
-          summary: 'Successful',
+          summary: 'Éxito',
           detail: 'Usuario desactivado',
           life: 3000,
         });
       },
+      acceptLabel: 'Sí',   
+      rejectLabel: 'No',    
     });
   }
 
@@ -111,7 +115,7 @@ export class UserManagementComponent implements OnInit {
         this.users[this.findIndexById(this.user.id)] = this.user;
         this.messageService.add({
           severity: 'success',
-          summary: 'Successful',
+          summary: 'Éxito',
           detail: 'Usuario actualizado',
           life: 3000,
         });
@@ -120,7 +124,7 @@ export class UserManagementComponent implements OnInit {
         this.users.push(this.user);
         this.messageService.add({
           severity: 'success',
-          summary: 'Successful',
+          summary: 'Éxito',
           detail: 'Usuario creado',
           life: 3000,
         });

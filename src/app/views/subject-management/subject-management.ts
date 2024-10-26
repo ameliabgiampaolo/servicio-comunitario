@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppConfig } from '../../../app/data/services/tools/app-config.service'
 import { SubjectService } from '../../../app/data/services/subjects/subjects.service';
-import { SkeletonModule } from 'primeng/skeleton';
-           
 export interface Subject {
     id?: string;
     name?: string;
@@ -31,6 +29,10 @@ export class SubjectManagementComponent implements OnInit   {
 
     submitted: boolean = false;
 
+    // multiple autocomplete variables
+    subjectsSuggestions!: any[];
+    selectedSubjectsSuggestions!: any[];
+
     constructor(private appConfig: AppConfig,
                 private subjectService: SubjectService,
                 private confirmationService: ConfirmationService,
@@ -44,6 +46,7 @@ export class SubjectManagementComponent implements OnInit   {
     this.subjectService.getsubject().then((data) => {
         this.subjects = data;
         this.allSubjects = data;
+        this.subjectsSuggestions = data;
     });
     this.filterSubjects();
   }
@@ -60,11 +63,13 @@ export class SubjectManagementComponent implements OnInit   {
         this.selectedSubjects = null;
         this.messageService.add({
           severity: 'success',
-          summary: 'Successful',
+          summary: 'Éxito',
           detail: 'Asignaturas retiradas',
           life: 3000,
         });
       },
+      acceptLabel: 'Sí',   
+      rejectLabel: 'No',    
     });
   }
 
@@ -78,14 +83,15 @@ export class SubjectManagementComponent implements OnInit   {
         this.subject = {};
         this.messageService.add({
           severity: 'success',
-          summary: 'Successful',
-          detail: 'Asignatura retiradas',
+          summary: 'Éxito',
+          detail: 'Asignatura retirada',
           life: 3000,
         });
       },
+      acceptLabel: 'Sí',   
+      rejectLabel: 'No',    
     });
   }
-
 
   hideDialog() {
     this.subjectDialog = false;
@@ -94,22 +100,24 @@ export class SubjectManagementComponent implements OnInit   {
 
   saveSubject() {
     this.submitted = true;
+    const subjectsArray = Array.isArray(this.subject.name) ? this.subject.name : Object.values(this.subject.name);
 
-    if (this.subject.name?.trim()) {
-        this.subject.id = this.createId();
-        this.subjects.push(this.subject);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Successful',
-          detail: 'Asignacción exitosa',
-          life: 3000,
-        });
+    subjectsArray.forEach(subject => {
+        subject.id = this.createId();
+        this.subjects.push(subject);
+    });
 
-      this.subjects = [...this.subjects];
-      this.allSubjects = [...this.subjects];
-      this.subjectDialog = false;
-      this.subject = {};
-    }
+    this.subjects = [...this.subjects];
+    this.allSubjects = [...this.subjects];
+    this.subjectDialog = false;
+    this.subject = {};
+
+    this.messageService.add({
+        severity: 'success',
+        summary: 'Éxito',
+        detail: 'Asignación exitosa',
+        life: 3000,
+    });
   }
 
   createId(): string {
@@ -122,31 +130,50 @@ export class SubjectManagementComponent implements OnInit   {
     return id;
   }
 
-    filterSubjects() {
-        if (this.selectedCourse) {
-            const courseNumber = this.getCourseNumberFromValue(this.selectedCourse);
-            this.subjects = this.allSubjects.filter(subject => subject.course === courseNumber);
-        } else {
-            this.subjects = [];
-        }
+  filterSubjects() {
+    if (this.selectedCourse) {
+      const courseNumber = this.getCourseNumberFromValue(this.selectedCourse);
+      this.subjects = this.allSubjects.filter(subject => subject.course === courseNumber);
+    } else {
+      this.subjects = [];
     }
 
-    getCourseNumberFromValue(courseValue: string): number {
-        const courseMap: { [key: string]: number } = {
-            'seccion_a_1': 1,
-            'seccion_b_1': 1,
-            'seccion_a_2': 2,
-            'seccion_b_2': 2,
-            'seccion_a_3': 3,
-            'seccion_b_3': 3,
-            'seccion_a_4': 4,
-            'seccion_b_4': 4,
-            'seccion_a_5': 5,
-            'seccion_b_5': 5,
+    this.subjectsSuggestions = this.subjects;
+  }
 
-        };
-        return courseMap[courseValue] || 0;
+  getCourseNumberFromValue(courseValue: string): number {
+    const courseMap: { [key: string]: number } = {
+      'seccion_a_1': 1,
+      'seccion_b_1': 1,
+      'seccion_a_2': 2,
+      'seccion_b_2': 2,
+      'seccion_a_3': 3,
+      'seccion_b_3': 3,
+      'seccion_a_4': 4,
+      'seccion_b_4': 4,
+      'seccion_a_5': 5,
+      'seccion_b_5': 5,
+    };
+    return courseMap[courseValue] || 0;
+  }
+
+  openNew() {
+    if (this.selectedCourse) {
+      this.subject = {};
+      this.submitted = false;
+      this.subjectDialog = true;
     }
+  }
 
-
+  adjustDialogHeight(isDropdownOpen: boolean): void {
+    const dialog = document.querySelector('.p-dialog') as HTMLElement;
+  
+    if (dialog) {
+      if (isDropdownOpen) {
+        dialog.style.height = '500px';
+      } else {
+        dialog.style.height = 'auto';
+      }
+    }
+  }
 }
