@@ -135,8 +135,6 @@ export class SubjectManagementComponent implements OnInit   {
     } else {
       this.subjects = [];
     }
-
-    this.subjectsSuggestions = this.subjects;
   }
 
   getCourseNumberFromValue(courseValue: string): number {
