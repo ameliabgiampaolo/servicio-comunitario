@@ -1,1 +1,161 @@
-<p>student works!</p>
+<div class="card">
+    <p-toast></p-toast>
+    <p-toolbar class="mb-4 gap-2">
+        <div class="flex justify-content-start align-items-center w-full">
+            <p-dropdown 
+                [options]="groupedCourses"  
+                [(ngModel)]="selectedCourse" 
+                placeholder="Selecciona un curso..." 
+                (onChange)="filterStudents()" 
+                [group]="true">
+                <ng-template let-group pTemplate="group">
+                    <div class="flex align-items-center">
+                        <span>{{ group.course }}</span>
+                    </div>
+                </ng-template>
+            
+                <ng-template let-option pTemplate="item">
+                    <div class="ml-4">
+                        <span>{{ option.section }}</span>
+                    </div>
+                </ng-template>
+            
+                <ng-template pTemplate="selectedItem" let-selected>
+                    <span>{{ selected.year }} - {{ selected.section }}</span>
+                </ng-template>
+                </p-dropdown>
+        </div>
+    </p-toolbar>
+
+    <p-table
+        #dt
+        [value]="students"
+        [rows]="10"
+        [paginator]="selectedCourse"
+        [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+        [tableStyle]="{ 'min-width': '75rem' }"
+        [(selection)]="selectedStudents"
+        [rowHover]="true"
+        dataKey="id"
+        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} entradas"
+        [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h5 class="m-0">Gestión de Estudiantes</h5>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input 
+                        pInputText 
+                        type="text" 
+                        (input)="dt.filterGlobal($event.target.value, 'contains')" 
+                        placeholder="Buscar..." />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="surname" style="min-width:15rem">
+                    Nombre(s) <p-sortIcon field="surname" />
+                </th>
+                <th pSortableColumn="surname" style="min-width:10rem">
+                    Apellido(s) <p-sortIcon field="surname" />
+                </th>
+                <th pSortableColumn="course" style="min-width:10rem">
+                    Curso asignado <p-sortIcon field="course" />
+                </th>
+                <th pSortableColumn="section" style="min-width:10rem">
+                    Sección asignada <p-sortIcon field="section" />
+                </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-student>
+            <tr>
+                <td>
+                    <div *ngIf="selectedCourse; else skeleton">
+                        {{ student.name }}
+                    </div>
+                    <ng-template #skeleton>
+                        <p-skeleton />
+                    </ng-template>
+                </td>
+                <td>
+                    <div *ngIf="selectedCourse; else skeleton">
+                        {{ student.surname }}
+                    </div>
+                    <ng-template #skeleton>
+                        <p-skeleton />
+                    </ng-template>
+                </td>
+                <td>
+                    <div *ngIf="selectedCourse; else skeleton">
+                        {{ student.course }}
+                    </div>
+                    <ng-template #skeleton>
+                        <p-skeleton />
+                    </ng-template>
+                </td>
+                <td>
+                    <div *ngIf="selectedCourse; else skeleton">
+                        {{ student.section }}
+                    </div>
+                    <ng-template #skeleton>
+                        <p-skeleton />
+                    </ng-template>
+                </td>
+                
+                <td>
+                    <p-button *ngIf="selectedCourse; else skelebutton" 
+                    pRipple 
+                    icon="pi pi-pencil" 
+                    class="mr-2" 
+                    [rounded]="true" 
+                    [outlined]="true" 
+                    severity="success" 
+                    (click)="editUser(student)" />
+                    <ng-template #skelebutton>
+                        <p-skeleton size="3rem" styleClass="mr-3"/>
+                    </ng-template>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <p-dialog 
+        [(visible)]="studentDialog" 
+        [style]="{ width: 'auto', height: 'auto' }" 
+        header="Selecciona la(s) asignaturas"
+        [modal]="true" 
+        styleClass="p-fluid"
+        [contentStyle]="{ 'display': 'flex', 'justify-content': 'center' }">
+
+        <ng-template pTemplate="content">
+            <div class="card" style="width: 360px;">
+                <p-multiSelect 
+                    [options]="subjectsSuggestions" 
+                    [(ngModel)]="subject.name" 
+                    optionLabel="name" 
+                    placeholder="Asignaturas"
+                    (onPanelShow)="adjustDialogHeight(true)"
+                    (onPanelHide)="adjustDialogHeight(false)" />
+            </div>                    
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+            <p-button 
+                pRipple 
+                label="Cancelar" 
+                icon="pi pi-times" 
+                [text]="true" 
+                (click)="hideDialog()" />
+            <p-button 
+                pRipple 
+                label="Incluir Asignatura(s)" 
+                icon="pi pi-check" 
+                [text]="true" 
+                (click)="saveSubject()" />
+        </ng-template>
+    </p-dialog>
+
+    <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>
+</div>

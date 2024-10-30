@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppConfig } from '../../data/services/tools/app-config.service'
-import { SubjectService } from '../../data/services/subjects/subjects.service';
+import { StudentService } from '../../data/services/student/student.service';
 export interface Student {
     id?: string;
     name?: string;
@@ -13,9 +13,9 @@ export interface Student {
   selector: 'student-management',
   templateUrl: 'student-management.html',
   styleUrls: ['./student-management.scss'],
-  providers: [MessageService, ConfirmationService, SubjectService],
+  providers: [MessageService, ConfirmationService, StudentService],
 })
-export class StudentManagementComponent implements OnInit   {
+export class StudentManagementComponent implements OnInit {
     groupedCourses: any;
 
     selectedCourse: string | undefined;
@@ -23,7 +23,7 @@ export class StudentManagementComponent implements OnInit   {
     students!: Student[];
     student!: Student;
     selectedStudents!: Student[] | null;
-    allStudentd!: Student[]; 
+    allStudents!: Student[]; 
 
     studentDialog: boolean = false;
 
@@ -32,7 +32,7 @@ export class StudentManagementComponent implements OnInit   {
     studentsSuggestions!: any[];
 
     constructor(private appConfig: AppConfig,
-                private subjectService: SubjectService,
+                private studentService: StudentService,
                 private confirmationService: ConfirmationService,
                 private messageService: MessageService
     ) {
@@ -41,79 +41,37 @@ export class StudentManagementComponent implements OnInit   {
 
     
   ngOnInit() {
-/*     this.subjectService.getsubject().then((data) => {
-        this.subjects = data;
-        this.allSubjects = data;
-        this.subjectsSuggestions = data;
+    this.studentService.getStudent().then((data) => {
+        this.students = data;
+        this.allStudents = data;
+        this.studentsSuggestions = data;
     });
-    this.filterSubjects(); */
-  }
-
-/*   deleteSelectedSubjects() {
-    this.confirmationService.confirm({
-      message: '¿Está seguro de retirar todas las asignaturas del curso?',
-      header: 'Confirmar',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.subjects = this.subjects.filter(
-          (val) => !this.selectedSubjects?.includes(val)
-        );
-        this.selectedSubjects = null;
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Éxito',
-          detail: 'Asignaturas retiradas',
-          life: 3000,
-        });
-      },
-      acceptLabel: 'Sí',   
-      rejectLabel: 'No',    
-    });
-  }
-
-  deleteSubject(subject: Subject) {
-    this.confirmationService.confirm({
-      message: '¿Está seguro que desea desactivar la asignatura ' + subject.name + ' del curso?',
-      header: 'Confirmar',
-      icon: 'pi pi-exclamation-triangle',
-      accept: () => {
-        this.subjects = this.subjects.filter((val) => val.id !== subject.id);
-        this.subject = {};
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Éxito',
-          detail: 'Asignatura retirada',
-          life: 3000,
-        });
-      },
-      acceptLabel: 'Sí',   
-      rejectLabel: 'No',    
-    });
+    this.filterStudents();
   }
 
   hideDialog() {
-    this.subjectDialog = false;
+    this.studentDialog = false;
     this.submitted = false;
   }
 
-  saveSubject() {
+  saveStudent() {
     this.submitted = true;
-    const subjectsArray = Array.isArray(this.subject.name) ? this.subject.name : Object.values(this.subject.name);
+    const studentsArray = Array.isArray(this.student.name) ? this.student.name : Object.values(this.student.name);
 
-    subjectsArray.forEach(subject => {
-        subject.id = this.createId();
-        this.subjects.push(subject);
+    studentsArray.forEach(student => {
+      student.id = this.createId();
+        this.students.push(student);
     });
 
-    this.subjects = [...this.subjects];
-    this.allSubjects = [...this.subjects];
-    this.subjectDialog = false;
-    this.subject = {};
+    this.students = [...this.students];
+    this.allStudents = [...this.students];
+    this.studentDialog = false;
+    this.student = {};
 
     this.messageService.add({
         severity: 'success',
         summary: 'Éxito',
-        detail: 'Asignación exitosa',
+        detail: 'Modificación Exitosa',
         life: 3000,
     });
   }
@@ -128,36 +86,53 @@ export class StudentManagementComponent implements OnInit   {
     return id;
   }
 
-  filterSubjects() {
+  filterStudents() {
     if (this.selectedCourse) {
-      const courseNumber = this.getCourseNumberFromValue(this.selectedCourse);
-      this.subjects = this.allSubjects.filter(subject => subject.course === courseNumber);
+      const courseValue = this.getCourseFromValue(this.selectedCourse);
+      const sectionValue = this.getSectionFromValue(this.selectedCourse);
+      this.students = this.allStudents.filter(student => student.course === courseValue && student.section === sectionValue);
     } else {
-      this.subjects = [];
+      this.students = [];
     }
   }
 
-  getCourseNumberFromValue(courseValue: string): number {
-    const courseMap: { [key: string]: number } = {
-      'seccion_a_1': 1,
-      'seccion_b_1': 1,
-      'seccion_a_2': 2,
-      'seccion_b_2': 2,
-      'seccion_a_3': 3,
-      'seccion_b_3': 3,
-      'seccion_a_4': 4,
-      'seccion_b_4': 4,
-      'seccion_a_5': 5,
-      'seccion_b_5': 5,
+  getCourseFromValue(courseValue: string): string {
+    const courseMap: { [key: string]: string } = {
+      'seccion_a_1': 'Primer Año',
+      'seccion_b_1': 'Primer Año',
+      'seccion_a_2': 'Segundo Año',
+      'seccion_b_2': 'Segundo Año',
+      'seccion_a_3': 'Tercer Año',
+      'seccion_b_3': 'Tercer Año',
+      'seccion_a_4': 'Cuarto Año',
+      'seccion_b_4': 'Cuarto Año',
+      'seccion_a_5': 'Quinto Año',
+      'seccion_b_5': 'Quinto Año',
     };
-    return courseMap[courseValue] || 0;
+    return courseMap[courseValue] || '';
+  }
+
+  getSectionFromValue(courseValue: string): string {
+    const courseMap: { [key: string]: string } = {
+      'seccion_a_1': 'Sección A',
+      'seccion_b_1': 'Sección B',
+      'seccion_a_2': 'Sección A',
+      'seccion_b_2': 'Sección B',
+      'seccion_a_3': 'Sección A',
+      'seccion_b_3': 'Sección B',
+      'seccion_a_4': 'Sección A',
+      'seccion_b_4': 'Sección B',
+      'seccion_a_5': 'Sección A',
+      'seccion_b_5': 'Sección B',
+    };
+    return courseMap[courseValue] || '';
   }
 
   openNew() {
     if (this.selectedCourse) {
-      this.subject = {};
+      this.student = {};
       this.submitted = false;
-      this.subjectDialog = true;
+      this.studentDialog = true;
     }
   }
 
@@ -171,5 +146,5 @@ export class StudentManagementComponent implements OnInit   {
         dialog.style.height = 'auto';
       }
     }
-  } */
+  }
 }
