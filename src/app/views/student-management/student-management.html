@@ -123,38 +123,78 @@
 
     <p-dialog 
         [(visible)]="studentDialog" 
-        [style]="{ width: 'auto', height: 'auto' }" 
-        header="Selecciona la(s) asignaturas"
+        [style]="{ width: '450px' }" 
+        header="Detalle del estudiante" 
         [modal]="true" 
         styleClass="p-fluid"
-        [contentStyle]="{ 'display': 'flex', 'justify-content': 'center' }">
+        [style]="{ width: 'auto', height: 'auto' }" >
+            <ng-template pTemplate="content">
+                <div class="field">
+                    <label for="name">Nombre(s)</label>
+                    <input 
+                        type="text" 
+                        pInputText 
+                        id="name" 
+                        [(ngModel)]="student.name" 
+                        required 
+                        autofocus 
+                        [disabled]="true"/>
+                </div>
+                <div class="field">
+                    <label for="surname">Apellido(s)</label>
+                    <input 
+                        type="text" 
+                        pInputText 
+                        id="surname" 
+                        [(ngModel)]="student.surname" 
+                        required 
+                        autofocus 
+                        [disabled]="true"/>
+                </div>
+                <div class="field">
+                    <label for="course">Curso</label>
+                    <input 
+                        type="text" 
+                        pInputText 
+                        id="course" 
+                        [(ngModel)]="student.course" 
+                        required 
+                        autofocus
+                        [disabled]="true" />
+                </div>
+                <div class="field">
+                    <label for="section">Sección</label>
+                    <p-dropdown 
+                        [(ngModel)]="student.section" 
+                        inputId="section" 
+                        [options]="sections"
+                        (click)="toggleDropdown()">
+                            <ng-template pTemplate="selectedItem">
+                                <p-tag 
+                                    [value]="student.section"/>
+                            </ng-template>
+                            <ng-template let-option pTemplate="item">
+                                <p-tag 
+                                    [value]="option.label"/>
+                            </ng-template>
+                    </p-dropdown>
+                </div>
+            </ng-template>
 
-        <ng-template pTemplate="content">
-            <div class="card" style="width: 360px;">
-                <p-multiSelect 
-                    [options]="subjectsSuggestions" 
-                    [(ngModel)]="subject.name" 
-                    optionLabel="name" 
-                    placeholder="Asignaturas"
-                    (onPanelShow)="adjustDialogHeight(true)"
-                    (onPanelHide)="adjustDialogHeight(false)" />
-            </div>                    
-        </ng-template>
-
-        <ng-template pTemplate="footer">
-            <p-button 
-                pRipple 
-                label="Cancelar" 
-                icon="pi pi-times" 
-                [text]="true" 
-                (click)="hideDialog()" />
-            <p-button 
-                pRipple 
-                label="Incluir Asignatura(s)" 
-                icon="pi pi-check" 
-                [text]="true" 
-                (click)="saveSubject()" />
-        </ng-template>
+            <ng-template pTemplate="footer">
+                <p-button 
+                    pRipple 
+                    label="Cancelar" 
+                    icon="pi pi-times" 
+                    [text]="true" 
+                    (click)="hideDialog()" />
+                <p-button 
+                    pRipple 
+                    label="Guardar" 
+                    icon="pi pi-check" 
+                    [text]="true" 
+                    (click)="saveStudent()" />
+            </ng-template>
     </p-dialog>
 
     <p-confirmDialog [style]="{ width: '450px' }"></p-confirmDialog>

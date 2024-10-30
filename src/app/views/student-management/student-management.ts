@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AppConfig } from '../../data/services/tools/app-config.service'
 import { StudentService } from '../../data/services/student/student.service';
@@ -31,12 +31,16 @@ export class StudentManagementComponent implements OnInit {
 
     studentsSuggestions!: any[];
 
+    sections!: any[];
+    isDropdownOpen = false;
+
     constructor(private appConfig: AppConfig,
                 private studentService: StudentService,
                 private confirmationService: ConfirmationService,
-                private messageService: MessageService
+                private messageService: MessageService,
+                private el: ElementRef
     ) {
-        this.groupedCourses = this.appConfig.subjects;     
+        this.groupedCourses = this.appConfig.subjects;
     }
 
     
@@ -46,6 +50,12 @@ export class StudentManagementComponent implements OnInit {
         this.allStudents = data;
         this.studentsSuggestions = data;
     });
+
+    this.sections = [
+      { label: 'Sección A', value: 'Sección A' },
+      { label: 'Sección B', value: 'Sección B' },
+    ];
+    
     this.filterStudents();
   }
 
@@ -56,24 +66,37 @@ export class StudentManagementComponent implements OnInit {
 
   saveStudent() {
     this.submitted = true;
-    const studentsArray = Array.isArray(this.student.name) ? this.student.name : Object.values(this.student.name);
+    if (this.student.name?.trim()) {
+      if (this.student.id) {
+        this.students[this.findIndexById(this.student.id)] = this.student;
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Éxito',
+          detail: 'Sección del estudiante actualizada',
+          life: 3000,
+        });
+      }
+      this.students = [...this.students];
+      this.studentDialog = false;
+      this.student = {};
+    }
+  }
 
-    studentsArray.forEach(student => {
-      student.id = this.createId();
-        this.students.push(student);
-    });
+  findIndexById(id: string): number {
+    let index = -1;
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].id === id) {
+        index = i;
+        break;
+      }
+    }
 
-    this.students = [...this.students];
-    this.allStudents = [...this.students];
-    this.studentDialog = false;
-    this.student = {};
+    return index;
+  }
 
-    this.messageService.add({
-        severity: 'success',
-        summary: 'Éxito',
-        detail: 'Modificación Exitosa',
-        life: 3000,
-    });
+  editUser(student: Student) {
+    this.student = { ...student };
+    this.studentDialog = true;
   }
 
   createId(): string {
@@ -136,15 +159,24 @@ export class StudentManagementComponent implements OnInit {
     }
   }
 
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+    this.adjustDialogHeight(this.isDropdownOpen);
+  }
+
   adjustDialogHeight(isDropdownOpen: boolean): void {
     const dialog = document.querySelector('.p-dialog') as HTMLElement;
   
     if (dialog) {
-      if (isDropdownOpen) {
-        dialog.style.height = '500px';
-      } else {
-        dialog.style.height = 'auto';
-      }
+      dialog.style.height = isDropdownOpen ? '750px' : 'auto';
+    }
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  handleClickOutside(target: HTMLElement): void {
+    if (this.isDropdownOpen && !this.el.nativeElement.contains(target)) {
+      this.isDropdownOpen = false;
+      this.adjustDialogHeight(false);
     }
   }
 }
