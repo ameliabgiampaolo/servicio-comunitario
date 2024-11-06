@@ -61,7 +61,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Horarios de clases',
-        url: '/404'
+        url: '/schedules-management'
       },
       {
         name: 'Notas',
