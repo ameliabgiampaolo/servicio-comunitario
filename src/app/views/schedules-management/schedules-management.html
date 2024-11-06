@@ -1,1 +1,29 @@
+<p-toast></p-toast>
+<p-toolbar class="mb-4 gap-2">
+    <div class="flex justify-content-start align-items-center w-full">
+        <p-dropdown 
+            [options]="groupedCourses"  
+            [(ngModel)]="selectedCourse" 
+            placeholder="Selecciona un curso..." 
+            [group]="true">
+            <ng-template let-group pTemplate="group">
+                <div class="flex align-items-center">
+                    <span>{{ group.course }}</span>
+                </div>
+            </ng-template>
+        
+            <ng-template let-option pTemplate="item">
+                <div class="ml-4">
+                    <span>{{ option.section }}</span>
+                </div>
+            </ng-template>
+        
+            <ng-template pTemplate="selectedItem" let-selected>
+                <span>{{ selected.year }} - {{ selected.section }}</span>
+            </ng-template>
+        </p-dropdown>
+    </div>
+</p-toolbar>
+
+
 <full-calendar [options]="calendarOptions"></full-calendar>

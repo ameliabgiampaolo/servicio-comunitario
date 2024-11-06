@@ -18,4 +18,16 @@ body {
     border-radius: 10px;
     margin-bottom: 1rem;
 }
-    
+
+::ng-deep .p-dropdown-panel .p-dropdown-items {
+    margin-left: 0 !important;
+}
+
+::ng-deep .p-dropdown-item {
+    padding-left: 0.5rem !important;
+}
+
+::ng-deep .p-dropdown-panel ul, 
+::ng-deep .p-dropdown-panel ol {
+    padding-left: 0 !important;
+}

@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
-import { FullCalendarModule } from '@fullcalendar/angular';
-import { SchedulesManagement } from './schedules-management';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CardModule, GridModule, FormModule, ToastModule, TableModule, DropdownModule } from '@coreui/angular';
-import { IconModule } from '@coreui/icons-angular';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
-import { InputTextModule } from 'primeng/inputtext';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { SkeletonModule } from 'primeng/skeleton';
-import { TagModule } from 'primeng/tag';
-import { ToolbarModule } from 'primeng/toolbar';
-import { SchedulesManagementRoutingModule } from './schedules-management-routing.module';
 
+import { CardModule, FormModule, GridModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
+
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TagModule } from 'primeng/tag';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SkeletonModule } from 'primeng/skeleton';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { SchedulesManagement } from './schedules-management';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { SchedulesManagementRoutingModule } from './schedules-management-routing.module';
 @NgModule({
-  declarations: [
-    SchedulesManagement
-  ],
   imports: [
+    SchedulesManagementRoutingModule,
     CardModule,
     GridModule,
-    IconModule,
+    IconModule, 
     CommonModule,
     FormModule,
     ToastModule,
@@ -39,8 +41,15 @@ import { SchedulesManagementRoutingModule } from './schedules-management-routing
     ReactiveFormsModule,
     SkeletonModule,
     MultiSelectModule,
-    SchedulesManagementRoutingModule,
     FullCalendarModule
+  ],
+  exports: [
+    RadioButtonModule,
+    DropdownModule,
+  ],
+  declarations: [
+    SchedulesManagement
   ]
 })
-export class SchedulesManagementModule { }
+export class SchedulesManagementModule {
+}
