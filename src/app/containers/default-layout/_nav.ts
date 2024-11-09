@@ -23,10 +23,6 @@ export const navItems: INavData[] = [
     name: 'Consultas',
     iconComponent: { name: 'cil-notes' },
     url: '/consult',
-    badge: {
-      color: 'info',
-      text: 'NEW'
-    },
     children: [
       {
         name: 'Notas',
@@ -34,7 +30,11 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Horario de clases',
-        url: '/404'
+        url: '/404',
+        badge: {
+          color: 'info',
+          text: 'NEW'
+        },
       },
     ]
   },
@@ -49,11 +49,19 @@ export const navItems: INavData[] = [
     children: [
       {
         name: 'Ciclos Escolares',
-        url: '/404'
+        url: '/404',
+        badge: {
+          color: 'info',
+          text: 'NEW'
+        },
       },
       {
         name: 'Secciones',
-        url: '/404'
+        url: '/404',
+        badge: {
+          color: 'info',
+          text: 'NEW'
+        },
       },
       {
         name: 'Alumnos',
@@ -65,7 +73,11 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Notas',
-        url: '/404'
+        url: '/404',
+        badge: {
+          color: 'info',
+          text: 'NEW'
+        },
       },
       {
         name: 'Asignaturas',
