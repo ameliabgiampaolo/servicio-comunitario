@@ -10,3 +10,13 @@
 ::ng-deep .p-dropdown-panel ol {
     padding-left: 0 !important;
 }
+
+.highlight-recess {
+    min-height: 50px !important; /* Ajusta el valor según sea necesario */
+    font-size: 1.2em;            /* Aumenta el tamaño del texto */
+    line-height: 1.5em;         /* Ajusta el espaciado del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+  

@@ -5,6 +5,7 @@
             [options]="groupedCourses"  
             [(ngModel)]="selectedCourse" 
             placeholder="Selecciona un curso..." 
+            (onChange)="generateCourseEvents()" 
             [group]="true">
             <ng-template let-group pTemplate="group">
                 <div class="flex align-items-center">
