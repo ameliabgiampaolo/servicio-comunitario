@@ -1,5 +1,6 @@
 <div class="bg-light min-vh-100 d-flex flex-row align-items-center login-background">
   <c-container>
+    <p-messages [(value)]="messages" [enableService]="false" class="login-messages" />
     <c-row class="justify-content-center">
       <c-col md="8" class="card-login">
         <c-card-group>
@@ -13,10 +14,14 @@
                     <svg cIcon name="cilUser"></svg>
                   </span>
                   <input 
-                    autoComplete="username" 
+                    autocomplete="new-username"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
                     formControlName="username" 
                     placeholder="Username" 
                     class="input"
+                    (keydown.enter)="login()"
                   />
                 </c-input-group>
                 <c-input-group class="mb-4">
@@ -29,6 +34,7 @@
                     placeholder="Password"
                     type="password"
                     class="input"
+                    (keydown.enter)="login()"
                   />
                 </c-input-group>
                 <c-row>

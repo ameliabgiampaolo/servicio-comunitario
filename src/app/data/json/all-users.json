@@ -1,0 +1,68 @@
+[
+    {
+      "username": "lhernandez",
+      "course": "seccion_a_1",
+      "rol": "student"
+    },
+    {
+        "username": "pfernandez",
+        "course": "seccion_b_1",
+        "rol": "student"
+    },
+    {
+        "username": "urodriguez",
+        "course": "seccion_a_2",
+        "rol": "student"
+    },
+    {
+        "username": "ulopez",
+        "course": "seccion_b_2",
+        "rol": "student"
+    },
+    {
+        "username": "ppita",
+        "course": "seccion_a_3",
+        "rol": "student"
+    },
+    {
+        "username": "gpita",
+        "course": "seccion_b_3",
+        "rol": "student"
+    },
+    {
+        "username": "ycontreras",
+        "course": "seccion_a_4",
+        "rol": "student"
+    },
+    {
+        "username": "aizaguirre",
+        "course": "seccion_b_4",
+        "rol": "student"
+    },
+    {
+        "username": "smoreno",
+        "course": "seccion_a_5",
+        "rol": "student"
+    },
+    {
+        "username": "knava",
+        "course": "seccion_b_5",
+        "rol": "student"
+    },
+    {
+        "username": "abrito",
+        "course": "",
+        "rol": "admin"
+    },
+    {
+        "username": "tlodato",
+        "course": "",
+        "rol": "admin"
+    },
+    {
+        "username": "mrodriguez",
+        "course": "",
+        "rol": "teacher"
+    }
+]
+  

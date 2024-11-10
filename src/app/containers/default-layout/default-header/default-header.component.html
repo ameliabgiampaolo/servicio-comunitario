@@ -1,4 +1,3 @@
-<!--<c-header class="mb-4 d-print-none" position="sticky">-->
 <ng-container>
   <c-container [fluid]="true">
     <button
@@ -18,12 +17,18 @@
           Inicio
         </a>
       </c-nav-item>
+    </c-header-nav>
+    <!-- Coloca el botón de Cerrar Sesión al final (lado derecho) -->
+    <c-header-nav class="d-none d-lg-flex ms-auto">
       <c-nav-item>
-        <a cNavLink routerLink="/settings" routerLinkActive="active">
-          Configuración
+        <a cNavLink (click)="logout()" routerLinkActive="active">
+          <svg cIcon
+            name="cilExitToApp"
+            size="lg"
+          ></svg>
+          Cerrar Sesión
         </a>
       </c-nav-item>
     </c-header-nav>
   </c-container>
 </ng-container>
-
