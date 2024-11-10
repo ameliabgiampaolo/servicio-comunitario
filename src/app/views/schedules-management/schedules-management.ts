@@ -17,42 +17,40 @@ export interface Subject {
   course?: number;
 }
 
-  // Mapa de colores para cada materia
-  const SUBJECT_COLOR_MAP = {
-    'Matemática': '#ff9999', // Rojo claro
-    'Inglés': '#a1f5b0',     // Verde claro
-    'RECESO': '#4287f5',     // Azul (destacado)
-    'Ed. Física y Deporte': '#f5c07a', // Naranja claro
-    'Informática (Educ. Trab.)': '#f5ea8c', // Amarillo claro
-    'Hª de Venezuela': '#b38cf5', // Púrpura claro
-    'Est. de la Naturaleza': '#a1f5e5', // Turquesa claro
-    'Geografía General': '#f58cc1', // Rosa claro
-    'Castellano y Literatura': '#d9a1f5', // Violeta claro
-    'Educación Artística': '#8ccbf5', // Celeste claro
-    'Religión': '#f5aa8c', // Marrón claro
-    'Ed. Familiar y Ciud.': '#a1f5d0', // Verde claro más suave,
-    'Inic. Dibujo Técnico (Educ. Trab.)': '#f5b3e0', // Rosa pálido
-    'Historia Universal': '#8a42f5',     // Lila claro
-    'Dibujo Técnico (Educ. Trab.)': '#f542b3', // Rosa claro
-    'Ciencias Biológicas': '#42f5b3',    // Verde menta
-    'Educ. para la Salud': '#42a1f5',      // Azul claro
-    'Física': '#42f5e3',             // Aqua claro
-    'Química': '#f5b342',            // Naranja claro
-    'Dibujo Técnico Aplic. (Educ. Trab.)': '#f542f5', // Rosa claro
-    'Geograf. de Venezuela': '#42f5d1', // Turquesa suave
-    'Hª de Venezuela (C.B.)': '#b542f5', // Púrpura claro
-    'Met. Investigación': '#42a7f5',  // Azul claro
-    'Dibujo Técnico': '#f5a742',      // Naranja claro
-    'Francés': '#a742f5',             // Violeta claro
-    'Latín y Griego': '#42f56b',      // Verde menta
-    'Historia del Arte': '#f542b5',   // Rosa claro
-    'Filosofía': '#f5e142',           // Amarillo suave
-    'Instrucción Premilitar': '#f5427f', // Rosa fuerte
-    'Ed. Física': '#f5c07a', // Naranja claro
-    'Ciencias de la Tierra': '#42f5b5',  // Verde agua claro
-    'Sociología': '#f5a742',            // Naranja suave
-  };
-
+const SUBJECT_COLOR_MAP = {
+  'Matemática': '#99b3cc', // Azul claro degradado
+  'Inglés': '#a0b8d6',     // Azul claro ligeramente más oscuro
+  'RECESO': '#2c384af2',   // Azul original (destacado)
+  'Ed. Física y Deporte': '#8ba3c5', // Azul claro intermedio
+  'Informática (Educ. Trab.)': '#b3c8e1', // Azul claro suave
+  'Hª de Venezuela': '#7f97b5', // Azul medio
+  'Est. de la Naturaleza': '#adc3de', // Azul claro pastel
+  'Geografía General': '#5f7692', // Azul más intenso para contraste
+  'Castellano y Literatura': '#99acc1', // Azul claro degradado
+  'Educación Artística': '#87a1bf', // Azul suave
+  'Religión': '#a8bad1', // Azul pastel más claro
+  'Ed. Familiar y Ciud.': '#6d8098', // Azul grisáceo intermedio
+  'Inic. Dibujo Técnico (Educ. Trab.)': '#a4b5cf', // Azul claro degradado
+  'Historia Universal': '#8da6c8',     // Azul suave
+  'Dibujo Técnico (Educ. Trab.)': '#7f94b3', // Azul medio
+  'Ciencias Biológicas': '#b0c4d8',    // Azul pastel claro
+  'Educ. para la Salud': '#95b1c6',      // Azul más claro
+  'Física': '#6e8ca6',             // Azul ligeramente más oscuro
+  'Química': '#94afc4',            // Azul suave
+  'Dibujo Técnico Aplic. (Educ. Trab.)': '#8799af', // Azul intermedio
+  'Geograf. de Venezuela': '#7094b1', // Azul claro
+  'Hª de Venezuela (C.B.)': '#68819e', // Azul más oscuro
+  'Met. Investigación': '#94b8d1',  // Azul pastel claro
+  'Dibujo Técnico': '#8ea3bc',      // Azul claro intermedio
+  'Francés': '#7a96b3',             // Azul medio
+  'Latín y Griego': '#9ab2c9',      // Azul más claro
+  'Historia del Arte': '#8099b0',   // Azul suave
+  'Filosofía': '#8eacc1',           // Azul pastel suave
+  'Instrucción Premilitar': '#768b9e', // Azul intermedio
+  'Ed. Física': '#a5bed3', // Azul claro
+  'Ciencias de la Tierra': '#7d98b3',  // Azul medio claro
+  'Sociología': '#94afc4',            // Azul pastel claro
+};
 @Component({
     selector: 'schedules-management',
     templateUrl: './schedules-management.html',
@@ -73,7 +71,7 @@ export class SchedulesManagement implements OnInit {
     slotMinTime: '06:00:00',
     slotMaxTime: '23:00:00',
     hiddenDays: [0, 6], // Oculta domingo y sábado
-    
+    initialDate: '2024-11-04T05:00:00', // Fecha de inicio predefinida    
     headerToolbar: false, // Oculta el header completo
     dayHeaderContent: (info) => { // Personaliza el formato del día de la semana
       const dayInSpanish = new Intl.DateTimeFormat('es', { weekday: 'long' }).format(info.date);
