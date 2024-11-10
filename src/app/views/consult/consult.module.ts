@@ -16,7 +16,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScheduleComponent } from './schedule/schedule.component';
-
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
     DropdownModule,
     RadioButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FullCalendarModule
   ],
   exports: [
     RadioButtonModule,

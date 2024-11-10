@@ -27,7 +27,7 @@ const routes: Routes = [
         path: 'schedule',
         component: ScheduleComponent,
         data: {
-          title: 'Notas'
+          title: 'Horario de clases'
         }
       },
     ]

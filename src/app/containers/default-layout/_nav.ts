@@ -31,10 +31,6 @@ export const navItems: INavData[] = [
       {
         name: 'Horario de clases',
         url: '/consult/schedule',
-        badge: {
-          color: 'info',
-          text: 'NEW'
-        },
       },
     ]
   },

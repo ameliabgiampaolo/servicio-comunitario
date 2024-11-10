@@ -1,0 +1,22 @@
+::ng-deep .p-dropdown-panel .p-dropdown-items {
+    margin-left: 0 !important;
+}
+
+::ng-deep .p-dropdown-item {
+    padding-left: 0.5rem !important; 
+}
+
+::ng-deep .p-dropdown-panel ul, 
+::ng-deep .p-dropdown-panel ol {
+    padding-left: 0 !important;
+}
+
+.highlight-recess {
+    min-height: 50px !important; /* Ajusta el valor según sea necesario */
+    font-size: 1.2em;            /* Aumenta el tamaño del texto */
+    line-height: 1.5em;         /* Ajusta el espaciado del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
