@@ -29,9 +29,7 @@ export class LoginService {
   
       this.storageService.save('currentUser', JSON.stringify(currentUser));
       this.userSubject.next(currentUser);
-  
-      console.log('usuario',this.storageService.getSavedUser());
-  
+    
       this.router.navigate(['/dashboard']);
     }
 
