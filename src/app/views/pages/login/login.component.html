@@ -5,14 +5,19 @@
         <c-card-group>
           <c-card class="p-4 card-glass">
             <c-card-body>
-              <form cForm>
+              <form [formGroup]="userForm">
                 <h5>Ingresar al portal</h5>
                 <p class="text-high-emphasis-dark">Ingresa con tu correo de escuela.</p>
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Username" />
+                  <input 
+                    autoComplete="username" 
+                    formControlName="username" 
+                    placeholder="Username" 
+                    class="input"
+                  />
                 </c-input-group>
                 <c-input-group class="mb-4">
                   <span cInputGroupText>
@@ -20,14 +25,15 @@
                   </span>
                   <input
                     autoComplete="current-password"
-                    cFormControl
+                    formControlName="password"
                     placeholder="Password"
                     type="password"
+                    class="input"
                   />
                 </c-input-group>
                 <c-row>
                   <c-col xs="6">
-                    <button (click)="redirectTo()" cButton class="px-4" color="primary">
+                    <button (click)="login()" cButton class="px-4" color="primary">
                       Acceder
                     </button>
                   </c-col>
