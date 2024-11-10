@@ -15,11 +15,13 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
   declarations: [
-    GradesComponent
+    GradesComponent,
+    ScheduleComponent
   ],
   imports: [
     CommonModule,

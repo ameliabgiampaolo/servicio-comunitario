@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { GradesComponent } from './grades/grades.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,13 @@ const routes: Routes = [
           title: 'Notas'
         }
       },
-      //TODO: Agregar schedule
+      {
+        path: 'schedule',
+        component: ScheduleComponent,
+        data: {
+          title: 'Notas'
+        }
+      },
     ]
   }
 ];
