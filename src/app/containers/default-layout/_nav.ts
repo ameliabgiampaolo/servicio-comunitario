@@ -57,11 +57,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Secciones',
-        url: '/404',
-        badge: {
-          color: 'info',
-          text: 'NEW'
-        },
+        url: '/sections-management'
       },
       {
         name: 'Alumnos',
