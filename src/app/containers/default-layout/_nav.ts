@@ -12,12 +12,37 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: 'Usuarios'
+    name: 'Administrador'
   },
   {
-    name: 'Gestion de usuarios',
-    url: '/user-management',
+    name: 'Gestion',
     iconComponent: { name: 'cil-user' },
+      children: [
+      {
+        name: 'Gestion de Usuarios',
+        url: '/user-management',
+      },
+      {
+        name: 'Ciclos Escolares',
+        url: '/404',
+        badge: {
+          color: 'info',
+          text: 'NEW'
+        },
+      },
+      {
+        name: 'Gestión de Secciones',
+        url: '/sections-management'
+      },
+      {
+        name: 'Gestión de Alumnos',
+        url: '/student-management'
+      },
+      {
+        name: 'Gestión de Asignaturas',
+        url: '/subject-management'
+      },
+    ],
   },
   {
     title: true,
@@ -29,12 +54,12 @@ export const navItems: INavData[] = [
     url: '/consult',
     children: [
       {
-        name: 'Notas',
-        url: '/consult/grades'
-      },
-      {
         name: 'Horario de clases',
         url: '/consult/schedule',
+      },
+      {
+        name: 'Notas',
+        url: '/consult/grades'
       },
     ]
   },
@@ -48,22 +73,6 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-settings' },
     children: [
       {
-        name: 'Ciclos Escolares',
-        url: '/404',
-        badge: {
-          color: 'info',
-          text: 'NEW'
-        },
-      },
-      {
-        name: 'Secciones',
-        url: '/sections-management'
-      },
-      {
-        name: 'Alumnos',
-        url: '/student-management'
-      },
-      {
         name: 'Horarios de clases',
         url: '/schedules-management'
       },
@@ -74,10 +83,6 @@ export const navItems: INavData[] = [
           color: 'info',
           text: 'NEW'
         },
-      },
-      {
-        name: 'Asignaturas',
-        url: '/subject-management'
       },
     ]
   },
