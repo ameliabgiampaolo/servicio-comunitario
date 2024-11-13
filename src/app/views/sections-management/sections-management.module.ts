@@ -18,6 +18,7 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SectionsManagementComponent } from './sections-management';
 import { SectionsManagementRoutingModule } from './sections-management-routing.module';
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   imports: [
     SectionsManagementRoutingModule,
@@ -39,7 +40,8 @@ import { SectionsManagementRoutingModule } from './sections-management-routing.m
     FormsModule,
     ReactiveFormsModule,
     SkeletonModule,
-    MultiSelectModule
+    MultiSelectModule,
+    MessagesModule
   ],
   exports: [
     RadioButtonModule,

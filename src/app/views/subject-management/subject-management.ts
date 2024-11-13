@@ -15,7 +15,7 @@ export interface Subject {
   styleUrls: ['./subject-management.scss'],
   providers: [MessageService, ConfirmationService, SubjectService],
 })
-export class SubjectManagementComponent implements OnInit   {
+export class SubjectManagementComponent implements OnInit {
     groupedCourses: any;
 
     selectedCourse: string | undefined;

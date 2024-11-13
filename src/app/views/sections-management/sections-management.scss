@@ -1,1 +1,23 @@
+::ng-deep .p-dropdown-panel .p-dropdown-items {
+    margin-left: 0 !important;
+}
 
+::ng-deep .p-dropdown-item {
+    padding-left: 0.5rem !important;
+}
+
+::ng-deep .p-dropdown-panel ul, 
+::ng-deep .p-dropdown-panel ol {
+    padding-left: 0 !important;
+}
+
+.login-messages {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050; 
+    width: auto;
+    max-width: 90%;
+    margin: 0 auto;
+}

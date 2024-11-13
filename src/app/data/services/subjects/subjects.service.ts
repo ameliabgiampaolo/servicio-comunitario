@@ -455,6 +455,20 @@ export class SubjectService {
         ];
     }
 
+    getSectionData() {
+        return [
+            {
+                section: 'Sección C',
+            },
+            {
+                section: 'Sección D',
+            },
+            {
+                section: 'Sección E',
+            },
+        ];
+    }
+
     getProductsMini() {
         return Promise.resolve(this.getSubjectData().slice(0, 5));
     }
@@ -465,5 +479,9 @@ export class SubjectService {
 
     getsubject() {
         return Promise.resolve(this.getSubjectData());
+    }
+
+    getSections() {
+        return Promise.resolve(this.getSectionData());
     }
 };
