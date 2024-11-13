@@ -19,6 +19,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { MessagesModule } from 'primeng/messages';
 import { SchoolYearManagementComponent } from './school-year-management';
 import { SchoolYearManagementRoutingModule } from './school-year-management-routing.module';
+import { CalendarModule } from 'primeng/calendar';
 @NgModule({
   imports: [
     SchoolYearManagementRoutingModule,
@@ -41,7 +42,8 @@ import { SchoolYearManagementRoutingModule } from './school-year-management-rout
     ReactiveFormsModule,
     SkeletonModule,
     MultiSelectModule,
-    MessagesModule
+    MessagesModule,
+    CalendarModule
   ],
   exports: [
     RadioButtonModule,

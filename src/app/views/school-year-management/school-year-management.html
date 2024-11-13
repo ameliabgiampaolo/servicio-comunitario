@@ -56,24 +56,27 @@
 
     <p-dialog 
         [(visible)]="newSchoolYearDialog" 
-        [style]="{ width: 'auto', height: 'auto' }" 
-        header="Agrega las secciones"
+        [style]="{ width: '500px', height: '290px' }" 
+        header="Periodo"
         [modal]="true" 
         styleClass="p-fluid"
         [contentStyle]="{ 'display': 'flex', 'justify-content': 'center' }">
-
         <ng-template pTemplate="content">
-            <div class="card" style="width: 360px;">
-                <p-multiSelect 
-                    [options]="sectionsSuggestions" 
-                    [(ngModel)]="section.section" 
-                    optionLabel="section" 
-                    placeholder="Secciones"
-                    (onPanelShow)="adjustDialogHeight(true)"
-                    (onPanelHide)="adjustDialogHeight(false)" />
-            </div>                    
-        </ng-template>
-
+            <p-calendar style="margin-right: 20px;"
+              [(ngModel)]="date1" 
+              view="year" 
+              dateFormat="yy" 
+              (onFocus)="adjustDialogHeight(true)"
+              (onClose)="adjustDialogHeight(false)"
+              (onSelect)="updateMaxYear(date1)" />  
+            
+            <p-calendar 
+              [(ngModel)]="date2" 
+              view="year" 
+              dateFormat="yy"
+              (onFocus)="adjustDialogHeight(true)"
+              (onClose)="adjustDialogHeight(false)" />  
+          </ng-template>
         <ng-template pTemplate="footer">
             <p-button 
                 pRipple 
@@ -83,7 +86,7 @@
                 (click)="hideDialog()" />
             <p-button 
                 pRipple 
-                label="Incluir sección(es)" 
+                label="Incluir ciclo" 
                 icon="pi pi-check" 
                 [text]="true" 
                 (click)="saveSections()" />
