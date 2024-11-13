@@ -24,11 +24,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Ciclos Escolares',
-        url: '/404',
-        badge: {
-          color: 'info',
-          text: 'NEW'
-        },
+        url: '/school-year-management',
       },
       {
         name: 'Gestión de Secciones',

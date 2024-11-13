@@ -80,6 +80,11 @@ const routes: Routes = [
           import('./views/sections-management/sections-management.module').then((m) => m.SectionsManagementModule)
       },
       {
+        path: '',
+        loadChildren: () =>
+          import('./views/school-year-management/school-year-management.module').then((m) => m.SchoolYearManagementModule)
+      },
+      {
         path: 'consult',
         loadChildren: () =>
           import('./views/consult/consult.module').then((m) => m.ConsultModule)
