@@ -4,6 +4,8 @@ import { AppConfig } from '../../data/services/tools/app-config.service'
 import { SubjectService } from '../../data/services/subjects/subjects.service';
 export interface Section {
   section?: string;
+  value?: string;
+  year?: string;
 }
 
 @Component({
@@ -50,7 +52,6 @@ export class SectionsManagementComponent implements OnInit {
         const selectedGroup = this.groupedCourses.find(course => course.value === this.selectedCourse);
         if (selectedGroup && selectedGroup.items.length > 0) {
             this.sections = selectedGroup.items; 
-            console.log('Secciones seleccionadas:', this.sections);
         } else {
             this.sections = []; 
             this.messages = [
@@ -59,7 +60,6 @@ export class SectionsManagementComponent implements OnInit {
         }
     } else {
         this.sections = [];
-        console.log('Ningún curso seleccionado.');
     }
   }
 
@@ -68,7 +68,6 @@ export class SectionsManagementComponent implements OnInit {
       this.section = {};
       this.submitted = false;
       this.sectionDialog = true;
-      console.log('this.sectionsSuggestions', this.sectionsSuggestions)
     }
   }
 
@@ -137,22 +136,38 @@ export class SectionsManagementComponent implements OnInit {
     this.submitted = true;
     const sectionsArray = Array.isArray(this.section.section) ? this.section.section : Object.values(this.section.section);
 
+
     sectionsArray.forEach(section => {
         this.sections.push(section);
     });
 
+
+    const selectedGroupIndex = this.groupedCourses.findIndex(course => course.value === this.selectedCourse);
+
+
     this.sections = [...this.sections];
     this.allSections = [...this.sections];
+    this.groupedCourses[selectedGroupIndex].items = [...this.sections];
+
+
+    this.groupedCourses[selectedGroupIndex].items.forEach((item) => {
+        item.year =  this.groupedCourses[selectedGroupIndex].course; 
+        if (!item.value.endsWith((selectedGroupIndex + 1).toString())) {
+            item.value = item.value.split('_')[0] + '_' + item.value.split('_')[1] + '_'  + (selectedGroupIndex + 1);
+        }
+    });
+
     this.sectionDialog = false;
     this.section = {};
-
+    
     this.messageService.add({
         severity: 'success',
         summary: 'Éxito',
         detail: 'Asignación exitosa',
         life: 3000,
     });
-  }
+}
+
 
   
   adjustDialogHeight(isDropdownOpen: boolean): void {

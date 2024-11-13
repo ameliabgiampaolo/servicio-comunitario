@@ -458,13 +458,29 @@ export class SubjectService {
     getSectionData() {
         return [
             {
+                section: 'Sección A',
+                value: 'seccion_a_',
+                year: '',
+            },
+            {
+                section: 'Sección B',
+                value: 'seccion_b_',
+                year: '',
+            },
+            {
                 section: 'Sección C',
+                value: 'seccion_c_',
+                year: '',
             },
             {
                 section: 'Sección D',
+                value: 'seccion_d_',
+                year: '',
             },
             {
                 section: 'Sección E',
+                value: 'seccion_e_',
+                year: '',
             },
         ];
     }
