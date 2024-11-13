@@ -97,18 +97,22 @@ export class SchedulesManagement implements OnInit {
   };
 
   generateCourseEvents() {
-    if (this.selectedCourse === 'seccion_b_1' || this.selectedCourse === 'seccion_a_1') {
-      this.calendarOptions.events = this.schedulesManagementService.eventsFirstYear(SUBJECT_COLOR_MAP);
-    } else if (this.selectedCourse === 'seccion_b_2' || this.selectedCourse === 'seccion_a_2') {
+    if (this.selectedCourse === 'seccion_a_1' || this.selectedCourse === 'seccion_b_1' || this.selectedCourse === 'seccion_c_1' || 
+      this.selectedCourse === 'seccion_d_1' || this.selectedCourse === 'seccion_e_1') {
+        this.calendarOptions.events = this.schedulesManagementService.eventsFirstYear(SUBJECT_COLOR_MAP);
+    } else if (this.selectedCourse === 'seccion_a_2' || this.selectedCourse === 'seccion_b_2' || this.selectedCourse === 'seccion_c_2' || 
+      this.selectedCourse === 'seccion_d_2' || this.selectedCourse === 'seccion_e_2') {
       this.calendarOptions.events = this.schedulesManagementService.eventsSecondYear(SUBJECT_COLOR_MAP);
-    } else if (this.selectedCourse === 'seccion_b_3' || this.selectedCourse === 'seccion_a_3') {
+    } else if (this.selectedCourse === 'seccion_a_3' || this.selectedCourse === 'seccion_b_3' || this.selectedCourse === 'seccion_c_3' || 
+      this.selectedCourse === 'seccion_d_3' || this.selectedCourse === 'seccion_e_3') {
       this.calendarOptions.events = this.schedulesManagementService.eventsThirdYear(SUBJECT_COLOR_MAP);
-    } else if (this.selectedCourse === 'seccion_b_4' || this.selectedCourse === 'seccion_a_4') {
+    } else if (this.selectedCourse === 'seccion_a_4' || this.selectedCourse === 'seccion_b_4' || this.selectedCourse === 'seccion_c_4' || 
+      this.selectedCourse === 'seccion_d_4' || this.selectedCourse === 'seccion_e_4') {
       this.calendarOptions.events = this.schedulesManagementService.eventsFourthYear(SUBJECT_COLOR_MAP);
-    } else if (this.selectedCourse === 'seccion_b_5' || this.selectedCourse === 'seccion_a_5') {
+    } else if (this.selectedCourse === 'seccion_a_5' || this.selectedCourse === 'seccion_b_5' || this.selectedCourse === 'seccion_c_5' || 
+      this.selectedCourse === 'seccion_d_5' || this.selectedCourse === 'seccion_e_5') {
       this.calendarOptions.events = this.schedulesManagementService.eventsFiveYear(SUBJECT_COLOR_MAP);
     }
-
   }
 
   private eventsFirstYear(SUBJECT_COLOR_MAP) {

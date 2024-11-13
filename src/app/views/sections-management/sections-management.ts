@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, Message, MessageService } from 'primeng/api';
 import { AppConfig } from '../../data/services/tools/app-config.service'
 import { SubjectService } from '../../data/services/subjects/subjects.service';
+import { ThisReceiver } from '@angular/compiler';
 export interface Section {
   section?: string;
   value?: string;
@@ -134,41 +135,53 @@ export class SectionsManagementComponent implements OnInit {
 
   saveSections() {
     this.submitted = true;
+
     const sectionsArray = Array.isArray(this.section.section) ? this.section.section : Object.values(this.section.section);
 
+    const newSections = sectionsArray.map(section => ({ ...section }));
 
-    sectionsArray.forEach(section => {
+    newSections.forEach(section => {
         this.sections.push(section);
     });
 
-
     const selectedGroupIndex = this.groupedCourses.findIndex(course => course.value === this.selectedCourse);
 
+    const selectedCourse = this.groupedCourses[selectedGroupIndex];
 
-    this.sections = [...this.sections];
-    this.allSections = [...this.sections];
-    this.groupedCourses[selectedGroupIndex].items = [...this.sections];
+    selectedCourse.items = selectedCourse.items.filter(item =>
+        !newSections.some(newSection => newSection.section === item.section)
+    );
 
+    selectedCourse.items.push(...newSections);
 
-    this.groupedCourses[selectedGroupIndex].items.forEach((item) => {
-        item.year =  this.groupedCourses[selectedGroupIndex].course; 
+    selectedCourse.items.forEach((item) => {
         if (!item.value.endsWith((selectedGroupIndex + 1).toString())) {
-            item.value = item.value.split('_')[0] + '_' + item.value.split('_')[1] + '_'  + (selectedGroupIndex + 1);
+            item.year = selectedCourse.course;
+            item.value = `${item.value.split('_')[0]}_${item.value.split('_')[1]}_${selectedGroupIndex + 1}`;
         }
     });
 
     this.sectionDialog = false;
     this.section = {};
-    
+
     this.messageService.add({
         severity: 'success',
         summary: 'Éxito',
         detail: 'Asignación exitosa',
         life: 3000,
     });
-}
+  }
 
-
+  getCourseValue(courseValue: string): string {
+    const courseMap: { [key: string]: string } = {
+      'primer_ano': 'Primer Año',
+      'segundo_ano': 'Segundo Año',
+      'tercer_ano': 'Tercer Año',
+      'cuarto_ano': 'Cuarto Año',
+      'quinto_ano': 'Quinto Año',
+    };
+    return courseMap[courseValue];
+  }
   
   adjustDialogHeight(isDropdownOpen: boolean): void {
     const dialog = document.querySelector('.p-dialog') as HTMLElement;

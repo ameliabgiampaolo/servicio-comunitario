@@ -54,6 +54,9 @@ export class StudentManagementComponent implements OnInit {
     this.sections = [
       { label: 'Sección A', value: 'Sección A' },
       { label: 'Sección B', value: 'Sección B' },
+      { label: 'Sección C', value: 'Sección C' },
+      { label: 'Sección D', value: 'Sección D' },
+      { label: 'Sección E', value: 'Sección E' },
     ];
     
     this.filterStudents();
