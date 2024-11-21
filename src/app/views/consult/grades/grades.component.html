@@ -1,6 +1,27 @@
 <div class="card">
-    <p-table 
-        [value]="customers" 
+    <p-toast></p-toast>
+    <p-toolbar class="mb-4 gap-2">
+        <div class="flex justify-content-start align-items-center w-full">
+            <p-dropdown 
+                [options]="schoolYears"  
+                [(ngModel)]="selectedSchoolYear" 
+                placeholder="Selecciona el ciclo escolar..." 
+                (onChange)="filterGrades()" 
+                [group]="false">
+                <ng-template let-option pTemplate="item">
+                    <div class="flex align-items-center">
+                        <span>{{ option.period }}</span>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="selectedItem" let-selected>
+                    <span>{{ selected.period }}</span>
+                </ng-template>
+            </p-dropdown>
+        </div>
+    </p-toolbar>
+    <p-table *ngIf="grades?.length > 0; else noGradesMessage"
+        [value]="grades" 
         sortField="representative.name" 
         sortMode="single" 
         dataKey="representative.name" 
@@ -49,4 +70,8 @@
                 </tr>
             </ng-template>
     </p-table>
+      <ng-template #noGradesMessage>
+        <p style="margin-left: 20px;">No se encontraron notas para el ciclo escolar seleccionado.</p>
+      </ng-template>
+      
 </div>
