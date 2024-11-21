@@ -23,10 +23,11 @@ export class SchoolYearManagementComponent implements OnInit {
   submitted: boolean = false;
 
   date: Date[] | undefined;
+  date1: any;
 
   date2 = new Date().getFullYear().toString();
 
-  constructor(private schoolYearService: SchoolYearService) {}
+  constructor(private schoolYearService: SchoolYearService, private messageService: MessageService) {}
     
   ngOnInit() {
     this.schoolYearService.getSchoolYearData().then((data) => {
@@ -62,26 +63,36 @@ export class SchoolYearManagementComponent implements OnInit {
     this.date2 = (Number(date1.getFullYear()) + 1).toString();
   }
 
-  saveSubject() {
+  saveSchoolYear() {
     this.submitted = true;
-    const period = this.schoolYear.period;
-/* 
-    subjectsArray.forEach(subject => {
-        subject.id = this.createId();
-        this.subjects.push(subject);
-    });
 
-    this.subjects = [...this.subjects];
-    this.allSubjects = [...this.subjects];
-    this.subjectDialog = false;
-    this.subject = {};
+    if (this.date1 && this.date2) {
+      this.date1 = this.date1.getFullYear().toString();
 
-    this.messageService.add({
-        severity: 'success',
-        summary: 'Éxito',
-        detail: 'Asignación exitosa',
-        life: 3000,
-    }); */
+      const newPeriod = `${this.date1}-${this.date2.toString()}`;
+      
+      const exists = this.schoolYears.some((year) => year.period === newPeriod);
+  
+      if (!exists) {
+        this.schoolYears = [{ period: newPeriod }, ...this.schoolYears];
+  
+        this.newSchoolYearDialog = false;
+        this.schoolYear = {};
+    
+        this.messageService.add({
+            severity: 'success',
+            summary: 'Éxito',
+            detail: 'Asignación exitosa',
+            life: 3000,
+        });
+      } else {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'Aviso',
+            detail: `El ciclo ${newPeriod} ya existe`,
+            life: 3000,
+        });
+      }
+    }
   }
-
 }

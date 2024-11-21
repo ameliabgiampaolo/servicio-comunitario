@@ -5,7 +5,7 @@
             <p-button 
                 pRipple 
                 severity="success" 
-                label="Agregar Ciclo Escolar" 
+                label="Empezar nuevo Ciclo Escolar" 
                 icon="pi pi-plus" 
                 class="ml-2 mr-2"       
                 (click)="openNew()" />
@@ -39,7 +39,7 @@
         <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="period" style="min-width:15rem">
-                    Ciclo Escolar <p-sortIcon field="period" />
+                    Ciclos Escolares anteriores <p-sortIcon field="period" />
                 </th>
             </tr>
         </ng-template>
@@ -89,7 +89,7 @@
                 label="Incluir ciclo" 
                 icon="pi pi-check" 
                 [text]="true" 
-                (click)="saveSections()" />
+                (click)="saveSchoolYear()" />
         </ng-template>
     </p-dialog>
 
