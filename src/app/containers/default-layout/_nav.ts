@@ -74,7 +74,7 @@ export const navItems: INavData[] = [
       },
       {
         name: 'Notas',
-        url: '/404',
+        url: '/upload-grades',
         badge: {
           color: 'info',
           text: 'NEW'

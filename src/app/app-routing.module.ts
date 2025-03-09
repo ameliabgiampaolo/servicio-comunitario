@@ -85,6 +85,11 @@ const routes: Routes = [
           import('./views/school-year-management/school-year-management.module').then((m) => m.SchoolYearManagementModule)
       },
       {
+        path: '',
+        loadChildren: () =>
+          import('./views/grades-management/grades-management.module').then((m) => m.GradesManagementModule)
+      },
+      {
         path: 'consult',
         loadChildren: () =>
           import('./views/consult/consult.module').then((m) => m.ConsultModule)
