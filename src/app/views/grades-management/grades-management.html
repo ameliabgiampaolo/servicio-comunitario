@@ -6,7 +6,6 @@
                 [options]="schoolYears"  
                 [(ngModel)]="selectedSchoolYear" 
                 placeholder="Selecciona el ciclo escolar" 
-   
                 [group]="false">
                 <ng-template let-option pTemplate="item">
                     <div class="flex align-items-center">
@@ -49,6 +48,7 @@
                     [options]="allStudents"  
                     [(ngModel)]="selectedStuded" 
                     placeholder="Selecciona el alumno" 
+                    (onChange)="getAllSubjects()"
                     [group]="false">
                     <ng-template let-student pTemplate="student">
                         <div class="flex align-items-center">
@@ -64,6 +64,24 @@
 
                     <ng-template pTemplate="selectedItem" let-selected>
                         <span>{{ selected.name }} {{ selected.surname }}</span>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+
+            <div style="margin-left: 20px;" *ngIf="this.selectedStuded">
+                <p-dropdown 
+                    [options]="subjects"  
+                    [(ngModel)]="subjectSelected" 
+                    placeholder="Selecciona la materia" 
+                    [group]="false">
+                    <ng-template let-subject pTemplate="subject">
+                        <div class="flex align-items-center">
+                            <span>{{ subject.name }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template pTemplate="selectedItem" let-selected>
+                        <span>{{ selected.name }}</span>
                     </ng-template>
                 </p-dropdown>
             </div>
