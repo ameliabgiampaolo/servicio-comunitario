@@ -2,6 +2,7 @@
     <p-toast></p-toast>
     <p-toolbar class="mb-4 gap-2">
         <div class="flex justify-content-start align-items-center w-full">
+            <!-- Dropdowns for selecting year, course, student, and subject -->
             <p-dropdown 
                 [options]="schoolYears"  
                 [(ngModel)]="selectedSchoolYear" 
@@ -18,7 +19,7 @@
                 </ng-template>
             </p-dropdown>
 
-            <div style="margin-left: 20px;">
+            <div style="margin-left: 20px;" *ngIf="selectedSchoolYear">
                 <p-dropdown 
                     [options]="groupedCourses"  
                     [(ngModel)]="selectedCourse" 
@@ -87,4 +88,52 @@
             </div>
         </div>
     </p-toolbar>
+</div>
+<br><br>
+
+<div class="flex justify-center" style="display: flex; gap: 20px; align-items: center;" *ngIf="subjectSelected">
+    <!-- Actividad realizada -->
+    <div class="flex flex-col gap-2">
+        <label for="activity" style="margin-top: 11px;">Actividad realizada: </label>
+        <input 
+            style="width: 54vh;" 
+            pInputText id="activity" 
+            aria-describedby="activity-help" 
+            [(ngModel)]="activity" 
+        />
+    </div>
+
+    <!-- Nota -->
+    <div class="flex flex-col gap-2">
+        <label for="note" style="margin-top: 11px;">Nota: </label>
+        <input 
+            type="number"
+            style="width: 14vh;" 
+            pInputText id="note" 
+            aria-describedby="note-help" 
+            [(ngModel)]="note" 
+        />
+    </div>
+</div> 
+
+<!-- Botones Guardar y Borrar -->
+<div class="flex justify-center" style="margin-top: 50px; float: inline-end;" *ngIf="subjectSelected">
+    <!-- Botón Guardar -->
+    <p-button 
+        pRipple 
+        severity="success" 
+        label="Guardar" 
+        icon="pi pi-save" 
+        (click)="uploadGrade()" 
+        class="mr-2" 
+    />
+
+    <!-- Botón Borrar -->
+    <p-button 
+        pRipple 
+        severity="danger" 
+        label="Borrar" 
+        icon="pi pi-trash" 
+        (click)="clearFields()" 
+    />
 </div>

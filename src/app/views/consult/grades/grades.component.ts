@@ -79,7 +79,9 @@ export class GradesComponent implements OnInit{
 
       this.gradesService.getGrades().then((data) => {
           this.grades = data;
+          console.log('this', this.grades)
       });
+
       this.schoolYearService.getSchoolYearData().then((data) => {
         this.schoolYears = data;
         this.selectedSchoolYear = this.schoolYears[0]; 

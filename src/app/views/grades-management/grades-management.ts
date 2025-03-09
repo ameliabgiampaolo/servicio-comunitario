@@ -4,12 +4,14 @@ import { MessageService } from "primeng/api";
 import { StudentService } from "../../data/services/student/student.service";
 import { AppConfig } from "../../data/services/tools/app-config.service";
 import { SubjectService } from "../../data/services/subjects/subjects.service";
+import { StorageService } from "../../data/services/tools/storage.service";
+import { GradesService } from "../../data/services/grades/grades.service";
 
 @Component({
   selector: 'grades-management',
   templateUrl: 'grades-management.html',
   styleUrls: ['./grades-management.scss'],
-  providers: [SchoolYearService, MessageService, StudentService, SubjectService],
+  providers: [SchoolYearService, MessageService, StudentService, SubjectService, GradesService, MessageService],
 })
 export class GradesManagementComponent {
   schoolYears: any;
@@ -26,16 +28,30 @@ export class GradesManagementComponent {
   subjects: any;
   subjectSelected: string;
 
+  activity: string = '';
+  note: number | null = null;
+
+  allGrades: any;
+
   constructor(
     private schoolYearService: SchoolYearService,
     private studentService: StudentService,
     private appConfig: AppConfig,
-    private subjectService: SubjectService
+    private subjectService: SubjectService,
+    private storageService: StorageService,
+    private gradesService: GradesService,
+    private messageService: MessageService
   ) {
     // get the school year
     this.schoolYearService.getSchoolYearData().then((data) => {
       this.schoolYears = data;
     });   
+
+    this.allGrades = [];
+  
+    this.gradesService.getGrades().then((data) => {
+      this.allGrades = Array.isArray(data) ? data : [];
+    });
 
     // get all courses
     this.groupedCourses = this.appConfig.subjects;
@@ -79,5 +95,36 @@ export class GradesManagementComponent {
       default:
         break;
     }
+  }
+
+  uploadGrade() {
+    if (Array.isArray(this.allGrades)) {
+      this.allGrades = [{       
+        id: Math.floor(Math.random() * 10000),
+        name: this.activity,
+        date: new Date().toLocaleDateString(),
+        status: this.note.toString(),
+        schoolYear: this.selectedSchoolYear.period,
+        representative: {
+          name: this.subjectSelected['name'], 
+        },
+        username: this.selectedStuded.username }, ...this.allGrades];
+    }
+  
+    console.log('allGrades', this.allGrades); // Check the updated allGrades array
+  
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Éxito',
+      detail: 'Nota cargada exitosamente.',
+      life: 3000,
+    });
+  
+    this.clearFields();
+  }
+
+  clearFields() {
+    this.activity = '';
+    this.note = null;
   }
 }
