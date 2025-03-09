@@ -5,6 +5,12 @@ export class SchoolYearService {
     getSchoolYear() {
         return [
             {
+                period: '2024-2025',
+            },
+            {
+                period: '2023-2024',
+            },
+            {
                 period: '2022-2023',
             },
             {

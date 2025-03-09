@@ -8,6 +8,57 @@ export class GradesService {
        {
         id: 1010,
         name: 'Taller Avanzado',
+        date: '15-01-2024',
+        status: '08',
+        schoolYear: '2024-2025',
+        representative: {
+          name: 'Matemática',
+        },
+        username: 'ycontreras',
+      },
+      {
+        id: 1020,
+        name: 'Exámen Semestral',
+        date: '20-02-2024',
+        status: '12',
+        schoolYear: '2024-2025',
+        representative: {
+          name: 'Matemática',
+        },
+        username: 'ycontreras',
+      },
+
+      // historia
+      {
+        id: 2010,
+        name: 'Investigación Documental',
+        date: '10-01-2024',
+        status: '14',
+        schoolYear: '2024-2025',
+        representative: {
+          name: 'Historia',
+        },
+      },
+      {
+        id: 2020,
+        name: 'Debate Histórico',
+        date: '15-03-2024',
+        status: '16',
+        schoolYear: '2024-2025',
+        representative: {
+          name: 'Historia',
+        },
+        username: 'ycontreras',
+      },
+
+     
+
+
+
+       // matemática
+       {
+        id: 1010,
+        name: 'Taller Avanzado',
         date: '15-01-2023',
         status: '09',
         schoolYear: '2022-2023',

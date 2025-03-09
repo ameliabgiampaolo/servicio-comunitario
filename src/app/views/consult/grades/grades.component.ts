@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GradesService } from '../../../data/services/grades/grades.service';
 import { SchoolYearService } from '../../../data/services/school-year/school-year.service';
 import { MessageService } from 'primeng/api';
+import { StorageService } from '../../../data/services/tools/storage.service';
 
 export interface Subject {
   name?: string;
@@ -13,12 +14,13 @@ export interface Grade {
   date?: string | Date;
   status?: string;
   representative?: Subject;
+  username?: string;
 }
 
 @Component({
     selector: 'app-grades',
     templateUrl: 'grades.component.html',
-    providers: [GradesService, SchoolYearService, MessageService],
+    providers: [GradesService, SchoolYearService, MessageService, StorageService],
     styles: [
         `:host ::ng-deep .p-rowgroup-footer td {
             font-weight: 700;
@@ -64,14 +66,17 @@ export class GradesComponent implements OnInit{
     grades!: Grade[];
     schoolYears: any;
     selectedSchoolYear: any;
+    username: string;
 
-    constructor(private gradesService: GradesService, private schoolYearService: SchoolYearService) {
+    constructor(private gradesService: GradesService, private schoolYearService: SchoolYearService, private storageService: StorageService) {
       this.schoolYearService.getSchoolYearData().then((data) => {
         this.schoolYears = data;
       });    
     }
 
     ngOnInit() {
+      this.username = this.storageService.getSavedUser()?.username;
+
       this.gradesService.getGrades().then((data) => {
           this.grades = data;
       });
@@ -108,7 +113,13 @@ export class GradesComponent implements OnInit{
     filterGrades() {
       if (this.selectedSchoolYear.period) {
         this.gradesService.getGrades().then((data) => {
-          this.grades = data.filter((grade) => grade.schoolYear === this.selectedSchoolYear.period.toString());
+          this.grades = data.filter((grade) =>{ 
+            if (grade.username) {
+              return grade.schoolYear === this.selectedSchoolYear.period.toString() && grade.username === this.username;
+            } else {
+              return grade.schoolYear === this.selectedSchoolYear.period.toString()
+            }
+          });
         });
       } else {
         this.gradesService.getGrades().then((data) => {
