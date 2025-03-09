@@ -4,7 +4,6 @@ import { MessageService } from "primeng/api";
 import { StudentService } from "../../data/services/student/student.service";
 import { AppConfig } from "../../data/services/tools/app-config.service";
 import { SubjectService } from "../../data/services/subjects/subjects.service";
-import { StorageService } from "../../data/services/tools/storage.service";
 import { GradesService } from "../../data/services/grades/grades.service";
 
 @Component({
@@ -38,7 +37,6 @@ export class GradesManagementComponent {
     private studentService: StudentService,
     private appConfig: AppConfig,
     private subjectService: SubjectService,
-    private storageService: StorageService,
     private gradesService: GradesService,
     private messageService: MessageService
   ) {
@@ -98,20 +96,17 @@ export class GradesManagementComponent {
   }
 
   uploadGrade() {
-    if (Array.isArray(this.allGrades)) {
-      this.allGrades = [{       
-        id: Math.floor(Math.random() * 10000),
-        name: this.activity,
-        date: new Date().toLocaleDateString(),
-        status: this.note.toString(),
-        schoolYear: this.selectedSchoolYear.period,
-        representative: {
-          name: this.subjectSelected['name'], 
-        },
-        username: this.selectedStuded.username }, ...this.allGrades];
-    }
+    const newGrade = {       
+      id: Math.floor(Math.random() * 10000),
+      name: this.activity,
+      date: new Date().toLocaleDateString(),
+      status: this.note.toString(),
+      schoolYear: this.selectedSchoolYear.period,
+      representative: { name: this.subjectSelected['name'] }, 
+      username: this.selectedStuded.username,
+    };
   
-    console.log('allGrades', this.allGrades); // Check the updated allGrades array
+    this.gradesService.addGrade(newGrade); 
   
     this.messageService.add({
       severity: 'success',
@@ -122,7 +117,7 @@ export class GradesManagementComponent {
   
     this.clearFields();
   }
-
+  
   clearFields() {
     this.activity = '';
     this.note = null;

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class GradesService {
+  private grades = this.getData(); 
+
   getData() {
     return [
        // matemática
@@ -51,10 +53,19 @@ export class GradesService {
         username: 'ycontreras',
       },
 
-     
-
-
-
+      // religion
+      {
+        id: 2020,
+        name: 'Presentación Oral',
+        date: '09-03-2025',
+        status: '14',
+        schoolYear: '2024-2025',
+        representative: {
+          name: 'Religión IV',
+        },
+        username: 'ycontreras',
+      },
+      
        // matemática
        {
         id: 1010,
@@ -825,5 +836,9 @@ export class GradesService {
 
   getGrades() {
     return Promise.resolve(this.getData());
+  }
+
+  addGrade(grade: any) {
+    this.grades = [grade, ...this.grades]; 
   }
 }
