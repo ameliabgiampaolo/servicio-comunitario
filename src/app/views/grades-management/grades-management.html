@@ -1,1 +1,72 @@
-<p>hola</p>
+<div class="card">
+    <p-toast></p-toast>
+    <p-toolbar class="mb-4 gap-2">
+        <div class="flex justify-content-start align-items-center w-full">
+            <p-dropdown 
+                [options]="schoolYears"  
+                [(ngModel)]="selectedSchoolYear" 
+                placeholder="Selecciona el ciclo escolar" 
+   
+                [group]="false">
+                <ng-template let-option pTemplate="item">
+                    <div class="flex align-items-center">
+                        <span>{{ option.period }}</span>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="selectedItem" let-selected>
+                    <span>{{ selected.period }}</span>
+                </ng-template>
+            </p-dropdown>
+
+            <div style="margin-left: 20px;">
+                <p-dropdown 
+                    [options]="groupedCourses"  
+                    [(ngModel)]="selectedCourse" 
+                    placeholder="Selecciona un curso" 
+                    (onChange)="filterStudents()" 
+                    [group]="true">
+                    <ng-template let-group pTemplate="group">
+                        <div class="flex align-items-center">
+                            <span>{{ group.course }}</span>
+                        </div>
+                    </ng-template>
+                
+                    <ng-template let-option pTemplate="item">
+                        <div class="ml-4">
+                            <span>{{ option.section }}</span>
+                        </div>
+                    </ng-template>
+                
+                    <ng-template pTemplate="selectedItem" let-selected>
+                        <span>{{ selected.year }} - {{ selected.section }}</span>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+
+            <div style="margin-left: 20px;" *ngIf="this.section && this.year">
+                <p-dropdown 
+                    [options]="allStudents"  
+                    [(ngModel)]="selectedStuded" 
+                    placeholder="Selecciona el alumno" 
+                    [group]="false">
+                    <ng-template let-student pTemplate="student">
+                        <div class="flex align-items-center">
+                            <span>{{ student.id }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template let-option pTemplate="item">
+                        <div class="flex align-items-center">
+                            <span>{{ option.name }} {{ option.surname }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template pTemplate="selectedItem" let-selected>
+                        <span>{{ selected.name }} {{ selected.surname }}</span>
+                    </ng-template>
+                </p-dropdown>
+            </div>
+        </div>
+    </p-toolbar>
+</div>
