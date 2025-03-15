@@ -1,0 +1,526 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  BadgesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/notifications/badges/badges.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-badges</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./badges.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./badges.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/views/notifications/badges/badges.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-badges&#x27;,
+  templateUrl: &#x27;./badges.component.html&#x27;,
+  styleUrls: [&#x27;./badges.component.scss&#x27;]
+})
+export class BadgesComponent {
+
+  constructor() { }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;c-row&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;app-docs-callout href&#x3D;&quot;components/badge&quot; name&#x3D;&quot;Badges&quot;&gt;&lt;/app-docs-callout&gt;
+  &lt;/c-col&gt;
+  &lt;c-col lg&#x3D;&quot;6&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Badges&lt;/strong&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Bootstrap badge scale to suit the size of the parent element by using relative font
+          sizing and &lt;code&gt;em&lt;/code&gt; units.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge&quot;&gt;
+          &lt;h1&gt;
+            Example heading
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;New&lt;/c-badge&gt;
+          &lt;/h1&gt;
+          &lt;h2&gt;
+            Example heading
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;New&lt;/c-badge&gt;
+          &lt;/h2&gt;
+          &lt;h3&gt;
+            Example heading
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;New&lt;/c-badge&gt;
+          &lt;/h3&gt;
+          &lt;h4&gt;
+            Example heading
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;New&lt;/c-badge&gt;
+          &lt;/h4&gt;
+          &lt;h5&gt;
+            Example heading
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;New&lt;/c-badge&gt;
+          &lt;/h5&gt;
+          &lt;h6&gt;
+            Example heading
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;New&lt;/c-badge&gt;
+          &lt;/h6&gt;
+        &lt;/app-docs-example&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Badges can be used as part of links or buttons to provide a counter.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge&quot;&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot;&gt;
+            Notifications
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;4&lt;/c-badge&gt;
+          &lt;/button&gt;
+        &lt;/app-docs-example&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Remark that depending on how you use them, badges may be complicated for users of
+          screen readers and related assistive technologies.
+        &lt;/p&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Unless the context is clear, consider including additional context with a visually
+          hidden piece of additional text.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge&quot;&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot;&gt;
+            Profile
+            &lt;c-badge color&#x3D;&quot;secondary&quot;&gt;9&lt;/c-badge&gt;
+            &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;unread messages&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col lg&#x3D;&quot;6&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;AngularBadges&lt;/strong&gt; &lt;small&gt;Contextual variations&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Add any of the below-mentioned &lt;code&gt;color&lt;/code&gt; props to modify the presentation of
+          a badge.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge#contextual-variations&quot;&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;primary&quot;&gt;primary&lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;success&quot;&gt;success&lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;danger&quot;&gt;danger&lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;warning&quot;&gt;warning&lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;info&quot;&gt;info&lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;light&quot;&gt;light&lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;dark&quot;&gt;dark&lt;/c-badge&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Badges&lt;/strong&gt; &lt;small&gt;Pill badges&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Apply the &lt;code&gt;shape&#x3D;&amp;#34;rounded-pill&amp;#34;&lt;/code&gt; prop to make badges rounded.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge#pill-badges&quot;&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;primary&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            primary
+          &lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;success&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            success
+          &lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;danger&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            danger
+          &lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;warning&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            warning
+          &lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;info&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            info
+          &lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;light&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            light
+          &lt;/c-badge&gt;
+          &lt;c-badge class&#x3D;&quot;me-1&quot; color&#x3D;&quot;dark&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;
+            dark
+          &lt;/c-badge&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Badges&lt;/strong&gt; &lt;small&gt;Positioned&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Use position prop to modify a component and position it in the corner of a link or button.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge#positioned&quot;&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot; class&#x3D;&quot;position-relative mx-2&quot;&gt;
+            Profile
+            &lt;c-badge color&#x3D;&quot;danger&quot; position&#x3D;&quot;top-start&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;99+&lt;/c-badge&gt;
+            &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;unread messages&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot; class&#x3D;&quot;position-relative mx-2&quot;&gt;
+            Profile
+            &lt;c-badge color&#x3D;&quot;danger&quot; position&#x3D;&quot;top-end&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;99+&lt;/c-badge&gt;
+            &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;unread messages&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;br&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot; class&#x3D;&quot;position-relative mx-2&quot;&gt;
+            Profile
+            &lt;c-badge color&#x3D;&quot;danger&quot; position&#x3D;&quot;bottom-start&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;99+&lt;/c-badge&gt;
+            &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;unread messages&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot; class&#x3D;&quot;position-relative mx-2&quot;&gt;
+            Profile
+            &lt;c-badge color&#x3D;&quot;danger&quot; position&#x3D;&quot;bottom-end&quot; shape&#x3D;&quot;rounded-pill&quot;&gt;99+&lt;/c-badge&gt;
+            &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;unread messages&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Badges&lt;/strong&gt; &lt;small&gt;Indicator&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          You can also create more generic indicators without a counter using a few more utilities.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/badge#positioned&quot;&gt;
+          &lt;button cButton color&#x3D;&quot;primary&quot; class&#x3D;&quot;position-relative&quot;&gt;
+            Profile
+            &lt;c-badge color&#x3D;&quot;danger&quot; position&#x3D;&quot;top-end&quot; shape&#x3D;&quot;rounded-circle&quot; class&#x3D;&quot;p-2&quot; cBorder&#x3D;&quot;light&quot;&gt;
+              &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;unread messages&lt;/span&gt;
+            &lt;/c-badge&gt;
+          &lt;/button&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+&lt;/c-row&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./badges.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><c-row>  <c-col xs="12">    <app-docs-callout href="components/badge" name="Badges"></app-docs-callout>  </c-col>  <c-col lg="6">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Badges</strong>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Bootstrap badge scale to suit the size of the parent element by using relative font          sizing and <code>em</code> units.        </p>        <app-docs-example href="components/badge">          <h1>            Example heading            <c-badge color="secondary">New</c-badge>          </h1>          <h2>            Example heading            <c-badge color="secondary">New</c-badge>          </h2>          <h3>            Example heading            <c-badge color="secondary">New</c-badge>          </h3>          <h4>            Example heading            <c-badge color="secondary">New</c-badge>          </h4>          <h5>            Example heading            <c-badge color="secondary">New</c-badge>          </h5>          <h6>            Example heading            <c-badge color="secondary">New</c-badge>          </h6>        </app-docs-example>        <p class="text-medium-emphasis small">          Badges can be used as part of links or buttons to provide a counter.        </p>        <app-docs-example href="components/badge">          <button cButton color="primary">            Notifications            <c-badge color="secondary">4</c-badge>          </button>        </app-docs-example>        <p class="text-medium-emphasis small">          Remark that depending on how you use them, badges may be complicated for users of          screen readers and related assistive technologies.        </p>        <p class="text-medium-emphasis small">          Unless the context is clear, consider including additional context with a visually          hidden piece of additional text.        </p>        <app-docs-example href="components/badge">          <button cButton color="primary">            Profile            <c-badge color="secondary">9</c-badge>            <span class="visually-hidden">unread messages</span>          </button>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col lg="6">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>AngularBadges</strong> <small>Contextual variations</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Add any of the below-mentioned <code>color</code> props to modify the presentation of          a badge.        </p>        <app-docs-example href="components/badge#contextual-variations">          <c-badge class="me-1" color="primary">primary</c-badge>          <c-badge class="me-1" color="success">success</c-badge>          <c-badge class="me-1" color="danger">danger</c-badge>          <c-badge class="me-1" color="warning">warning</c-badge>          <c-badge class="me-1" color="info">info</c-badge>          <c-badge class="me-1" color="light">light</c-badge>          <c-badge class="me-1" color="dark">dark</c-badge>        </app-docs-example>      </c-card-body>    </c-card>    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Badges</strong> <small>Pill badges</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Apply the <code>shape=&#34;rounded-pill&#34;</code> prop to make badges rounded.        </p>        <app-docs-example href="components/badge#pill-badges">          <c-badge class="me-1" color="primary" shape="rounded-pill">            primary          </c-badge>          <c-badge class="me-1" color="success" shape="rounded-pill">            success          </c-badge>          <c-badge class="me-1" color="danger" shape="rounded-pill">            danger          </c-badge>          <c-badge class="me-1" color="warning" shape="rounded-pill">            warning          </c-badge>          <c-badge class="me-1" color="info" shape="rounded-pill">            info          </c-badge>          <c-badge class="me-1" color="light" shape="rounded-pill">            light          </c-badge>          <c-badge class="me-1" color="dark" shape="rounded-pill">            dark          </c-badge>        </app-docs-example>      </c-card-body>    </c-card>    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Badges</strong> <small>Positioned</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Use position prop to modify a component and position it in the corner of a link or button.        </p>        <app-docs-example href="components/badge#positioned">          <button cButton color="primary" class="position-relative mx-2">            Profile            <c-badge color="danger" position="top-start" shape="rounded-pill">99+</c-badge>            <span class="visually-hidden">unread messages</span>          </button>          <button cButton color="primary" class="position-relative mx-2">            Profile            <c-badge color="danger" position="top-end" shape="rounded-pill">99+</c-badge>            <span class="visually-hidden">unread messages</span>          </button>          <br>          <button cButton color="primary" class="position-relative mx-2">            Profile            <c-badge color="danger" position="bottom-start" shape="rounded-pill">99+</c-badge>            <span class="visually-hidden">unread messages</span>          </button>          <button cButton color="primary" class="position-relative mx-2">            Profile            <c-badge color="danger" position="bottom-end" shape="rounded-pill">99+</c-badge>            <span class="visually-hidden">unread messages</span>          </button>        </app-docs-example>      </c-card-body>    </c-card>    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Badges</strong> <small>Indicator</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          You can also create more generic indicators without a counter using a few more utilities.        </p>        <app-docs-example href="components/badge#positioned">          <button cButton color="primary" class="position-relative">            Profile            <c-badge color="danger" position="top-end" shape="rounded-circle" class="p-2" cBorder="light">              <span class="visually-hidden">unread messages</span>            </c-badge>          </button>        </app-docs-example>      </c-card-body>    </c-card>  </c-col></c-row></div>'
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToastComponent', 'selector': 'app-toast-simple'},{'name': 'BadgesComponent', 'selector': 'app-badges'},{'name': 'ChartSample', 'selector': 'app-chart-sample'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DocsCalloutComponent', 'selector': 'app-docs-callout'},{'name': 'DocsExampleComponent', 'selector': 'app-docs-example'},{'name': 'DocsLinkComponent', 'selector': 'app-docs-link'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesManagementComponent', 'selector': 'grades-management'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalsComponent', 'selector': 'app-modals'},{'name': 'Page404Component', 'selector': 'app-page404'},{'name': 'Page500Component', 'selector': 'app-page500'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SchedulesManagement', 'selector': 'schedules-management'},{'name': 'SchoolYearManagementComponent', 'selector': 'school-year-management'},{'name': 'SectionsManagementComponent', 'selector': 'sections-management'},{'name': 'StudentManagementComponent', 'selector': 'student-management'},{'name': 'SubjectManagementComponent', 'selector': 'subject-management'},{'name': 'ThemeColorComponent', 'selector': 'app-theme-color'},{'name': 'ToastersComponent', 'selector': 'app-toasters'},{'name': 'ToastSampleIconComponent', 'selector': 'toast-sample-icon'},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserManagementComponent', 'selector': 'user-management'},{'name': 'WidgetsBrandComponent', 'selector': 'app-widgets-brand'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'},{'name': 'WidgetsDropdownComponent', 'selector': 'app-widgets-dropdown'},{'name': 'WidgetsEComponent', 'selector': 'app-widgets-e'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BadgesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BadgesComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

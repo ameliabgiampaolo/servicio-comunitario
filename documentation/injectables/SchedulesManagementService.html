@@ -1,0 +1,2140 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SchedulesManagementService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/data/services/schedules-management/schedules-management.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#eventsFirstYear" >eventsFirstYear</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#eventsFiveYear" >eventsFiveYear</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#eventsFourthYear" >eventsFourthYear</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#eventsSecondYear" >eventsSecondYear</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#eventsThirdYear" >eventsThirdYear</a>
+                            </li>
+                            <li>
+                                <a href="#getData" >getData</a>
+                            </li>
+                            <li>
+                                <a href="#getEvents" >getEvents</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventsFirstYear"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>eventsFirstYear</b></span>
+                        <a href="#eventsFirstYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eventsFirstYear(SUBJECT_COLOR_MAP)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>SUBJECT_COLOR_MAP</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventsFiveYear"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>eventsFiveYear</b></span>
+                        <a href="#eventsFiveYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eventsFiveYear(SUBJECT_COLOR_MAP)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1171"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:1171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>SUBJECT_COLOR_MAP</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventsFourthYear"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>eventsFourthYear</b></span>
+                        <a href="#eventsFourthYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eventsFourthYear(SUBJECT_COLOR_MAP)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="874"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:874</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>SUBJECT_COLOR_MAP</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventsSecondYear"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>eventsSecondYear</b></span>
+                        <a href="#eventsSecondYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eventsSecondYear(SUBJECT_COLOR_MAP)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="301"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:301</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>SUBJECT_COLOR_MAP</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventsThirdYear"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>eventsThirdYear</b></span>
+                        <a href="#eventsThirdYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eventsThirdYear(SUBJECT_COLOR_MAP)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="577"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:577</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>SUBJECT_COLOR_MAP</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getData"></a>
+                    <span class="name">
+                        <span ><b>getData</b></span>
+                        <a href="#getData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="4"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:4</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEvents"></a>
+                    <span class="name">
+                        <span ><b>getEvents</b></span>
+                        <a href="#getEvents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getEvents()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="21"
+                                    class="link-to-prism">src/app/data/services/schedules-management/schedules-management.service.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+@Injectable()
+export class SchedulesManagementService {
+    getData() {
+        return [
+            { id: 1, title: &#x27;All Day Event&#x27;, start: &#x27;2017-02-01&#x27; },
+            { id: 2, title: &#x27;Long Event&#x27;, start: &#x27;2017-02-07&#x27;, end: &#x27;2017-02-10&#x27; },
+            { id: 3, title: &#x27;Repeating Event&#x27;, start: &#x27;2017-02-09T16:00:00&#x27; },
+            { id: 4, title: &#x27;Repeating Event&#x27;, start: &#x27;2017-02-16T16:00:00&#x27; },
+            { id: 5, title: &#x27;Conference&#x27;, start: &#x27;2017-02-11&#x27;, end: &#x27;2017-02-13&#x27; },
+            { id: 6, title: &#x27;Meeting&#x27;, start: &#x27;2017-02-12T10:30:00&#x27;, end: &#x27;2017-02-12T12:30:00&#x27; },
+            { id: 7, title: &#x27;Lunch&#x27;, start: &#x27;2017-02-12T12:00:00&#x27; },
+            { id: 8, title: &#x27;Meeting&#x27;, start: &#x27;2017-02-12T14:30:00&#x27; },
+            { id: 9, title: &#x27;Happy Hour&#x27;, start: &#x27;2017-02-12T17:30:00&#x27; },
+            { id: 10, title: &#x27;Dinner&#x27;, start: &#x27;2017-02-12T20:00:00&#x27; },
+            { id: 11, title: &#x27;Birthday Party&#x27;, start: &#x27;2017-02-13T07:00:00&#x27; },
+            { id: 12, title: &#x27;Click for Google&#x27;, url: &#x27;https://www.google.com/&#x27;, start: &#x27;2017-02-28&#x27; },
+        ];
+    }
+
+    getEvents() {
+        return Promise.resolve(this.getData());
+    }
+
+    public eventsFirstYear(SUBJECT_COLOR_MAP) {
+        let events;
+        events &#x3D; [
+          //lunes
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T08:30:00&#x27;,
+            end: &#x27;2024-11-04T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-04T08:55:00&#x27;,
+            end: &#x27;2024-11-04T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T11:05:00&#x27;,
+            end: &#x27;2024-11-04T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          //martes
+          {
+            title: &#x27;Hª de Venezuela&#x27;,
+            start: &#x27;2024-11-05T07:00:00&#x27;,
+            end: &#x27;2024-11-05T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T08:30:00&#x27;,
+            end: &#x27;2024-11-05T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Est. de la Naturaleza&#x27;,
+            start: &#x27;2024-11-05T08:55:00&#x27;,
+            end: &#x27;2024-11-05T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;]
+          },
+          {
+            title: &#x27;Geografía General&#x27;,
+            start: &#x27;2024-11-05T10:20:00&#x27;,
+            end: &#x27;2024-11-05T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T11:05:00&#x27;,
+            end: &#x27;2024-11-05T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Geografía General&#x27;,
+            start: &#x27;2024-11-05T11:30:00&#x27;,
+            end: &#x27;2024-11-05T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;]
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-05T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          //miercoles
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T07:00:00&#x27;,
+            end: &#x27;2024-11-06T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T08:30:00&#x27;,
+            end: &#x27;2024-11-06T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-06T08:55:00&#x27;,
+            end: &#x27;2024-11-06T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-06T10:20:00&#x27;,
+            end: &#x27;2024-11-06T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T11:05:00&#x27;,
+            end: &#x27;2024-11-06T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-06T11:30:00&#x27;,
+            end: &#x27;2024-11-06T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;Educación Artística&#x27;,
+            start: &#x27;2024-11-06T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+          },
+          // jueves
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-07T07:00:00&#x27;,
+            end: &#x27;2024-11-07T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;Educación Artística&#x27;,
+            start: &#x27;2024-11-07T07:45:00&#x27;,
+            end: &#x27;2024-11-07T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T08:30:00&#x27;,
+            end: &#x27;2024-11-07T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Educación Artística&#x27;,
+            start: &#x27;2024-11-07T08:55:00&#x27;,
+            end: &#x27;2024-11-07T09:35:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-07T09:35:00&#x27;,
+            end: &#x27;2024-11-07T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-07T10:20:00&#x27;,
+            end: &#x27;2024-11-07T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T11:05:00&#x27;,
+            end: &#x27;2024-11-07T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Educación Artística&#x27;,
+            start: &#x27;2024-11-07T11:30:00&#x27;,
+            end: &#x27;2024-11-07T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-07T12:30:00&#x27;,
+            end: &#x27;2024-11-07T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          // viernes
+          {
+            title: &#x27;Geografía General&#x27;,
+            start: &#x27;2024-11-08T07:00:00&#x27;,
+            end: &#x27;2024-11-08T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;]
+          },
+          {
+            title: &#x27;Hª de Venezuela	&#x27;,
+            start: &#x27;2024-11-08T07:45:00&#x27;,
+            end: &#x27;2024-11-08T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T08:30:00&#x27;,
+            end: &#x27;2024-11-08T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Est. de la Naturaleza&#x27;,
+            start: &#x27;2024-11-08T08:55:00&#x27;,
+            end: &#x27;2024-11-08T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;]
+          },
+          {
+            title: &#x27;Ed. Familiar y Ciud.&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T11:05:00&#x27;,
+            end: &#x27;2024-11-08T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ed. Familiar y Ciud.&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;]
+          },
+        ];
+    
+        return events;
+    }
+      
+    public eventsSecondYear(SUBJECT_COLOR_MAP) {
+        let events;
+        events &#x3D; [
+          //lunes
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T08:30:00&#x27;,
+            end: &#x27;2024-11-04T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Dibujo Técnico (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T08:55:00&#x27;,
+            end: &#x27;2024-11-04T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T11:05:00&#x27;,
+            end: &#x27;2024-11-04T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Educación Artística&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+          },
+          //martes
+          {
+            title: &#x27;Historia Universal&#x27;,
+            start: &#x27;2024-11-05T07:00:00&#x27;,
+            end: &#x27;2024-11-05T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Historia Universal&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Historia Universal&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T08:30:00&#x27;,
+            end: &#x27;2024-11-05T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-05T08:55:00&#x27;,
+            end: &#x27;2024-11-05T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-05T10:20:00&#x27;,
+            end: &#x27;2024-11-05T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T11:05:00&#x27;,
+            end: &#x27;2024-11-05T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Educ. para la Salud&#x27;,
+            start: &#x27;2024-11-05T11:30:00&#x27;,
+            end: &#x27;2024-11-05T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educ. para la Salud&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educ. para la Salud&#x27;]
+          },
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-05T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          //miercoles
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-06T07:00:00&#x27;,
+            end: &#x27;2024-11-06T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T08:30:00&#x27;,
+            end: &#x27;2024-11-06T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ciencias Biológicas	&#x27;,
+            start: &#x27;2024-11-06T08:55:00&#x27;,
+            end: &#x27;2024-11-06T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T10:20:00&#x27;,
+            end: &#x27;2024-11-06T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T11:05:00&#x27;,
+            end: &#x27;2024-11-06T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T11:30:00&#x27;,
+            end: &#x27;2024-11-06T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Educ. para la Salud&#x27;,
+            start: &#x27;2024-11-06T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educ. para la Salud&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Educ. para la Salud&#x27;]
+          },
+          // jueves
+          {
+            title: &#x27;Hª de Venezuela&#x27;,
+            start: &#x27;2024-11-07T07:00:00&#x27;,
+            end: &#x27;2024-11-07T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;Hª de Venezuela&#x27;,
+            start: &#x27;2024-11-07T07:45:00&#x27;,
+            end: &#x27;2024-11-07T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T08:30:00&#x27;,
+            end: &#x27;2024-11-07T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-07T08:55:00&#x27;,
+            end: &#x27;2024-11-07T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-07T10:20:00&#x27;,
+            end: &#x27;2024-11-07T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T11:05:00&#x27;,
+            end: &#x27;2024-11-07T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-07T11:30:00&#x27;,
+            end: &#x27;2024-11-07T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Est. de la Naturaleza	&#x27;,
+            start: &#x27;2024-11-07T12:30:00&#x27;,
+            end: &#x27;2024-11-07T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;]
+          },
+          // viernes
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-08T07:00:00&#x27;,
+            end: &#x27;2024-11-08T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-08T07:45:00&#x27;,
+            end: &#x27;2024-11-08T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T08:30:00&#x27;,
+            end: &#x27;2024-11-08T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Dibujo Técnico (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-08T08:55:00&#x27;,
+            end: &#x27;2024-11-08T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T11:05:00&#x27;,
+            end: &#x27;2024-11-08T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;Historia Universal&#x27;,
+            start: &#x27;2024-11-08T12:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Historia Universal&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Historia Universal&#x27;]
+          },
+        ];
+    
+        return events;
+    }
+    
+    public eventsThirdYear(SUBJECT_COLOR_MAP) {
+        let events;
+        events &#x3D; [
+          //lunes
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T08:30:00&#x27;,
+            end: &#x27;2024-11-04T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-04T08:55:00&#x27;,
+            end: &#x27;2024-11-04T09:35:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-04T09:35:00&#x27;,
+            end: &#x27;2024-11-04T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T11:05:00&#x27;,
+            end: &#x27;2024-11-04T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Ed. Física y Deporte&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+          },
+          {
+            title: &#x27;Informática (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+          },
+          //martes
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-05T07:00:00&#x27;,
+            end: &#x27;2024-11-05T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T08:30:00&#x27;,
+            end: &#x27;2024-11-05T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-05T08:55:00&#x27;,
+            end: &#x27;2024-11-05T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-05T10:20:00&#x27;,
+            end: &#x27;2024-11-05T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T11:05:00&#x27;,
+            end: &#x27;2024-11-05T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-05T11:30:00&#x27;,
+            end: &#x27;2024-11-05T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;Geograf. de Venezuela&#x27;,
+            start: &#x27;2024-11-05T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;]
+          },
+          //miercoles
+          {
+            title: &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-06T07:00:00&#x27;,
+            end: &#x27;2024-11-06T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-06T07:45:00&#x27;,
+            end: &#x27;2024-11-06T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T08:30:00&#x27;,
+            end: &#x27;2024-11-06T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T08:55:00&#x27;,
+            end: &#x27;2024-11-06T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-06T10:20:00&#x27;,
+            end: &#x27;2024-11-06T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T11:05:00&#x27;,
+            end: &#x27;2024-11-06T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-06T11:30:00&#x27;,
+            end: &#x27;2024-11-06T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-06T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          // jueves
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-07T07:00:00&#x27;,
+            end: &#x27;2024-11-07T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-07T07:45:00&#x27;,
+            end: &#x27;2024-11-07T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T08:30:00&#x27;,
+            end: &#x27;2024-11-07T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-07T08:55:00&#x27;,
+            end: &#x27;2024-11-07T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Hª de Venezuela (C.B.)&#x27;,
+            start: &#x27;2024-11-07T10:20:00&#x27;,
+            end: &#x27;2024-11-07T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela (C.B.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela (C.B.)&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T11:05:00&#x27;,
+            end: &#x27;2024-11-07T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Hª de Venezuela (C.B.)&#x27;,
+            start: &#x27;2024-11-07T11:30:00&#x27;,
+            end: &#x27;2024-11-07T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela (C.B.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela (C.B.)&#x27;]
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-07T12:30:00&#x27;,
+            end: &#x27;2024-11-07T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          // viernes
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-08T07:00:00&#x27;,
+            end: &#x27;2024-11-08T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-08T07:45:00&#x27;,
+            end: &#x27;2024-11-08T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T08:30:00&#x27;,
+            end: &#x27;2024-11-08T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Geograf. de Venezuela&#x27;,
+            start: &#x27;2024-11-08T08:55:00&#x27;,
+            end: &#x27;2024-11-08T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T11:05:00&#x27;,
+            end: &#x27;2024-11-08T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;]
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+        ];
+    
+        return events;
+    }
+    
+    public eventsFourthYear(SUBJECT_COLOR_MAP) {
+        let events;
+        events &#x3D; [
+          //lunes
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T08:30:00&#x27;,
+            end: &#x27;2024-11-04T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Instrucción Premilitar&#x27;,
+            start: &#x27;2024-11-04T08:55:00&#x27;,
+            end: &#x27;2024-11-04T09:35:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;]
+          },
+          {
+            title: &#x27;Instrucción Premilitar&#x27;,
+            start: &#x27;2024-11-04T09:35:00&#x27;,
+            end: &#x27;2024-11-04T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;]
+          },
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T11:05:00&#x27;,
+            end: &#x27;2024-11-04T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          //martes
+          {
+            title: &#x27;Met. Investigación&#x27;,
+            start: &#x27;2024-11-05T07:00:00&#x27;,
+            end: &#x27;2024-11-05T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T08:30:00&#x27;,
+            end: &#x27;2024-11-05T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Historia del Arte&#x27;,
+            start: &#x27;2024-11-05T08:55:00&#x27;,
+            end: &#x27;2024-11-05T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Historia del Arte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Historia del Arte&#x27;]
+          },
+          {
+            title: &#x27;Hª de Venezuela&#x27;,
+            start: &#x27;2024-11-05T10:20:00&#x27;,
+            end: &#x27;2024-11-05T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T11:05:00&#x27;,
+            end: &#x27;2024-11-05T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Met. Investigación&#x27;,
+            start: &#x27;2024-11-05T11:30:00&#x27;,
+            end: &#x27;2024-11-05T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;]
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-05T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          //miercoles
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T07:00:00&#x27;,
+            end: &#x27;2024-11-06T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T07:45:00&#x27;,
+            end: &#x27;2024-11-06T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T08:30:00&#x27;,
+            end: &#x27;2024-11-06T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ed. Física&#x27;,
+            start: &#x27;2024-11-06T08:55:00&#x27;,
+            end: &#x27;2024-11-06T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física&#x27;]
+          },
+          {
+            title: &#x27;Filosofía&#x27;,
+            start: &#x27;2024-11-06T10:20:00&#x27;,
+            end: &#x27;2024-11-06T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Filosofía&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Filosofía&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T11:05:00&#x27;,
+            end: &#x27;2024-11-06T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Met. Investigación&#x27;,
+            start: &#x27;2024-11-06T11:30:00&#x27;,
+            end: &#x27;2024-11-06T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;]
+          },
+          {
+            title: &#x27;Latín y Griego&#x27;,
+            start: &#x27;2024-11-06T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Latín y Griego&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Latín y Griego&#x27;]
+          },
+          // jueves
+          {
+            title: &#x27;Francés&#x27;,
+            start: &#x27;2024-11-07T07:00:00&#x27;,
+            end: &#x27;2024-11-07T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Francés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Francés&#x27;]
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-07T07:45:00&#x27;,
+            end: &#x27;2024-11-07T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T08:30:00&#x27;,
+            end: &#x27;2024-11-07T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Historia del Arte&#x27;,
+            start: &#x27;2024-11-07T08:55:00&#x27;,
+            end: &#x27;2024-11-07T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Historia del Arte&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Historia del Arte&#x27;]
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-07T10:20:00&#x27;,
+            end: &#x27;2024-11-07T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T11:05:00&#x27;,
+            end: &#x27;2024-11-07T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-07T11:30:00&#x27;,
+            end: &#x27;2024-11-07T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-07T12:30:00&#x27;,
+            end: &#x27;2024-11-07T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          // viernes
+          {
+            title: &#x27;Dibujo Técnico&#x27;,
+            start: &#x27;2024-11-08T07:00:00&#x27;,
+            end: &#x27;2024-11-08T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Dibujo Técnico&#x27;]
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-08T07:45:00&#x27;,
+            end: &#x27;2024-11-08T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T08:30:00&#x27;,
+            end: &#x27;2024-11-08T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-08T08:55:00&#x27;,
+            end: &#x27;2024-11-08T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;Latín y Griego&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Latín y Griego&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Latín y Griego&#x27;]
+          },
+          {
+            title: &#x27;Francés&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Francés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Francés&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T11:05:00&#x27;,
+            end: &#x27;2024-11-08T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Filosofía&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Filosofía&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Filosofía&#x27;]
+          },
+          {
+            title: &#x27;Met. Investigación&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;]
+          },
+        ];
+    
+        return events;
+    }
+    
+    public eventsFiveYear(SUBJECT_COLOR_MAP) {
+        let events;
+        events &#x3D; [
+          //lunes
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-04T07:00:00&#x27;,
+            end: &#x27;2024-11-04T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T08:30:00&#x27;,
+            end: &#x27;2024-11-04T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-04T08:55:00&#x27;,
+            end: &#x27;2024-11-04T09:35:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-04T09:35:00&#x27;,
+            end: &#x27;2024-11-04T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-04T10:20:00&#x27;,
+            end: &#x27;2024-11-04T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-04T11:05:00&#x27;,
+            end: &#x27;2024-11-04T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ciencias Biológicas&#x27;,
+            start: &#x27;2024-11-04T11:30:00&#x27;,
+            end: &#x27;2024-11-04T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias Biológicas&#x27;]
+          },
+          {
+            title: &#x27;Ciencias de la Tierra&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias de la Tierra&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias de la Tierra&#x27;]
+          },
+          {
+            title: &#x27;Ciencias de la Tierra&#x27;,
+            start: &#x27;2024-11-04T12:30:00&#x27;,
+            end: &#x27;2024-11-04T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias de la Tierra&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias de la Tierra&#x27;]
+          },
+          //martes
+          {
+            title: &#x27;Física&#x27;,
+            start: &#x27;2024-11-05T07:00:00&#x27;,
+            end: &#x27;2024-11-05T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Física&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T08:30:00&#x27;,
+            end: &#x27;2024-11-05T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-05T08:55:00&#x27;,
+            end: &#x27;2024-11-05T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;Geograf. de Venezuela&#x27;,
+            start: &#x27;2024-11-05T10:20:00&#x27;,
+            end: &#x27;2024-11-05T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-05T11:05:00&#x27;,
+            end: &#x27;2024-11-05T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ed. Física&#x27;,
+            start: &#x27;2024-11-05T11:30:00&#x27;,
+            end: &#x27;2024-11-05T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física&#x27;]
+          },
+          {
+            title: &#x27;Instrucción Premilitar&#x27;,
+            start: &#x27;2024-11-05T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;]
+          },
+          //miercoles
+          {
+            title: &#x27;Met. Investigación&#x27;,
+            start: &#x27;2024-11-06T07:00:00&#x27;,
+            end: &#x27;2024-11-06T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;]
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-06T07:45:00&#x27;,
+            end: &#x27;2024-11-06T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T08:30:00&#x27;,
+            end: &#x27;2024-11-06T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Castellano y Literatura&#x27;,
+            start: &#x27;2024-11-06T08:55:00&#x27;,
+            end: &#x27;2024-11-06T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+          },
+          {
+            title: &#x27;Inglés&#x27;,
+            start: &#x27;2024-11-06T10:20:00&#x27;,
+            end: &#x27;2024-11-06T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-06T11:05:00&#x27;,
+            end: &#x27;2024-11-06T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-06T11:30:00&#x27;,
+            end: &#x27;2024-11-06T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Francés&#x27;,
+            start: &#x27;2024-11-06T12:30:00&#x27;,
+            end: &#x27;2024-11-05T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Francés&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Francés&#x27;]
+          },
+          // jueves
+          {
+            title: &#x27;Latín y Griego&#x27;,
+            start: &#x27;2024-11-07T07:00:00&#x27;,
+            end: &#x27;2024-11-07T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Latín y Griego&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Latín y Griego&#x27;]
+          },
+          {
+            title: &#x27;Geograf. de Venezuela&#x27;,
+            start: &#x27;2024-11-07T07:45:00&#x27;,
+            end: &#x27;2024-11-07T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T08:30:00&#x27;,
+            end: &#x27;2024-11-07T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Sociología&#x27;,
+            start: &#x27;2024-11-07T08:55:00&#x27;,
+            end: &#x27;2024-11-07T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Sociología&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Sociología&#x27;]
+          },
+          {
+            title: &#x27;Filosofía&#x27;,
+            start: &#x27;2024-11-07T10:20:00&#x27;,
+            end: &#x27;2024-11-07T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Filosofía&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Filosofía&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-07T11:05:00&#x27;,
+            end: &#x27;2024-11-07T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Ed. Física&#x27;,
+            start: &#x27;2024-11-07T11:30:00&#x27;,
+            end: &#x27;2024-11-07T12:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física&#x27;]
+          },
+          {
+            title: &#x27;Instrucción Premilitar&#x27;,
+            start: &#x27;2024-11-07T12:30:00&#x27;,
+            end: &#x27;2024-11-07T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Instrucción Premilitar&#x27;]
+          },
+          // viernes
+          {
+            title: &#x27;Met. Investigación&#x27;,
+            start: &#x27;2024-11-08T07:00:00&#x27;,
+            end: &#x27;2024-11-08T07:45:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Met. Investigación&#x27;]
+          },
+          {
+            title: &#x27;Religión&#x27;,
+            start: &#x27;2024-11-08T07:45:00&#x27;,
+            end: &#x27;2024-11-08T08:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T08:30:00&#x27;,
+            end: &#x27;2024-11-08T08:55:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Matemática&#x27;,
+            start: &#x27;2024-11-08T08:55:00&#x27;,
+            end: &#x27;2024-11-08T10:20:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+          },
+          {
+            title: &#x27;Ciencias de la Tierra&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ciencias de la Tierra&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Ciencias de la Tierra&#x27;]
+          },
+          {
+            title: &#x27;Química&#x27;,
+            start: &#x27;2024-11-08T10:20:00&#x27;,
+            end: &#x27;2024-11-08T11:05:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Química&#x27;]
+          },
+          {
+            title: &#x27;RECESO&#x27;,
+            start: &#x27;2024-11-08T11:05:00&#x27;,
+            end: &#x27;2024-11-08T11:30:00&#x27;,
+            className: &#x27;highlight-recess&#x27;
+          },
+          {
+            title: &#x27;Geograf. de Venezuela&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;]
+          },
+          {
+            title: &#x27;Geograf. de Venezuela&#x27;,
+            start: &#x27;2024-11-08T11:30:00&#x27;,
+            end: &#x27;2024-11-08T13:30:00&#x27;,
+            backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;],
+            borderColor: SUBJECT_COLOR_MAP[&#x27;Geograf. de Venezuela&#x27;]
+          },
+        ];
+    
+        return events;
+    }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SchedulesManagementService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

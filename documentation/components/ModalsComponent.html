@@ -1,0 +1,1129 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ModalsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/notifications/modals/modals.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-modals</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./modals.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./modals.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#liveDemoVisible" >liveDemoVisible</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#handleLiveDemoChange" >handleLiveDemoChange</a>
+                            </li>
+                            <li>
+                                <a href="#toggleLiveDemo" >toggleLiveDemo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/views/notifications/modals/modals.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleLiveDemoChange"></a>
+                    <span class="name">
+                        <span ><b>handleLiveDemoChange</b></span>
+                        <a href="#handleLiveDemoChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleLiveDemoChange(event: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/views/notifications/modals/modals.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleLiveDemo"></a>
+                    <span class="name">
+                        <span ><b>toggleLiveDemo</b></span>
+                        <a href="#toggleLiveDemo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleLiveDemo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="14"
+                                    class="link-to-prism">src/app/views/notifications/modals/modals.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="liveDemoVisible"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>liveDemoVisible</b></span>
+                        <a href="#liveDemoVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/views/notifications/modals/modals.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-modals&#x27;,
+  templateUrl: &#x27;./modals.component.html&#x27;,
+  styleUrls: [&#x27;./modals.component.scss&#x27;]
+})
+export class ModalsComponent {
+
+  public liveDemoVisible &#x3D; false;
+
+  constructor() { }
+
+  toggleLiveDemo() {
+    this.liveDemoVisible &#x3D; !this.liveDemoVisible;
+  }
+
+  handleLiveDemoChange(event: boolean) {
+    this.liveDemoVisible &#x3D; event;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;c-row&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;app-docs-callout href&#x3D;&quot;components/modal&quot; name&#x3D;&quot;Modal&quot;&gt;&lt;/app-docs-callout&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot; ngPreserveWhitespaces&gt;
+          Below is a static modal example (meaning its &lt;code&gt;position&lt;/code&gt; and
+          &lt;code&gt;display&lt;/code&gt; have been overridden). Included are the modal header, modal body
+          (required for &lt;code&gt;padding&lt;/code&gt;), and modal footer (optional). We ask that you
+          include modal headers with dismiss actions whenever possible, or provide another
+          explicit dismiss action.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal&quot;&gt;
+          &lt;c-modal
+            [keyboard]&#x3D;&quot;false&quot;
+            [transition]&#x3D;&quot;false&quot;
+            backdrop&#x3D;&quot;static&quot;
+            class&#x3D;&quot;position-static d-block show&quot;
+            id&#x3D;&quot;modalStatic&quot;
+          &gt;
+            &lt;c-modal-header&gt;
+              &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+              &lt;button cButtonClose&gt;&lt;/button&gt;
+            &lt;/c-modal-header&gt;
+            &lt;c-modal-body&gt;Modal body text goes here.&lt;/c-modal-body&gt;
+            &lt;c-modal-footer&gt;
+              &lt;button cButton color&#x3D;&quot;secondary&quot;&gt;Close&lt;/button&gt;
+              &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Save changes&lt;/button&gt;
+            &lt;/c-modal-footer&gt;
+          &lt;/c-modal&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Live demo&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Toggle a working modal demo by clicking the button below. It will slide down and fade
+          in from the top of the page.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#live-demo&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;liveDemo&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Static backdrop&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          If you don’t provide an &lt;code&gt;(visibleChange)&lt;/code&gt; handler to the Modal component, your
+          modal will behave as though the backdrop is static, meaning it will not close when
+          clicking outside it. Click the button below to try it.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#static-backdrop&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;staticBackdrop&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Scrolling long content&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          If your modals are too long for the user’s viewport, they scroll the page by itself.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#scrolling-long-content&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;scrollingLongContent&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot; ngPreserveWhitespaces&gt;
+          You can also create a scrollable modal that allows scroll the modal body by adding &lt;code&gt;scrollable&lt;/code&gt;
+          prop.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#scrolling-long-content&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;scrollableLongContent&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Vertically centered&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Add &lt;code&gt;alignment&#x3D;&amp;#34;center&amp;#34;&lt;/code&gt; to &lt;code&gt;&amp;lt;c-modal&amp;gt;&lt;/code&gt; to
+          vertically center the modal.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#vertically-centered&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;verticallyCentered&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#vertically-centered&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;verticallyCenteredScrollable&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Tooltips and popovers&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          &lt;code&gt;cTooltip&lt;/code&gt; and &lt;code&gt;cPopover&lt;/code&gt; can be placed within
+          modals as needed. When modals are closed, any tooltips and popovers within are also
+          automatically dismissed.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#tooltips-and-popovers&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;withPopover&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Optional sizes&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot; ngPreserveWhitespaces&gt;
+          Modals have three optional sizes, available via modifier classes to be placed on a
+          &lt;code&gt;&amp;lt;c-modal&amp;gt;&lt;/code&gt;. These sizes kick in at certain breakpoints to avoid
+          horizontal scrollbars on narrower viewports.
+        &lt;/p&gt;
+        &lt;table class&#x3D;&quot;table&quot;&gt;
+          &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Size&lt;/th&gt;
+            &lt;th&gt;Property size&lt;/th&gt;
+            &lt;th&gt;Modal max-width&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Small&lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;sm&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;300px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Default&lt;/td&gt;
+            &lt;td class&#x3D;&quot;text-medium-emphasis&quot;&gt;None&lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;500px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Large&lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;lg&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;800px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;Extra large&lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;xl&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;code&gt;1140px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#optional-sizes&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;optionalSizes&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Modal&lt;/strong&gt; &lt;small&gt;Fullscreen Modal&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Another override is the option to pop up a modal that covers the user viewport,
+          available via property &lt;code&gt;fullscreen&lt;/code&gt;.
+        &lt;/p&gt;
+        &lt;table class&#x3D;&quot;table&quot;&gt;
+          &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Property fullscrean&lt;/th&gt;
+            &lt;th&gt;Availability&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;code&gt;true&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;Always&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;sm&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              Below &lt;code&gt;576px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;md&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              Below &lt;code&gt;768px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;lg&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              Below &lt;code&gt;992px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;xl&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              Below &lt;code&gt;1200px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;code&gt;&amp;#39;xxl&amp;#39;&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              Below &lt;code&gt;1400px&lt;/code&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/modal#fullscreen-modal&quot;&gt;
+          &lt;ng-container *ngTemplateOutlet&#x3D;&quot;fullScreen&quot;&gt;&lt;/ng-container&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+&lt;/c-row&gt;
+
+&lt;ng-template #liveDemo&gt;
+  &lt;button (click)&#x3D;&quot;toggleLiveDemo()&quot; cButton&gt;Launch demo modal&lt;/button&gt;
+  &lt;c-modal id&#x3D;&quot;liveDemoModal&quot; [visible]&#x3D;&quot;liveDemoVisible&quot; (visibleChange)&#x3D;&quot;handleLiveDemoChange($event)&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button (click)&#x3D;&quot;toggleLiveDemo()&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;Woohoo, you&amp;#39;re reading this text in a modal!&lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button (click)&#x3D;&quot;toggleLiveDemo()&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Save changes&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #staticBackdrop&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;staticBackdropModal.id&quot; cButton&gt;Launch static backdrop modal&lt;/button&gt;
+  &lt;c-modal #staticBackdropModal backdrop&#x3D;&quot;static&quot; id&#x3D;&quot;staticBackdropModal&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;staticBackdropModal.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;I will not close if you click outside of me. Don&#x27;t even try to press escape key.&lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;staticBackdropModal.id&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Understood&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #scrollingLongContent&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;scrollingLongContentModal.id&quot; cButton&gt;Scrolling long content&lt;/button&gt;
+  &lt;c-modal #scrollingLongContentModal id&#x3D;&quot;scrollingLongContentModal&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;scrollingLongContentModal.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;
+      &lt;ng-container *ngTemplateOutlet&#x3D;&quot;longContent&quot;&gt;&lt;/ng-container&gt;
+    &lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;scrollingLongContentModal.id&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Save changes&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #scrollableLongContent&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;scrollableLongContentModal.id&quot; cButton&gt;Scrollable long content&lt;/button&gt;
+  &lt;c-modal #scrollableLongContentModal id&#x3D;&quot;scrollableLongContentModal&quot; scrollable&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;scrollableLongContentModal.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;
+      &lt;ng-container *ngTemplateOutlet&#x3D;&quot;longContent&quot;&gt;&lt;/ng-container&gt;
+    &lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;scrollableLongContentModal.id&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Save changes&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #verticallyCentered&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;verticallyCenteredModal.id&quot; cButton&gt;Centered modal&lt;/button&gt;
+  &lt;c-modal #verticallyCenteredModal alignment&#x3D;&quot;center&quot; id&#x3D;&quot;verticallyCenteredModal&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;verticallyCenteredModal.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;
+      Woohoo, you&amp;#39;re reading this text in a modal!
+    &lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;verticallyCenteredModal.id&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Understood&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #verticallyCenteredScrollable&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;verticallyCenteredScrollableModal.id&quot; cButton&gt;Centered scrollable modal&lt;/button&gt;
+  &lt;c-modal #verticallyCenteredScrollableModal
+           [scrollable]&#x3D;&quot;true&quot;
+           alignment&#x3D;&quot;center&quot;
+           id&#x3D;&quot;verticallyCenteredScrollableModal&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;verticallyCenteredScrollableModal.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;
+      &lt;p&gt;
+        This is some placeholder content to show a vertically centered modal. We&#x27;ve added some extra copy here to show
+        how vertically centering the modal works when combined with scrollable modals. We also use some repeated line
+        breaks to quickly extend the height of the content, thereby triggering the scrolling. When content becomes
+        longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.
+      &lt;/p&gt;
+      &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+      &lt;p&gt;Just like that.&lt;/p&gt;
+    &lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;verticallyCenteredScrollableModal.id&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Understood&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #withPopover&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;withPopoverModal.id&quot; cButton&gt;Modal with Popover&lt;/button&gt;
+  &lt;c-modal #withPopoverModal alignment&#x3D;&quot;center&quot; id&#x3D;&quot;withPopoverModal&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Modal title&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;withPopoverModal.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;
+      &lt;h5&gt;Popover in a modal&lt;/h5&gt;
+      This
+      &lt;button [cPopoverTrigger]&#x3D;&quot;&#x27;click&#x27;&quot; [cPopover]&#x3D;&quot;popoverHtml&quot; [cPopoverOptions]&#x3D;&quot;{strategy: &#x27;fixed&#x27;}&quot; cButton&gt;button&lt;/button&gt;
+      triggers a popover on click.
+      &lt;ng-template #popoverHtml&gt;
+        &lt;h3 class&#x3D;&quot;popover-header&quot;&gt;
+          Popover title
+        &lt;/h3&gt;
+        &lt;div class&#x3D;&quot;popover-body&quot; id&#x3D;&quot;&quot;&gt;
+          And here’s some amazing content. It’s very engaging. Right?
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+      &lt;hr/&gt;
+      &lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
+      &lt;p&gt;
+        &lt;a cTooltip&#x3D;&quot;Tooltip text&quot; href&gt;This link&lt;/a&gt; and &lt;a [cTooltipOptions]&#x3D;&quot;{strategy: &#x27;fixed&#x27;}&quot;
+                                                             cTooltip&#x3D;&quot;Tooltip text&quot;
+                                                             cTooltipPlacement&#x3D;&quot;bottom&quot;
+                                                             href&gt;that link&lt;/a&gt;
+        have tooltips on hover.
+      &lt;/p&gt;
+    &lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;withPopoverModal.id&quot; cButton color&#x3D;&quot;secondary&quot;&gt;
+        Close
+      &lt;/button&gt;
+      &lt;button cButton color&#x3D;&quot;primary&quot;&gt;Understood&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #optionalSizes&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;modalXl.id&quot; cButton&gt;Extra large modal&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;modalLg.id&quot; cButton&gt;Large modal&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;modalSm.id&quot; cButton&gt;Small modal&lt;/button&gt;
+  &lt;c-modal #modalXl id&#x3D;&quot;modalXl&quot; size&#x3D;&quot;xl&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Extra large modal&lt;/h5&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #modalLg id&#x3D;&quot;modalLg&quot; size&#x3D;&quot;lg&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Large modal&lt;/h5&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #modalSm id&#x3D;&quot;modalSm&quot; size&#x3D;&quot;sm&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Small modal&lt;/h5&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #fullScreen&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;fullScreen.id&quot; cButton&gt;Full screen&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;fullScreenSm.id&quot; cButton&gt;Full screen below sm&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;fullScreenMd.id&quot; cButton&gt;Full screen below md&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;fullScreenLg.id&quot; cButton&gt;Full screen below lg&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;fullScreenXl.id&quot; cButton&gt;Full screen below xl&lt;/button&gt;
+  &lt;button [cModalToggle]&#x3D;&quot;fullScreen2Xl.id&quot; cButton&gt;Full screen below xxl&lt;/button&gt;
+  &lt;c-modal #fullScreen [fullscreen]&#x3D;&quot;true&quot; id&#x3D;&quot;fullScreen&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Full screen&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;fullScreen.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+    &lt;c-modal-footer&gt;
+      &lt;button cButton [cModalToggle]&#x3D;&quot;fullScreen.id&quot;&gt;Close&lt;/button&gt;
+    &lt;/c-modal-footer&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #fullScreenSm fullscreen&#x3D;&quot;sm&quot; id&#x3D;&quot;fullScreenSm&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Full screen below sm&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;fullScreenSm.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #fullScreenMd fullscreen&#x3D;&quot;md&quot; id&#x3D;&quot;fullScreenMd&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Full screen below md&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;fullScreenMd.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #fullScreenLg fullscreen&#x3D;&quot;lg&quot; id&#x3D;&quot;fullScreenLg&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Full screen below lg&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;fullScreenLg.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #fullScreenXl fullscreen&#x3D;&quot;xl&quot; id&#x3D;&quot;fullScreenXl&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Full screen below xl&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;fullScreenXl.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+  &lt;c-modal #fullScreen2Xl fullscreen&#x3D;&quot;xxl&quot; id&#x3D;&quot;fullScreen2Xl&quot;&gt;
+    &lt;c-modal-header&gt;
+      &lt;h5 cModalTitle&gt;Full screen below xxl&lt;/h5&gt;
+      &lt;button [cModalToggle]&#x3D;&quot;fullScreen2Xl.id&quot; cButtonClose&gt;&lt;/button&gt;
+    &lt;/c-modal-header&gt;
+    &lt;c-modal-body&gt;...&lt;/c-modal-body&gt;
+  &lt;/c-modal&gt;
+&lt;/ng-template&gt;
+
+&lt;ng-template #longContent&gt;
+  &lt;p&gt;
+    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+    lacus vel augue laoreet rutrum faucibus dolor auctor.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+    auctor fringilla.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+    lacus vel augue laoreet rutrum faucibus dolor auctor.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+    auctor fringilla.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+    lacus vel augue laoreet rutrum faucibus dolor auctor.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+    auctor fringilla.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+    lacus vel augue laoreet rutrum faucibus dolor auctor.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+    auctor fringilla.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+    lacus vel augue laoreet rutrum faucibus dolor auctor.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+    auctor fringilla.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+    lacus vel augue laoreet rutrum faucibus dolor auctor.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+    auctor fringilla.
+  &lt;/p&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./modals.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><c-row>  <c-col xs="12">    <app-docs-callout href="components/modal" name="Modal"></app-docs-callout>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header>        <strong>Angular Modal</strong>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small" ngPreserveWhitespaces>          Below is a static modal example (meaning its <code>position</code> and          <code>display</code> have been overridden). Included are the modal header, modal body          (required for <code>padding</code>), and modal footer (optional). We ask that you          include modal headers with dismiss actions whenever possible, or provide another          explicit dismiss action.        </p>        <app-docs-example href="components/modal">          <c-modal            [keyboard]="false"            [transition]="false"            backdrop="static"            class="position-static d-block show"            id="modalStatic"          >            <c-modal-header>              <h5 cModalTitle>Modal title</h5>              <button cButtonClose></button>            </c-modal-header>            <c-modal-body>Modal body text goes here.</c-modal-body>            <c-modal-footer>              <button cButton color="secondary">Close</button>              <button cButton color="primary">Save changes</button>            </c-modal-footer>          </c-modal>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Live demo</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Toggle a working modal demo by clicking the button below. It will slide down and fade          in from the top of the page.        </p>        <app-docs-example href="components/modal#live-demo">          <ng-container *ngTemplateOutlet="liveDemo"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Static backdrop</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          If you don’t provide an <code>(visibleChange)</code> handler to the Modal component, your          modal will behave as though the backdrop is static, meaning it will not close when          clicking outside it. Click the button below to try it.        </p>        <app-docs-example href="components/modal#static-backdrop">          <ng-container *ngTemplateOutlet="staticBackdrop"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Scrolling long content</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          If your modals are too long for the user’s viewport, they scroll the page by itself.        </p>        <app-docs-example href="components/modal#scrolling-long-content">          <ng-container *ngTemplateOutlet="scrollingLongContent"></ng-container>        </app-docs-example>        <p class="text-medium-emphasis small" ngPreserveWhitespaces>          You can also create a scrollable modal that allows scroll the modal body by adding <code>scrollable</code>          prop.        </p>        <app-docs-example href="components/modal#scrolling-long-content">          <ng-container *ngTemplateOutlet="scrollableLongContent"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Vertically centered</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Add <code>alignment=&#34;center&#34;</code> to <code>&lt;c-modal&gt;</code> to          vertically center the modal.        </p>        <app-docs-example href="components/modal#vertically-centered">          <ng-container *ngTemplateOutlet="verticallyCentered"></ng-container>        </app-docs-example>        <app-docs-example href="components/modal#vertically-centered">          <ng-container *ngTemplateOutlet="verticallyCenteredScrollable"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Tooltips and popovers</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          <code>cTooltip</code> and <code>cPopover</code> can be placed within          modals as needed. When modals are closed, any tooltips and popovers within are also          automatically dismissed.        </p>        <app-docs-example href="components/modal#tooltips-and-popovers">          <ng-container *ngTemplateOutlet="withPopover"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Optional sizes</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small" ngPreserveWhitespaces>          Modals have three optional sizes, available via modifier classes to be placed on a          <code>&lt;c-modal&gt;</code>. These sizes kick in at certain breakpoints to avoid          horizontal scrollbars on narrower viewports.        </p>        <table class="table">          <thead>          <tr>            <th>Size</th>            <th>Property size</th>            <th>Modal max-width</th>          </tr>          </thead>          <tbody>          <tr>            <td>Small</td>            <td>              <code>&#39;sm&#39;</code>            </td>            <td>              <code>300px</code>            </td>          </tr>          <tr>            <td>Default</td>            <td class="text-medium-emphasis">None</td>            <td>              <code>500px</code>            </td>          </tr>          <tr>            <td>Large</td>            <td>              <code>&#39;lg&#39;</code>            </td>            <td>              <code>800px</code>            </td>          </tr>          <tr>            <td>Extra large</td>            <td>              <code>&#39;xl&#39;</code>            </td>            <td>              <code>1140px</code>            </td>          </tr>          </tbody>        </table>        <app-docs-example href="components/modal#optional-sizes">          <ng-container *ngTemplateOutlet="optionalSizes"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Modal</strong> <small>Fullscreen Modal</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Another override is the option to pop up a modal that covers the user viewport,          available via property <code>fullscreen</code>.        </p>        <table class="table">          <thead>          <tr>            <th>Property fullscrean</th>            <th>Availability</th>          </tr>          </thead>          <tbody>          <tr>            <td>              <code>true</code>            </td>            <td>Always</td>          </tr>          <tr>            <td>              <code>&#39;sm&#39;</code>            </td>            <td>              Below <code>576px</code>            </td>          </tr>          <tr>            <td>              <code>&#39;md&#39;</code>            </td>            <td>              Below <code>768px</code>            </td>          </tr>          <tr>            <td>              <code>&#39;lg&#39;</code>            </td>            <td>              Below <code>992px</code>            </td>          </tr>          <tr>            <td>              <code>&#39;xl&#39;</code>            </td>            <td>              Below <code>1200px</code>            </td>          </tr>          <tr>            <td>              <code>&#39;xxl&#39;</code>            </td>            <td>              Below <code>1400px</code>            </td>          </tr>          </tbody>        </table>        <app-docs-example href="components/modal#fullscreen-modal">          <ng-container *ngTemplateOutlet="fullScreen"></ng-container>        </app-docs-example>      </c-card-body>    </c-card>  </c-col></c-row><ng-template #liveDemo>  <button (click)="toggleLiveDemo()" cButton>Launch demo modal</button>  <c-modal id="liveDemoModal" [visible]="liveDemoVisible" (visibleChange)="handleLiveDemoChange($event)">    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button (click)="toggleLiveDemo()" cButtonClose></button>    </c-modal-header>    <c-modal-body>Woohoo, you&#39;re reading this text in a modal!</c-modal-body>    <c-modal-footer>      <button (click)="toggleLiveDemo()" cButton color="secondary">        Close      </button>      <button cButton color="primary">Save changes</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #staticBackdrop>  <button [cModalToggle]="staticBackdropModal.id" cButton>Launch static backdrop modal</button>  <c-modal #staticBackdropModal backdrop="static" id="staticBackdropModal">    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button [cModalToggle]="staticBackdropModal.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>I will not close if you click outside of me. Don\'t even try to press escape key.</c-modal-body>    <c-modal-footer>      <button [cModalToggle]="staticBackdropModal.id" cButton color="secondary">        Close      </button>      <button cButton color="primary">Understood</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #scrollingLongContent>  <button [cModalToggle]="scrollingLongContentModal.id" cButton>Scrolling long content</button>  <c-modal #scrollingLongContentModal id="scrollingLongContentModal">    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button [cModalToggle]="scrollingLongContentModal.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>      <ng-container *ngTemplateOutlet="longContent"></ng-container>    </c-modal-body>    <c-modal-footer>      <button [cModalToggle]="scrollingLongContentModal.id" cButton color="secondary">        Close      </button>      <button cButton color="primary">Save changes</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #scrollableLongContent>  <button [cModalToggle]="scrollableLongContentModal.id" cButton>Scrollable long content</button>  <c-modal #scrollableLongContentModal id="scrollableLongContentModal" scrollable>    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button [cModalToggle]="scrollableLongContentModal.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>      <ng-container *ngTemplateOutlet="longContent"></ng-container>    </c-modal-body>    <c-modal-footer>      <button [cModalToggle]="scrollableLongContentModal.id" cButton color="secondary">        Close      </button>      <button cButton color="primary">Save changes</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #verticallyCentered>  <button [cModalToggle]="verticallyCenteredModal.id" cButton>Centered modal</button>  <c-modal #verticallyCenteredModal alignment="center" id="verticallyCenteredModal">    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button [cModalToggle]="verticallyCenteredModal.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>      Woohoo, you&#39;re reading this text in a modal!    </c-modal-body>    <c-modal-footer>      <button [cModalToggle]="verticallyCenteredModal.id" cButton color="secondary">        Close      </button>      <button cButton color="primary">Understood</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #verticallyCenteredScrollable>  <button [cModalToggle]="verticallyCenteredScrollableModal.id" cButton>Centered scrollable modal</button>  <c-modal #verticallyCenteredScrollableModal           [scrollable]="true"           alignment="center"           id="verticallyCenteredScrollableModal">    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button [cModalToggle]="verticallyCenteredScrollableModal.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>      <p>        This is some placeholder content to show a vertically centered modal. We\'ve added some extra copy here to show        how vertically centering the modal works when combined with scrollable modals. We also use some repeated line        breaks to quickly extend the height of the content, thereby triggering the scrolling. When content becomes        longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.      </p>      <br><br><br><br><br><br><br><br><br><br>      <p>Just like that.</p>    </c-modal-body>    <c-modal-footer>      <button [cModalToggle]="verticallyCenteredScrollableModal.id" cButton color="secondary">        Close      </button>      <button cButton color="primary">Understood</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #withPopover>  <button [cModalToggle]="withPopoverModal.id" cButton>Modal with Popover</button>  <c-modal #withPopoverModal alignment="center" id="withPopoverModal">    <c-modal-header>      <h5 cModalTitle>Modal title</h5>      <button [cModalToggle]="withPopoverModal.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>      <h5>Popover in a modal</h5>      This      <button [cPopoverTrigger]="\'click\'" [cPopover]="popoverHtml" [cPopoverOptions]="{strategy: \'fixed\'}" cButton>button</button>      triggers a popover on click.      <ng-template #popoverHtml>        <h3 class="popover-header">          Popover title        </h3>        <div class="popover-body" id="">          And here’s some amazing content. It’s very engaging. Right?        </div>      </ng-template>      <hr/>      <h5>Tooltips in a modal</h5>      <p>        <a cTooltip="Tooltip text" href>This link</a> and <a [cTooltipOptions]="{strategy: \'fixed\'}"                                                             cTooltip="Tooltip text"                                                             cTooltipPlacement="bottom"                                                             href>that link</a>        have tooltips on hover.      </p>    </c-modal-body>    <c-modal-footer>      <button [cModalToggle]="withPopoverModal.id" cButton color="secondary">        Close      </button>      <button cButton color="primary">Understood</button>    </c-modal-footer>  </c-modal></ng-template><ng-template #optionalSizes>  <button [cModalToggle]="modalXl.id" cButton>Extra large modal</button>  <button [cModalToggle]="modalLg.id" cButton>Large modal</button>  <button [cModalToggle]="modalSm.id" cButton>Small modal</button>  <c-modal #modalXl id="modalXl" size="xl">    <c-modal-header>      <h5 cModalTitle>Extra large modal</h5>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal>  <c-modal #modalLg id="modalLg" size="lg">    <c-modal-header>      <h5 cModalTitle>Large modal</h5>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal>  <c-modal #modalSm id="modalSm" size="sm">    <c-modal-header>      <h5 cModalTitle>Small modal</h5>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal></ng-template><ng-template #fullScreen>  <button [cModalToggle]="fullScreen.id" cButton>Full screen</button>  <button [cModalToggle]="fullScreenSm.id" cButton>Full screen below sm</button>  <button [cModalToggle]="fullScreenMd.id" cButton>Full screen below md</button>  <button [cModalToggle]="fullScreenLg.id" cButton>Full screen below lg</button>  <button [cModalToggle]="fullScreenXl.id" cButton>Full screen below xl</button>  <button [cModalToggle]="fullScreen2Xl.id" cButton>Full screen below xxl</button>  <c-modal #fullScreen [fullscreen]="true" id="fullScreen">    <c-modal-header>      <h5 cModalTitle>Full screen</h5>      <button [cModalToggle]="fullScreen.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>...</c-modal-body>    <c-modal-footer>      <button cButton [cModalToggle]="fullScreen.id">Close</button>    </c-modal-footer>  </c-modal>  <c-modal #fullScreenSm fullscreen="sm" id="fullScreenSm">    <c-modal-header>      <h5 cModalTitle>Full screen below sm</h5>      <button [cModalToggle]="fullScreenSm.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal>  <c-modal #fullScreenMd fullscreen="md" id="fullScreenMd">    <c-modal-header>      <h5 cModalTitle>Full screen below md</h5>      <button [cModalToggle]="fullScreenMd.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal>  <c-modal #fullScreenLg fullscreen="lg" id="fullScreenLg">    <c-modal-header>      <h5 cModalTitle>Full screen below lg</h5>      <button [cModalToggle]="fullScreenLg.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal>  <c-modal #fullScreenXl fullscreen="xl" id="fullScreenXl">    <c-modal-header>      <h5 cModalTitle>Full screen below xl</h5>      <button [cModalToggle]="fullScreenXl.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal>  <c-modal #fullScreen2Xl fullscreen="xxl" id="fullScreen2Xl">    <c-modal-header>      <h5 cModalTitle>Full screen below xxl</h5>      <button [cModalToggle]="fullScreen2Xl.id" cButtonClose></button>    </c-modal-header>    <c-modal-body>...</c-modal-body>  </c-modal></ng-template><ng-template #longContent>  <p>    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.  </p>  <p>    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis    lacus vel augue laoreet rutrum faucibus dolor auctor.  </p>  <p>    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus    auctor fringilla.  </p>  <p>    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.  </p>  <p>    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis    lacus vel augue laoreet rutrum faucibus dolor auctor.  </p>  <p>    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus    auctor fringilla.  </p>  <p>    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.  </p>  <p>    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis    lacus vel augue laoreet rutrum faucibus dolor auctor.  </p>  <p>    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus    auctor fringilla.  </p>  <p>    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.  </p>  <p>    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis    lacus vel augue laoreet rutrum faucibus dolor auctor.  </p>  <p>    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus    auctor fringilla.  </p>  <p>    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.  </p>  <p>    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis    lacus vel augue laoreet rutrum faucibus dolor auctor.  </p>  <p>    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus    auctor fringilla.  </p>  <p>    Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis    in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.  </p>  <p>    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis    lacus vel augue laoreet rutrum faucibus dolor auctor.  </p>  <p>    Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel    scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus    auctor fringilla.  </p></ng-template></div>'
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToastComponent', 'selector': 'app-toast-simple'},{'name': 'BadgesComponent', 'selector': 'app-badges'},{'name': 'ChartSample', 'selector': 'app-chart-sample'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DocsCalloutComponent', 'selector': 'app-docs-callout'},{'name': 'DocsExampleComponent', 'selector': 'app-docs-example'},{'name': 'DocsLinkComponent', 'selector': 'app-docs-link'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesManagementComponent', 'selector': 'grades-management'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalsComponent', 'selector': 'app-modals'},{'name': 'Page404Component', 'selector': 'app-page404'},{'name': 'Page500Component', 'selector': 'app-page500'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SchedulesManagement', 'selector': 'schedules-management'},{'name': 'SchoolYearManagementComponent', 'selector': 'school-year-management'},{'name': 'SectionsManagementComponent', 'selector': 'sections-management'},{'name': 'StudentManagementComponent', 'selector': 'student-management'},{'name': 'SubjectManagementComponent', 'selector': 'subject-management'},{'name': 'ThemeColorComponent', 'selector': 'app-theme-color'},{'name': 'ToastersComponent', 'selector': 'app-toasters'},{'name': 'ToastSampleIconComponent', 'selector': 'toast-sample-icon'},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserManagementComponent', 'selector': 'user-management'},{'name': 'WidgetsBrandComponent', 'selector': 'app-widgets-brand'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'},{'name': 'WidgetsDropdownComponent', 'selector': 'app-widgets-dropdown'},{'name': 'WidgetsEComponent', 'selector': 'app-widgets-e'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ModalsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ModalsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1173 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SchoolYearManagementComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/school-year-management/school-year-management.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>MessageService</code>
+                            <code>ConfirmationService</code>
+                                <code><a href="../injectables/SchoolYearService.html" target="_self" >SchoolYearService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>school-year-management</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./school-year-management.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>school-year-management.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allSchoolYears" >allSchoolYears</a>
+                            </li>
+                            <li>
+                                <a href="#date" >date</a>
+                            </li>
+                            <li>
+                                <a href="#date1" >date1</a>
+                            </li>
+                            <li>
+                                <a href="#date2" >date2</a>
+                            </li>
+                            <li>
+                                <a href="#newSchoolYearDialog" >newSchoolYearDialog</a>
+                            </li>
+                            <li>
+                                <a href="#schoolYear" >schoolYear</a>
+                            </li>
+                            <li>
+                                <a href="#schoolYears" >schoolYears</a>
+                            </li>
+                            <li>
+                                <a href="#submitted" >submitted</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#adjustDialogHeight" >adjustDialogHeight</a>
+                            </li>
+                            <li>
+                                <a href="#hideDialog" >hideDialog</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openNew" >openNew</a>
+                            </li>
+                            <li>
+                                <a href="#saveSchoolYear" >saveSchoolYear</a>
+                            </li>
+                            <li>
+                                <a href="#updateMaxYear" >updateMaxYear</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(schoolYearService: <a href="../injectables/SchoolYearService.html" target="_self">SchoolYearService</a>, messageService: MessageService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>schoolYearService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SchoolYearService.html" target="_self" >SchoolYearService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adjustDialogHeight"></a>
+                    <span class="name">
+                        <span ><b>adjustDialogHeight</b></span>
+                        <a href="#adjustDialogHeight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adjustDialogHeight(isDropdownOpen: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="50"
+                                    class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>isDropdownOpen</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideDialog"></a>
+                    <span class="name">
+                        <span ><b>hideDialog</b></span>
+                        <a href="#hideDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hideDialog()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="32"
+                                    class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openNew"></a>
+                    <span class="name">
+                        <span ><b>openNew</b></span>
+                        <a href="#openNew"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openNew()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveSchoolYear"></a>
+                    <span class="name">
+                        <span ><b>saveSchoolYear</b></span>
+                        <a href="#saveSchoolYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveSchoolYear()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateMaxYear"></a>
+                    <span class="name">
+                        <span ><b>updateMaxYear</b></span>
+                        <a href="#updateMaxYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateMaxYear(date1)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>date1</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allSchoolYears"></a>
+                    <span class="name">
+                        <span ><b>allSchoolYears</b></span>
+                        <a href="#allSchoolYears"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/SchoolYear.html" target="_self" >SchoolYear[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date"></a>
+                    <span class="name">
+                        <span ><b>date</b></span>
+                        <a href="#date"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Date[] | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date1"></a>
+                    <span class="name">
+                        <span ><b>date1</b></span>
+                        <a href="#date1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date2"></a>
+                    <span class="name">
+                        <span ><b>date2</b></span>
+                        <a href="#date2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date().getFullYear().toString()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newSchoolYearDialog"></a>
+                    <span class="name">
+                        <span ><b>newSchoolYearDialog</b></span>
+                        <a href="#newSchoolYearDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="schoolYear"></a>
+                    <span class="name">
+                        <span ><b>schoolYear</b></span>
+                        <a href="#schoolYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/SchoolYear.html" target="_self" >SchoolYear</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="schoolYears"></a>
+                    <span class="name">
+                        <span ><b>schoolYears</b></span>
+                        <a href="#schoolYears"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/SchoolYear.html" target="_self" >SchoolYear[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitted"></a>
+                    <span class="name">
+                        <span ><b>submitted</b></span>
+                        <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/views/school-year-management/school-year-management.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ConfirmationService, MessageService } from &#x27;primeng/api&#x27;;
+import { SchoolYearService } from &#x27;../../data/services/school-year/school-year.service&#x27;;
+
+export interface SchoolYear {
+  period?: string;
+}
+
+@Component({
+  selector: &#x27;school-year-management&#x27;,
+  templateUrl: &#x27;school-year-management.html&#x27;,
+  styleUrls: [&#x27;./school-year-management.scss&#x27;],
+  providers: [MessageService, ConfirmationService, SchoolYearService],
+})
+export class SchoolYearManagementComponent implements OnInit {
+  newSchoolYearDialog: boolean &#x3D; false;
+  
+  schoolYears!: SchoolYear[]
+  schoolYear!: SchoolYear;
+
+  allSchoolYears!: SchoolYear[]; 
+
+  submitted: boolean &#x3D; false;
+
+  date: Date[] | undefined;
+  date1: any;
+
+  date2 &#x3D; new Date().getFullYear().toString();
+
+  constructor(private schoolYearService: SchoolYearService, private messageService: MessageService) {}
+    
+  ngOnInit() {
+    this.schoolYearService.getSchoolYearData().then((data) &#x3D;&gt; {
+      this.schoolYears &#x3D; data;
+      this.allSchoolYears &#x3D; data;
+    });
+  }
+
+  openNew() {
+    this.schoolYear &#x3D; {};
+    this.submitted &#x3D; false;
+    this.newSchoolYearDialog &#x3D; true
+  }
+
+  hideDialog() {
+    this.newSchoolYearDialog &#x3D; false;
+    this.submitted &#x3D; false;
+  }
+
+  adjustDialogHeight(isDropdownOpen: boolean): void {
+    const dialog &#x3D; document.querySelector(&#x27;.p-dialog&#x27;) as HTMLElement;
+  
+    if (dialog) {
+      if (isDropdownOpen) {
+        dialog.style.height &#x3D; &#x27;500px&#x27;;
+      } else {
+        dialog.style.height &#x3D; &#x27;auto&#x27;;
+      }
+    }
+  }
+
+  updateMaxYear(date1) {
+    this.date2 &#x3D; (Number(date1.getFullYear()) + 1).toString();
+  }
+
+  saveSchoolYear() {
+    this.submitted &#x3D; true;
+
+    if (this.date1 &amp;&amp; this.date2) {
+      this.date1 &#x3D; this.date1.getFullYear().toString();
+
+      const newPeriod &#x3D; &#x60;${this.date1}-${this.date2.toString()}&#x60;;
+      
+      const exists &#x3D; this.schoolYears.some((year) &#x3D;&gt; year.period &#x3D;&#x3D;&#x3D; newPeriod);
+  
+      if (!exists) {
+        this.schoolYears &#x3D; [{ period: newPeriod }, ...this.schoolYears];
+  
+        this.newSchoolYearDialog &#x3D; false;
+        this.schoolYear &#x3D; {};
+    
+        this.messageService.add({
+            severity: &#x27;success&#x27;,
+            summary: &#x27;Éxito&#x27;,
+            detail: &#x27;Asignación exitosa&#x27;,
+            life: 3000,
+        });
+      } else {
+          this.messageService.add({
+            severity: &#x27;warn&#x27;,
+            summary: &#x27;Aviso&#x27;,
+            detail: &#x60;El ciclo ${newPeriod} ya existe&#x60;,
+            life: 3000,
+        });
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;p-toast&gt;&lt;/p-toast&gt;
+    &lt;p-toolbar class&#x3D;&quot;mb-4 gap-2&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-start align-items-center w-full&quot;&gt;
+            &lt;p-button 
+                pRipple 
+                severity&#x3D;&quot;success&quot; 
+                label&#x3D;&quot;Empezar nuevo Ciclo Escolar&quot; 
+                icon&#x3D;&quot;pi pi-plus&quot; 
+                class&#x3D;&quot;ml-2 mr-2&quot;       
+                (click)&#x3D;&quot;openNew()&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/p-toolbar&gt;
+
+    &lt;p-table
+        #dt
+        [value]&#x3D;&quot;schoolYears&quot;
+        [rows]&#x3D;&quot;10&quot;
+        [paginator]&#x3D;&quot;true&quot;
+        [globalFilterFields]&#x3D;&quot;[&#x27;period&#x27;]&quot;
+        [tableStyle]&#x3D;&quot;{ &#x27;min-width&#x27;: &#x27;75rem&#x27; }&quot;
+        [rowHover]&#x3D;&quot;true&quot;
+        dataKey&#x3D;&quot;period&quot;
+        currentPageReportTemplate&#x3D;&quot;Mostrando {first} de {last} de {totalRecords} entradas&quot;
+        [showCurrentPageReport]&#x3D;&quot;true&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;caption&quot;&gt;
+            &lt;div class&#x3D;&quot;flex align-items-center justify-content-between&quot;&gt;
+                &lt;h5 class&#x3D;&quot;m-0&quot;&gt;Gestión de Ciclos Escolares&lt;/h5&gt;
+                &lt;span class&#x3D;&quot;p-input-icon-left&quot;&gt;
+                    &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+                    &lt;input 
+                        pInputText 
+                        type&#x3D;&quot;text&quot; 
+                        (input)&#x3D;&quot;dt.filterGlobal($event.target.value, &#x27;contains&#x27;)&quot; 
+                        placeholder&#x3D;&quot;Buscar...&quot; /&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+            &lt;tr&gt;
+                &lt;th pSortableColumn&#x3D;&quot;period&quot; style&#x3D;&quot;min-width:15rem&quot;&gt;
+                    Ciclos Escolares anteriores &lt;p-sortIcon field&#x3D;&quot;period&quot; /&gt;
+                &lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-schoolYear&gt;
+            &lt;tr&gt;                
+                &lt;td&gt;
+                    &lt;div&gt;
+                        {{ schoolYear.period }}
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/ng-template&gt;
+    &lt;/p-table&gt;
+
+    &lt;p-dialog 
+        [(visible)]&#x3D;&quot;newSchoolYearDialog&quot; 
+        [style]&#x3D;&quot;{ width: &#x27;500px&#x27;, height: &#x27;290px&#x27; }&quot; 
+        header&#x3D;&quot;Periodo&quot;
+        [modal]&#x3D;&quot;true&quot; 
+        styleClass&#x3D;&quot;p-fluid&quot;
+        [contentStyle]&#x3D;&quot;{ &#x27;display&#x27;: &#x27;flex&#x27;, &#x27;justify-content&#x27;: &#x27;center&#x27; }&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;content&quot;&gt;
+            &lt;p-calendar style&#x3D;&quot;margin-right: 20px;&quot;
+              [(ngModel)]&#x3D;&quot;date1&quot; 
+              view&#x3D;&quot;year&quot; 
+              dateFormat&#x3D;&quot;yy&quot; 
+              (onFocus)&#x3D;&quot;adjustDialogHeight(true)&quot;
+              (onClose)&#x3D;&quot;adjustDialogHeight(false)&quot;
+              (onSelect)&#x3D;&quot;updateMaxYear(date1)&quot; /&gt;  
+            
+            &lt;p-calendar 
+              [(ngModel)]&#x3D;&quot;date2&quot; 
+              view&#x3D;&quot;year&quot; 
+              dateFormat&#x3D;&quot;yy&quot;
+              (onFocus)&#x3D;&quot;adjustDialogHeight(true)&quot;
+              (onClose)&#x3D;&quot;adjustDialogHeight(false)&quot; /&gt;  
+          &lt;/ng-template&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;footer&quot;&gt;
+            &lt;p-button 
+                pRipple 
+                label&#x3D;&quot;Cancelar&quot; 
+                icon&#x3D;&quot;pi pi-times&quot; 
+                [text]&#x3D;&quot;true&quot; 
+                (click)&#x3D;&quot;hideDialog()&quot; /&gt;
+            &lt;p-button 
+                pRipple 
+                label&#x3D;&quot;Incluir ciclo&quot; 
+                icon&#x3D;&quot;pi pi-check&quot; 
+                [text]&#x3D;&quot;true&quot; 
+                (click)&#x3D;&quot;saveSchoolYear()&quot; /&gt;
+        &lt;/ng-template&gt;
+    &lt;/p-dialog&gt;
+
+    &lt;p-confirmDialog [style]&#x3D;&quot;{ width: &#x27;450px&#x27; }&quot;&gt;&lt;/p-confirmDialog&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./school-year-management.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <p-toast></p-toast>    <p-toolbar class="mb-4 gap-2">        <div class="flex justify-content-start align-items-center w-full">            <p-button                 pRipple                 severity="success"                 label="Empezar nuevo Ciclo Escolar"                 icon="pi pi-plus"                 class="ml-2 mr-2"                       (click)="openNew()" />        </div>    </p-toolbar>    <p-table        #dt        [value]="schoolYears"        [rows]="10"        [paginator]="true"        [globalFilterFields]="[\'period\']"        [tableStyle]="{ \'min-width\': \'75rem\' }"        [rowHover]="true"        dataKey="period"        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} entradas"        [showCurrentPageReport]="true">        <ng-template pTemplate="caption">            <div class="flex align-items-center justify-content-between">                <h5 class="m-0">Gestión de Ciclos Escolares</h5>                <span class="p-input-icon-left">                    <i class="pi pi-search"></i>                    <input                         pInputText                         type="text"                         (input)="dt.filterGlobal($event.target.value, \'contains\')"                         placeholder="Buscar..." />                </span>            </div>        </ng-template>        <ng-template pTemplate="header">            <tr>                <th pSortableColumn="period" style="min-width:15rem">                    Ciclos Escolares anteriores <p-sortIcon field="period" />                </th>            </tr>        </ng-template>        <ng-template pTemplate="body" let-schoolYear>            <tr>                                <td>                    <div>                        {{ schoolYear.period }}                    </div>                </td>            </tr>        </ng-template>    </p-table>    <p-dialog         [(visible)]="newSchoolYearDialog"         [style]="{ width: \'500px\', height: \'290px\' }"         header="Periodo"        [modal]="true"         styleClass="p-fluid"        [contentStyle]="{ \'display\': \'flex\', \'justify-content\': \'center\' }">        <ng-template pTemplate="content">            <p-calendar style="margin-right: 20px;"              [(ngModel)]="date1"               view="year"               dateFormat="yy"               (onFocus)="adjustDialogHeight(true)"              (onClose)="adjustDialogHeight(false)"              (onSelect)="updateMaxYear(date1)" />                          <p-calendar               [(ngModel)]="date2"               view="year"               dateFormat="yy"              (onFocus)="adjustDialogHeight(true)"              (onClose)="adjustDialogHeight(false)" />            </ng-template>        <ng-template pTemplate="footer">            <p-button                 pRipple                 label="Cancelar"                 icon="pi pi-times"                 [text]="true"                 (click)="hideDialog()" />            <p-button                 pRipple                 label="Incluir ciclo"                 icon="pi pi-check"                 [text]="true"                 (click)="saveSchoolYear()" />        </ng-template>    </p-dialog>    <p-confirmDialog [style]="{ width: \'450px\' }"></p-confirmDialog></div></div>'
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToastComponent', 'selector': 'app-toast-simple'},{'name': 'BadgesComponent', 'selector': 'app-badges'},{'name': 'ChartSample', 'selector': 'app-chart-sample'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DocsCalloutComponent', 'selector': 'app-docs-callout'},{'name': 'DocsExampleComponent', 'selector': 'app-docs-example'},{'name': 'DocsLinkComponent', 'selector': 'app-docs-link'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesManagementComponent', 'selector': 'grades-management'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalsComponent', 'selector': 'app-modals'},{'name': 'Page404Component', 'selector': 'app-page404'},{'name': 'Page500Component', 'selector': 'app-page500'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SchedulesManagement', 'selector': 'schedules-management'},{'name': 'SchoolYearManagementComponent', 'selector': 'school-year-management'},{'name': 'SectionsManagementComponent', 'selector': 'sections-management'},{'name': 'StudentManagementComponent', 'selector': 'student-management'},{'name': 'SubjectManagementComponent', 'selector': 'subject-management'},{'name': 'ThemeColorComponent', 'selector': 'app-theme-color'},{'name': 'ToastersComponent', 'selector': 'app-toasters'},{'name': 'ToastSampleIconComponent', 'selector': 'toast-sample-icon'},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserManagementComponent', 'selector': 'user-management'},{'name': 'WidgetsBrandComponent', 'selector': 'app-widgets-brand'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'},{'name': 'WidgetsDropdownComponent', 'selector': 'app-widgets-dropdown'},{'name': 'WidgetsEComponent', 'selector': 'app-widgets-e'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SchoolYearManagementComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SchoolYearManagementComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

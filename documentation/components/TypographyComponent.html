@@ -1,0 +1,479 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TypographyComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/theme/typography.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>typography.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/views/theme/typography.component.ts:6</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  templateUrl: &#x27;typography.component.html&#x27;,
+})
+export class TypographyComponent {
+  constructor() {}
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;fade-in&quot;&gt;
+  &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+    &lt;c-card-header&gt;
+      Headings
+    &lt;/c-card-header&gt;
+    &lt;c-card-body&gt;
+      &lt;p&gt;Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.&lt;/p&gt;
+      &lt;table class&#x3D;&quot;table&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Heading&lt;/th&gt;
+            &lt;th&gt;Example&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;&amp;lt;h2&amp;gt;&amp;lt;/h2&amp;gt;&lt;/code&gt;&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;&amp;lt;h3&amp;gt;&amp;lt;/h3&amp;gt;&lt;/code&gt;&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;&amp;lt;h4&amp;gt;&amp;lt;/h4&amp;gt;&lt;/code&gt;&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;h4&gt;h4. Bootstrap heading&lt;/h4&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;&amp;lt;h5&amp;gt;&amp;lt;/h5&amp;gt;&lt;/code&gt;&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;h5&gt;h5. Bootstrap heading&lt;/h5&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;
+              &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;&amp;lt;h6&amp;gt;&amp;lt;/h6&amp;gt;&lt;/code&gt;&lt;/p&gt;
+            &lt;/td&gt;
+            &lt;td&gt;&lt;h6&gt;h6. Bootstrap heading&lt;/h6&gt;&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/c-card-body&gt;
+  &lt;/c-card&gt;
+  &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+    &lt;c-card-header&gt;
+      Headings
+    &lt;/c-card-header&gt;
+    &lt;c-card-body&gt;
+      &lt;p&gt;&lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;.h1&lt;/code&gt; through &lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;.h6&lt;/code&gt; classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.&lt;/p&gt;
+      &lt;div class&#x3D;&quot;bd-example&quot;&gt;
+        &lt;p class&#x3D;&quot;h1&quot;&gt;h1. Bootstrap heading&lt;/p&gt;
+        &lt;p class&#x3D;&quot;h2&quot;&gt;h2. Bootstrap heading&lt;/p&gt;
+        &lt;p class&#x3D;&quot;h3&quot;&gt;h3. Bootstrap heading&lt;/p&gt;
+        &lt;p class&#x3D;&quot;h4&quot;&gt;h4. Bootstrap heading&lt;/p&gt;
+        &lt;p class&#x3D;&quot;h5&quot;&gt;h5. Bootstrap heading&lt;/p&gt;
+        &lt;p class&#x3D;&quot;h6&quot;&gt;h6. Bootstrap heading&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/c-card-body&gt;
+  &lt;/c-card&gt;
+  &lt;c-card class&#x3D;&quot;mb-4&quot; id&#x3D;&quot;someAnchorage&quot;&gt;
+    &lt;c-card-header&gt;
+      Display headings
+    &lt;/c-card-header&gt;
+    &lt;c-card-body&gt;
+      &lt;p&gt;Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a &lt;strong&gt;display heading&lt;/strong&gt;—a larger, slightly more opinionated heading style.&lt;/p&gt;
+      &lt;div class&#x3D;&quot;bd-example bd-example-type&quot;&gt;
+        &lt;table class&#x3D;&quot;table&quot;&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;span class&#x3D;&quot;display-1&quot;&gt;Display 1&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;span class&#x3D;&quot;display-2&quot;&gt;Display 2&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;span class&#x3D;&quot;display-3&quot;&gt;Display 3&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;span class&#x3D;&quot;display-4&quot;&gt;Display 4&lt;/span&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/c-card-body&gt;
+  &lt;/c-card&gt;
+  &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+    &lt;c-card-header&gt;
+      Inline text elements
+    &lt;/c-card-header&gt;
+    &lt;c-card-body&gt;
+      &lt;p&gt;Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a &lt;strong&gt;display heading&lt;/strong&gt;—a larger, slightly more opinionated heading style.&lt;/p&gt;
+      &lt;div class&#x3D;&quot;bd-example&quot;&gt;
+        &lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.&lt;/p&gt;
+        &lt;p&gt;&lt;del&gt;This line of text is meant to be treated as deleted text.&lt;/del&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;s&gt;This line of text is meant to be treated as no longer accurate.&lt;/s&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;u&gt;This line of text will render as underlined&lt;/u&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/c-card-body&gt;
+  &lt;/c-card&gt;
+  &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+    &lt;c-card-header&gt;
+      Description list alignment
+    &lt;/c-card-header&gt;
+    &lt;c-card-body&gt;
+      &lt;p&gt;Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a &lt;code class&#x3D;&quot;c-highlighter-rouge&quot;&gt;.text-truncate&lt;/code&gt; class to truncate the text with an ellipsis.&lt;/p&gt;
+      &lt;div class&#x3D;&quot;bd-example&quot;&gt;
+        &lt;dl class&#x3D;&quot;row&quot;&gt;
+          &lt;dt class&#x3D;&quot;col-sm-3&quot;&gt;Description lists&lt;/dt&gt;
+          &lt;dd class&#x3D;&quot;col-sm-9&quot;&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+
+          &lt;dt class&#x3D;&quot;col-sm-3&quot;&gt;Euismod&lt;/dt&gt;
+          &lt;dd class&#x3D;&quot;col-sm-9&quot;&gt;
+            &lt;p&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/p&gt;
+            &lt;p&gt;Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
+          &lt;/dd&gt;
+
+          &lt;dt class&#x3D;&quot;col-sm-3&quot;&gt;Malesuada porta&lt;/dt&gt;
+          &lt;dd class&#x3D;&quot;col-sm-9&quot;&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+
+          &lt;dt class&#x3D;&quot;col-sm-3 c-d-block c-text-truncate&quot;&gt;Truncated term is truncated with &lt;code&gt;d-block&lt;/code&gt;&lt;/dt&gt;
+          &lt;dd class&#x3D;&quot;col-sm-9 c-d-block c-text-truncate&quot;&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/dd&gt;
+
+          &lt;dt class&#x3D;&quot;col-sm-3&quot;&gt;Nesting&lt;/dt&gt;
+          &lt;dd class&#x3D;&quot;col-sm-9&quot;&gt;
+            &lt;dl class&#x3D;&quot;row&quot;&gt;
+              &lt;dt class&#x3D;&quot;col-sm-4&quot;&gt;Nested definition list&lt;/dt&gt;
+              &lt;dd class&#x3D;&quot;col-sm-8&quot;&gt;Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.&lt;/dd&gt;
+            &lt;/dl&gt;
+          &lt;/dd&gt;
+        &lt;/dl&gt;
+      &lt;/div&gt;
+    &lt;/c-card-body&gt;
+  &lt;/c-card&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="fade-in">  <c-card class="mb-4">    <c-card-header>      Headings    </c-card-header>    <c-card-body>      <p>Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.</p>      <table class="table">        <thead>          <tr>            <th>Heading</th>            <th>Example</th>          </tr>        </thead>        <tbody>          <tr>            <td>              <p><code class="c-highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code></p>            </td>            <td><h1>h1. Bootstrap heading</h1></td>          </tr>          <tr>            <td>              <p><code class="c-highlighter-rouge">&lt;h2&gt;&lt;/h2&gt;</code></p>            </td>            <td><h2>h2. Bootstrap heading</h2></td>          </tr>          <tr>            <td>              <p><code class="c-highlighter-rouge">&lt;h3&gt;&lt;/h3&gt;</code></p>            </td>            <td><h3>h3. Bootstrap heading</h3></td>          </tr>          <tr>            <td>              <p><code class="c-highlighter-rouge">&lt;h4&gt;&lt;/h4&gt;</code></p>            </td>            <td><h4>h4. Bootstrap heading</h4></td>          </tr>          <tr>            <td>              <p><code class="c-highlighter-rouge">&lt;h5&gt;&lt;/h5&gt;</code></p>            </td>            <td><h5>h5. Bootstrap heading</h5></td>          </tr>          <tr>            <td>              <p><code class="c-highlighter-rouge">&lt;h6&gt;&lt;/h6&gt;</code></p>            </td>            <td><h6>h6. Bootstrap heading</h6></td>          </tr>        </tbody>      </table>    </c-card-body>  </c-card>  <c-card class="mb-4">    <c-card-header>      Headings    </c-card-header>    <c-card-body>      <p><code class="c-highlighter-rouge">.h1</code> through <code class="c-highlighter-rouge">.h6</code> classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.</p>      <div class="bd-example">        <p class="h1">h1. Bootstrap heading</p>        <p class="h2">h2. Bootstrap heading</p>        <p class="h3">h3. Bootstrap heading</p>        <p class="h4">h4. Bootstrap heading</p>        <p class="h5">h5. Bootstrap heading</p>        <p class="h6">h6. Bootstrap heading</p>      </div>    </c-card-body>  </c-card>  <c-card class="mb-4" id="someAnchorage">    <c-card-header>      Display headings    </c-card-header>    <c-card-body>      <p>Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a <strong>display heading</strong>—a larger, slightly more opinionated heading style.</p>      <div class="bd-example bd-example-type">        <table class="table">          <tbody>            <tr>              <td><span class="display-1">Display 1</span></td>            </tr>            <tr>              <td><span class="display-2">Display 2</span></td>            </tr>            <tr>              <td><span class="display-3">Display 3</span></td>            </tr>            <tr>              <td><span class="display-4">Display 4</span></td>            </tr>          </tbody>        </table>      </div>    </c-card-body>  </c-card>  <c-card class="mb-4">    <c-card-header>      Inline text elements    </c-card-header>    <c-card-body>      <p>Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a <strong>display heading</strong>—a larger, slightly more opinionated heading style.</p>      <div class="bd-example">        <p>You can use the mark tag to <mark>highlight</mark> text.</p>        <p><del>This line of text is meant to be treated as deleted text.</del></p>        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>        <p><u>This line of text will render as underlined</u></p>        <p><small>This line of text is meant to be treated as fine print.</small></p>        <p><strong>This line rendered as bold text.</strong></p>        <p><em>This line rendered as italicized text.</em></p>      </div>    </c-card-body>  </c-card>  <c-card class="mb-4">    <c-card-header>      Description list alignment    </c-card-header>    <c-card-body>      <p>Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a <code class="c-highlighter-rouge">.text-truncate</code> class to truncate the text with an ellipsis.</p>      <div class="bd-example">        <dl class="row">          <dt class="col-sm-3">Description lists</dt>          <dd class="col-sm-9">A description list is perfect for defining terms.</dd>          <dt class="col-sm-3">Euismod</dt>          <dd class="col-sm-9">            <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>            <p>Donec id elit non mi porta gravida at eget metus.</p>          </dd>          <dt class="col-sm-3">Malesuada porta</dt>          <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>          <dt class="col-sm-3 c-d-block c-text-truncate">Truncated term is truncated with <code>d-block</code></dt>          <dd class="col-sm-9 c-d-block c-text-truncate">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>          <dt class="col-sm-3">Nesting</dt>          <dd class="col-sm-9">            <dl class="row">              <dt class="col-sm-4">Nested definition list</dt>              <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>            </dl>          </dd>        </dl>      </div>    </c-card-body>  </c-card></div></div>'
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToastComponent', 'selector': 'app-toast-simple'},{'name': 'BadgesComponent', 'selector': 'app-badges'},{'name': 'ChartSample', 'selector': 'app-chart-sample'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DocsCalloutComponent', 'selector': 'app-docs-callout'},{'name': 'DocsExampleComponent', 'selector': 'app-docs-example'},{'name': 'DocsLinkComponent', 'selector': 'app-docs-link'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesManagementComponent', 'selector': 'grades-management'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalsComponent', 'selector': 'app-modals'},{'name': 'Page404Component', 'selector': 'app-page404'},{'name': 'Page500Component', 'selector': 'app-page500'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SchedulesManagement', 'selector': 'schedules-management'},{'name': 'SchoolYearManagementComponent', 'selector': 'school-year-management'},{'name': 'SectionsManagementComponent', 'selector': 'sections-management'},{'name': 'StudentManagementComponent', 'selector': 'student-management'},{'name': 'SubjectManagementComponent', 'selector': 'subject-management'},{'name': 'ThemeColorComponent', 'selector': 'app-theme-color'},{'name': 'ToastersComponent', 'selector': 'app-toasters'},{'name': 'ToastSampleIconComponent', 'selector': 'toast-sample-icon'},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserManagementComponent', 'selector': 'user-management'},{'name': 'WidgetsBrandComponent', 'selector': 'app-widgets-brand'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'},{'name': 'WidgetsDropdownComponent', 'selector': 'app-widgets-dropdown'},{'name': 'WidgetsEComponent', 'selector': 'app-widgets-e'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TypographyComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TypographyComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,596 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#APP_CONTAINERS" title="src/app/app.module.ts" ><b>APP_CONTAINERS</b>&nbsp;&nbsp;&nbsp;(src/.../app.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#iconSubset" title="src/app/icons/icon-subset.ts" ><b>iconSubset</b>&nbsp;&nbsp;&nbsp;(src/.../icon-subset.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#navItems" title="src/app/containers/default-layout/_nav.ts" ><b>navItems</b>&nbsp;&nbsp;&nbsp;(src/.../_nav.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SUBJECT_COLOR_MAP" title="src/app/views/schedules-management/schedules-management.ts" ><b>SUBJECT_COLOR_MAP</b>&nbsp;&nbsp;&nbsp;(src/.../schedules-management.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SUBJECT_COLOR_MAP" title="src/app/views/consult/schedule/schedule.component.ts" ><b>SUBJECT_COLOR_MAP</b>&nbsp;&nbsp;&nbsp;(src/.../schedule.component.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/app.module.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_CONTAINERS"></a>
+                    <span class="name">
+                        <span ><b>APP_CONTAINERS</b></span>
+                        <a href="#APP_CONTAINERS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  DefaultHeaderComponent,
+  DefaultLayoutComponent
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/icons/icon-subset.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iconSubset"></a>
+                    <span class="name">
+                        <span ><b>iconSubset</b></span>
+                        <a href="#iconSubset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  cibCcAmex,
+  cibCcApplePay,
+  cibCcMastercard,
+  cibCcPaypal,
+  cibCcStripe,
+  cibCcVisa,
+  cibFacebook,
+  cibGoogle,
+  cibLinkedin,
+  cibSkype,
+  cibTwitter,
+  cifBr,
+  cifEs,
+  cifFr,
+  cifIn,
+  cifPl,
+  cifUs,
+  cilAlignCenter,
+  cilAlignLeft,
+  cilAlignRight,
+  cilApplicationsSettings,
+  cilArrowBottom,
+  cilArrowRight,
+  cilArrowTop,
+  cilBasket,
+  cilBell,
+  cilBold,
+  cilBookmark,
+  cilCalculator,
+  cilCalendar,
+  cilChart,
+  cilChartPie,
+  cilCheck,
+  cilChevronLeft,
+  cilChevronRight,
+  cilCloudDownload,
+  cilCode,
+  cilCommentSquare,
+  cilCreditCard,
+  cilCursor,
+  cilDollar,
+  cilDrop,
+  cilEnvelopeClosed,
+  cilEnvelopeOpen,
+  cilFile,
+  cilHome,
+  cilInbox,
+  cilIndentDecrease,
+  cilIndentIncrease,
+  cilItalic,
+  cilJustifyCenter,
+  cilLayers,
+  cilList,
+  cilListNumbered,
+  cilLocationPin,
+  cilLockLocked,
+  cilMagnifyingGlass,
+  cilMap,
+  cilMediaPlay,
+  cilMenu,
+  cilExitToApp,
+  cilMoon,
+  cilNotes,
+  cilOptions,
+  cilPaperclip,
+  cilPaperPlane,
+  cilPen,
+  cilPencil,
+  cilPeople,
+  cilPrint,
+  cilPuzzle,
+  cilReportSlash,
+  cilSave,
+  cilSettings,
+  cilShare,
+  cilShareAll,
+  cilShareBoxed,
+  cilSpeech,
+  cilSpeedometer,
+  cilSpreadsheet,
+  cilStar,
+  cilSun,
+  cilTags,
+  cilTask,
+  cilTrash,
+  cilUnderline,
+  cilUser,
+  cilUserFemale,
+  cilUserFollow,
+  cilUserUnfollow,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/containers/default-layout/_nav.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navItems"></a>
+                    <span class="name">
+                        <span ><b>navItems</b></span>
+                        <a href="#navItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>INavData[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    name: &#x27;Inicio&#x27;,
+    url: &#x27;/dashboard&#x27;,
+    badge: {
+      color: &#x27;info&#x27;,
+      text: &#x27;NEW&#x27;
+    },
+    iconComponent: { name: &#x27;cil-speedometer&#x27; }
+  },
+  {
+    title: true,
+    name: &#x27;Administrador&#x27;
+  },
+  {
+    name: &#x27;Gestion&#x27;,
+    iconComponent: { name: &#x27;cil-user&#x27; },
+      children: [
+      {
+        name: &#x27;Gestion de Usuarios&#x27;,
+        url: &#x27;/user-management&#x27;,
+      },
+      {
+        name: &#x27;Ciclos Escolares&#x27;,
+        url: &#x27;/school-year-management&#x27;,
+      },
+      {
+        name: &#x27;Gestión de Secciones&#x27;,
+        url: &#x27;/sections-management&#x27;
+      },
+      {
+        name: &#x27;Gestión de Alumnos&#x27;,
+        url: &#x27;/student-management&#x27;
+      },
+      {
+        name: &#x27;Gestión de Asignaturas&#x27;,
+        url: &#x27;/subject-management&#x27;
+      },
+    ],
+  },
+  {
+    title: true,
+    name: &#x27;Alumnos&#x27;
+  },
+  {
+    name: &#x27;Consultas&#x27;,
+    iconComponent: { name: &#x27;cil-notes&#x27; },
+    url: &#x27;/consult&#x27;,
+    children: [
+      {
+        name: &#x27;Horario de clases&#x27;,
+        url: &#x27;/consult/schedule&#x27;,
+      },
+      {
+        name: &#x27;Notas&#x27;,
+        url: &#x27;/consult/grades&#x27;
+      },
+    ]
+  },
+  {
+    title: true,
+    name: &#x27;Docentes&#x27;,
+    url: &#x27;/admin&#x27;
+  },
+  {
+    name: &#x27;Administración Escolar&#x27;,
+    iconComponent: { name: &#x27;cil-settings&#x27; },
+    children: [
+      {
+        name: &#x27;Horarios de clases&#x27;,
+        url: &#x27;/schedules-management&#x27;
+      },
+      {
+        name: &#x27;Notas&#x27;,
+        url: &#x27;/upload-grades&#x27;,
+        badge: {
+          color: &#x27;info&#x27;,
+          text: &#x27;NEW&#x27;
+        },
+      },
+    ]
+  },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/views/schedules-management/schedules-management.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SUBJECT_COLOR_MAP"></a>
+                    <span class="name">
+                        <span ><b>SUBJECT_COLOR_MAP</b></span>
+                        <a href="#SUBJECT_COLOR_MAP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  &#x27;Matemática&#x27;: &#x27;#99b3cc&#x27;, // Azul claro degradado
+  &#x27;Inglés&#x27;: &#x27;#a0b8d6&#x27;,     // Azul claro ligeramente más oscuro
+  &#x27;RECESO&#x27;: &#x27;#2c384af2&#x27;,   // Azul original (destacado)
+  &#x27;Ed. Física y Deporte&#x27;: &#x27;#8ba3c5&#x27;, // Azul claro intermedio
+  &#x27;Informática (Educ. Trab.)&#x27;: &#x27;#b3c8e1&#x27;, // Azul claro suave
+  &#x27;Hª de Venezuela&#x27;: &#x27;#7f97b5&#x27;, // Azul medio
+  &#x27;Est. de la Naturaleza&#x27;: &#x27;#adc3de&#x27;, // Azul claro pastel
+  &#x27;Geografía General&#x27;: &#x27;#5f7692&#x27;, // Azul más intenso para contraste
+  &#x27;Castellano y Literatura&#x27;: &#x27;#99acc1&#x27;, // Azul claro degradado
+  &#x27;Educación Artística&#x27;: &#x27;#87a1bf&#x27;, // Azul suave
+  &#x27;Religión&#x27;: &#x27;#a8bad1&#x27;, // Azul pastel más claro
+  &#x27;Ed. Familiar y Ciud.&#x27;: &#x27;#6d8098&#x27;, // Azul grisáceo intermedio
+  &#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;: &#x27;#a4b5cf&#x27;, // Azul claro degradado
+  &#x27;Historia Universal&#x27;: &#x27;#8da6c8&#x27;,     // Azul suave
+  &#x27;Dibujo Técnico (Educ. Trab.)&#x27;: &#x27;#7f94b3&#x27;, // Azul medio
+  &#x27;Ciencias Biológicas&#x27;: &#x27;#b0c4d8&#x27;,    // Azul pastel claro
+  &#x27;Educ. para la Salud&#x27;: &#x27;#95b1c6&#x27;,      // Azul más claro
+  &#x27;Física&#x27;: &#x27;#6e8ca6&#x27;,             // Azul ligeramente más oscuro
+  &#x27;Química&#x27;: &#x27;#94afc4&#x27;,            // Azul suave
+  &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;: &#x27;#8799af&#x27;, // Azul intermedio
+  &#x27;Geograf. de Venezuela&#x27;: &#x27;#7094b1&#x27;, // Azul claro
+  &#x27;Hª de Venezuela (C.B.)&#x27;: &#x27;#68819e&#x27;, // Azul más oscuro
+  &#x27;Met. Investigación&#x27;: &#x27;#94b8d1&#x27;,  // Azul pastel claro
+  &#x27;Dibujo Técnico&#x27;: &#x27;#8ea3bc&#x27;,      // Azul claro intermedio
+  &#x27;Francés&#x27;: &#x27;#7a96b3&#x27;,             // Azul medio
+  &#x27;Latín y Griego&#x27;: &#x27;#9ab2c9&#x27;,      // Azul más claro
+  &#x27;Historia del Arte&#x27;: &#x27;#8099b0&#x27;,   // Azul suave
+  &#x27;Filosofía&#x27;: &#x27;#8eacc1&#x27;,           // Azul pastel suave
+  &#x27;Instrucción Premilitar&#x27;: &#x27;#768b9e&#x27;, // Azul intermedio
+  &#x27;Ed. Física&#x27;: &#x27;#a5bed3&#x27;, // Azul claro
+  &#x27;Ciencias de la Tierra&#x27;: &#x27;#7d98b3&#x27;,  // Azul medio claro
+  &#x27;Sociología&#x27;: &#x27;#94afc4&#x27;,            // Azul pastel claro
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/views/consult/schedule/schedule.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SUBJECT_COLOR_MAP"></a>
+                    <span class="name">
+                        <span ><b>SUBJECT_COLOR_MAP</b></span>
+                        <a href="#SUBJECT_COLOR_MAP"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  &#x27;Matemática&#x27;: &#x27;#99b3cc&#x27;, // Azul claro degradado
+  &#x27;Inglés&#x27;: &#x27;#a0b8d6&#x27;,     // Azul claro ligeramente más oscuro
+  &#x27;RECESO&#x27;: &#x27;#2c384af2&#x27;,   // Azul original (destacado)
+  &#x27;Ed. Física y Deporte&#x27;: &#x27;#8ba3c5&#x27;, // Azul claro intermedio
+  &#x27;Informática (Educ. Trab.)&#x27;: &#x27;#b3c8e1&#x27;, // Azul claro suave
+  &#x27;Hª de Venezuela&#x27;: &#x27;#7f97b5&#x27;, // Azul medio
+  &#x27;Est. de la Naturaleza&#x27;: &#x27;#adc3de&#x27;, // Azul claro pastel
+  &#x27;Geografía General&#x27;: &#x27;#5f7692&#x27;, // Azul más intenso para contraste
+  &#x27;Castellano y Literatura&#x27;: &#x27;#99acc1&#x27;, // Azul claro degradado
+  &#x27;Educación Artística&#x27;: &#x27;#87a1bf&#x27;, // Azul suave
+  &#x27;Religión&#x27;: &#x27;#a8bad1&#x27;, // Azul pastel más claro
+  &#x27;Ed. Familiar y Ciud.&#x27;: &#x27;#6d8098&#x27;, // Azul grisáceo intermedio
+  &#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;: &#x27;#a4b5cf&#x27;, // Azul claro degradado
+  &#x27;Historia Universal&#x27;: &#x27;#8da6c8&#x27;,     // Azul suave
+  &#x27;Dibujo Técnico (Educ. Trab.)&#x27;: &#x27;#7f94b3&#x27;, // Azul medio
+  &#x27;Ciencias Biológicas&#x27;: &#x27;#b0c4d8&#x27;,    // Azul pastel claro
+  &#x27;Educ. para la Salud&#x27;: &#x27;#95b1c6&#x27;,      // Azul más claro
+  &#x27;Física&#x27;: &#x27;#6e8ca6&#x27;,             // Azul ligeramente más oscuro
+  &#x27;Química&#x27;: &#x27;#94afc4&#x27;,            // Azul suave
+  &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;: &#x27;#8799af&#x27;, // Azul intermedio
+  &#x27;Geograf. de Venezuela&#x27;: &#x27;#7094b1&#x27;, // Azul claro
+  &#x27;Hª de Venezuela (C.B.)&#x27;: &#x27;#68819e&#x27;, // Azul más oscuro
+  &#x27;Met. Investigación&#x27;: &#x27;#94b8d1&#x27;,  // Azul pastel claro
+  &#x27;Dibujo Técnico&#x27;: &#x27;#8ea3bc&#x27;,      // Azul claro intermedio
+  &#x27;Francés&#x27;: &#x27;#7a96b3&#x27;,             // Azul medio
+  &#x27;Latín y Griego&#x27;: &#x27;#9ab2c9&#x27;,      // Azul más claro
+  &#x27;Historia del Arte&#x27;: &#x27;#8099b0&#x27;,   // Azul suave
+  &#x27;Filosofía&#x27;: &#x27;#8eacc1&#x27;,           // Azul pastel suave
+  &#x27;Instrucción Premilitar&#x27;: &#x27;#768b9e&#x27;, // Azul intermedio
+  &#x27;Ed. Física&#x27;: &#x27;#a5bed3&#x27;, // Azul claro
+  &#x27;Ciencias de la Tierra&#x27;: &#x27;#7d98b3&#x27;,  // Azul medio claro
+  &#x27;Sociología&#x27;: &#x27;#94afc4&#x27;,            // Azul pastel claro
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

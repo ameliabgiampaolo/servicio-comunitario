@@ -1,0 +1,640 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >UsersService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/data/services/users/users.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getProductsMini" >getProductsMini</a>
+                            </li>
+                            <li>
+                                <a href="#getProductsSmall" >getProductsSmall</a>
+                            </li>
+                            <li>
+                                <a href="#getUsers" >getUsers</a>
+                            </li>
+                            <li>
+                                <a href="#getUsersData" >getUsersData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsMini"></a>
+                    <span class="name">
+                        <span ><b>getProductsMini</b></span>
+                        <a href="#getProductsMini"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsMini()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="221"
+                                    class="link-to-prism">src/app/data/services/users/users.service.ts:221</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsSmall"></a>
+                    <span class="name">
+                        <span ><b>getProductsSmall</b></span>
+                        <a href="#getProductsSmall"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsSmall()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="225"
+                                    class="link-to-prism">src/app/data/services/users/users.service.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsers"></a>
+                    <span class="name">
+                        <span ><b>getUsers</b></span>
+                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsers()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="229"
+                                    class="link-to-prism">src/app/data/services/users/users.service.ts:229</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsersData"></a>
+                    <span class="name">
+                        <span ><b>getUsersData</b></span>
+                        <a href="#getUsersData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsersData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="5"
+                                    class="link-to-prism">src/app/data/services/users/users.service.ts:5</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+    
+@Injectable()
+export class UsersService {
+    getUsersData() {
+        return [
+            {
+                id: &#x27;1000&#x27;,
+                code: &#x27;f230fh0g3&#x27;,
+                name: &#x27;Elena Rodríguez&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1001&#x27;,
+                code: &#x27;nvklal433&#x27;,
+                name: &#x27;Pedro García&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;BLOQUEADO&#x27;,
+            },
+            {
+                id: &#x27;1002&#x27;,
+                code: &#x27;zz21cz3c1&#x27;,
+                name: &#x27;Mario Méndez&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;INACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1003&#x27;,
+                code: &#x27;244wgerg2&#x27;,
+                name: &#x27;Sofía Cordobéz&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;ACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1004&#x27;,
+                code: &#x27;h456wer53&#x27;,
+                name: &#x27;Stephanie Zambrano&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1005&#x27;,
+                code: &#x27;av2231fwg&#x27;,
+                name: &#x27;Danielle López&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;BLOQUEADO&#x27;,
+            },
+            {
+                id: &#x27;1006&#x27;,
+                code: &#x27;bib36pfvm&#x27;,
+                name: &#x27;Elliot Page&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;INACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1007&#x27;,
+                code: &#x27;mbvjkgip5&#x27;,
+                name: &#x27;Denise Hernández&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1008&#x27;,
+                code: &#x27;vbb124btr&#x27;,
+                name: &#x27;Federico Lorca&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;INACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1009&#x27;,
+                code: &#x27;cm230f032&#x27;,
+                name: &#x27;Luka Modrić&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;,
+            },
+            {
+                id: &#x27;1010&#x27;,
+                code: &#x27;plb34234v&#x27;,
+                name: &#x27;Celia Cruz&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;BLOQUEADO&#x27;,
+            },
+            {
+                id: &#x27;1011&#x27;,
+                code: &#x27;4920nnc2d&#x27;,
+                name: &#x27;Carlos Martínez&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1012&#x27;,
+                code: &#x27;250vm23cc&#x27;,
+                name: &#x27;Laura Rodríguez&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1013&#x27;,
+                code: &#x27;fldsmn31b&#x27;,
+                name: &#x27;Jorge Pérez&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;BLOQUEADO&#x27;
+            },
+            {
+                id: &#x27;1014&#x27;,
+                code: &#x27;waas1x2as&#x27;,
+                name: &#x27;Ana García&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;INACTIVO&#x27;
+            },
+            {
+                id: &#x27;1015&#x27;,
+                code: &#x27;vb34btbg5&#x27;,
+                name: &#x27;Luis Fernández&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1016&#x27;,
+                code: &#x27;k8l6j58jl&#x27;,
+                name: &#x27;Elena Sánchez&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1017&#x27;,
+                code: &#x27;v435nn85n&#x27;,
+                name: &#x27;David Ramírez&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1018&#x27;,
+                code: &#x27;09zx9c0zc&#x27;,
+                name: &#x27;María López&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1019&#x27;,
+                code: &#x27;mnb5mb2m5&#x27;,
+                name: &#x27;Pedro Gómez&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1020&#x27;,
+                code: &#x27;r23fwf2w3&#x27;,
+                name: &#x27;Sofía Díaz&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;BLOQUEADO&#x27;
+            },
+            {
+                id: &#x27;1021&#x27;,
+                code: &#x27;pxpzczo23&#x27;,
+                name: &#x27;Fernando Ruiz&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;INACTIVO&#x27;
+            },
+            {
+                id: &#x27;1022&#x27;,
+                code: &#x27;2c42cb5cb&#x27;,
+                name: &#x27;Isabel Herrera&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1023&#x27;,
+                code: &#x27;5k43kkk23&#x27;,
+                name: &#x27;Santiago Morales&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;INACTIVO&#x27;
+            },
+            {
+                id: &#x27;1024&#x27;,
+                code: &#x27;lm2tny2k4&#x27;,
+                name: &#x27;Lucía Jiménez&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1025&#x27;,
+                code: &#x27;nbm5mv45n&#x27;,
+                name: &#x27;Mateo Ortiz&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1026&#x27;,
+                code: &#x27;zx23zc42c&#x27;,
+                name: &#x27;Daniela Silva&#x27;,
+                category: &#x27;Almuno&#x27;,
+                status: &#x27;INACTIVO&#x27;
+            },
+            {
+                id: &#x27;1027&#x27;,
+                code: &#x27;acvx872gc&#x27;,
+                name: &#x27;Álvaro Castillo&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1028&#x27;,
+                code: &#x27;tx125ck42&#x27;,
+                name: &#x27;Eva Reyes&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            },
+            {
+                id: &#x27;1029&#x27;,
+                code: &#x27;gwuby345v&#x27;,
+                name: &#x27;Adriana Rojas&#x27;,
+                category: &#x27;Docente&#x27;,
+                status: &#x27;ACTIVO&#x27;
+            }            
+        ];
+    }
+
+
+    getProductsMini() {
+        return Promise.resolve(this.getUsersData().slice(0, 5));
+    }
+
+    getProductsSmall() {
+        return Promise.resolve(this.getUsersData().slice(0, 10));
+    }
+
+    getUsers() {
+        return Promise.resolve(this.getUsersData());
+    }
+};</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsersService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

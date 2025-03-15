@@ -1,0 +1,888 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AlertsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/notifications/alerts/alerts.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-alerts</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./alerts.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./alerts.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dismissible" >dismissible</a>
+                            </li>
+                            <li>
+                                <a href="#visible" >visible</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAlertVisibleChange" >onAlertVisibleChange</a>
+                            </li>
+                            <li>
+                                <a href="#onResetDismiss" >onResetDismiss</a>
+                            </li>
+                            <li>
+                                <a href="#onToggleDismiss" >onToggleDismiss</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAlertVisibleChange"></a>
+                    <span class="name">
+                        <span ><b>onAlertVisibleChange</b></span>
+                        <a href="#onAlertVisibleChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAlertVisibleChange(eventValue: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>eventValue</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>this.visible</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onResetDismiss"></a>
+                    <span class="name">
+                        <span ><b>onResetDismiss</b></span>
+                        <a href="#onResetDismiss"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onResetDismiss()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onToggleDismiss"></a>
+                    <span class="name">
+                        <span ><b>onToggleDismiss</b></span>
+                        <a href="#onToggleDismiss"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onToggleDismiss()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dismissible"></a>
+                    <span class="name">
+                        <span ><b>dismissible</b></span>
+                        <a href="#dismissible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visible"></a>
+                    <span class="name">
+                        <span ><b>visible</b></span>
+                        <a href="#visible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[true, true]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/views/notifications/alerts/alerts.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-alerts&#x27;,
+  templateUrl: &#x27;./alerts.component.html&#x27;,
+  styleUrls: [&#x27;./alerts.component.scss&#x27;]
+})
+export class AlertsComponent implements OnInit {
+
+  visible &#x3D; [true, true];
+  dismissible &#x3D; true;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  onAlertVisibleChange(eventValue: any &#x3D; this.visible) {
+    this.visible[1] &#x3D; eventValue;
+  }
+
+  onResetDismiss() {
+    this.visible &#x3D; [true, true];
+  }
+
+  onToggleDismiss() {
+    this.dismissible &#x3D; !this.dismissible;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;c-row&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;app-docs-callout href&#x3D;&quot;components/alert&quot; name&#x3D;&quot;Alert&quot;&gt;&lt;/app-docs-callout&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header&gt;
+        &lt;strong&gt;Angular Alert&lt;/strong&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Angular Alert is prepared for any length of text, as well as an optional close button.
+          For a styling, use one of the &lt;strong&gt;required&lt;/strong&gt; contextual &lt;code&gt;color&lt;/code&gt;
+          props (e.g., &lt;code&gt;primary&lt;/code&gt;). For inline dismissal, use the
+          &lt;a href&#x3D;&quot;https://coreui.io/angular/docs/4.0/components/alert#dismissing&quot;&gt;
+            dismissing prop
+          &lt;/a&gt;
+          .
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/alert&quot;&gt;
+          &lt;c-alert color&#x3D;&quot;primary&quot;&gt;A simple primary alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;secondary&quot;&gt;A simple secondary alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;success&quot;&gt;A simple success alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;danger&quot;&gt;A simple danger alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;warning&quot;&gt;A simple warning alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;info&quot;&gt;A simple info alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;light&quot;&gt;A simple light alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;dark&quot;&gt;A simple dark alert—check it out!&lt;/c-alert&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Alert&lt;/strong&gt; &lt;small&gt;solid variant&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/alert&quot;&gt;
+          &lt;c-alert color&#x3D;&quot;primary&quot; variant&#x3D;&quot;solid&quot;&gt;A solid primary alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;secondary&quot; variant&#x3D;&quot;solid&quot;&gt;A solid secondary alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;success&quot; variant&#x3D;&quot;solid&quot;&gt;A solid success alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;danger&quot; variant&#x3D;&quot;solid&quot;&gt;A solid danger alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;warning&quot; variant&#x3D;&quot;solid&quot;&gt;A solid warning alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;info&quot; variant&#x3D;&quot;solid&quot;&gt;A solid info alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;light&quot; variant&#x3D;&quot;solid&quot;&gt;A solid light alert—check it out!&lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;dark&quot; variant&#x3D;&quot;solid&quot;&gt;A solid dark alert—check it out!&lt;/c-alert&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Alert&lt;/strong&gt; &lt;small&gt;Link color&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Use the &lt;code&gt;cAlertLink&lt;/code&gt; directive to immediately give matching colored
+          links inside any alert.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/alert#link-color&quot;&gt;
+          &lt;c-alert color&#x3D;&quot;primary&quot;&gt;
+            A simple primary alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give
+            it a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;secondary&quot;&gt;
+            A simple secondary alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;.
+            Give it a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;success&quot;&gt;
+            A simple success alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give
+            it a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;danger&quot;&gt;
+            A simple danger alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give
+            it a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;warning&quot;&gt;
+            A simple warning alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give
+            it a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;info&quot;&gt;
+            A simple info alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give it
+            a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;light&quot;&gt;
+            A simple light alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give it
+            a click if you like.
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;dark&quot;&gt;
+            A simple dark alert with &lt;a cAlertLink routerLink&#x3D;&quot;./&quot;&gt;an example link&lt;/a&gt;. Give it
+            a click if you like.
+          &lt;/c-alert&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Alert&lt;/strong&gt; &lt;small&gt;Additional content&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Alert can also incorporate supplementary components &amp;amp; elements like heading,
+          paragraph, and divider.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/alert#additional-content&quot;&gt;
+          &lt;c-alert color&#x3D;&quot;success&quot;&gt;
+            &lt;h4 cAlertHeading&gt;Well done!&lt;/h4&gt;
+            &lt;p&gt;
+              Aww yeah, you successfully read this important alert message. This example text is
+              going to run a bit longer so that you can see how spacing within an alert works
+              with this kind of content.
+            &lt;/p&gt;
+            &lt;hr/&gt;
+            &lt;p class&#x3D;&quot;mb-0&quot;&gt;
+              Whenever you need to, be sure to use margin utilities to keep things nice and
+              tidy.
+            &lt;/p&gt;
+          &lt;/c-alert&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Alert&lt;/strong&gt;  &lt;small&gt;Icons&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/alert&quot;&gt;
+          &lt;c-alert color&#x3D;&quot;dark&quot; class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+            &lt;svg cIcon name&#x3D;&quot;cilCheck&quot; class&#x3D;&quot;flex-shrink-0 me-2&quot; size&#x3D;&quot;xl&quot;&gt;&lt;/svg&gt;
+            &lt;div&gt;An example alert with an icon&lt;/div&gt;
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;secondary&quot; class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+            &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot; fill&#x3D;&quot;currentColor&quot; class&#x3D;&quot;bi bi-exclamation-triangle-fill flex-shrink-0 me-2&quot; viewBox&#x3D;&quot;0 0 16 16&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Warning:&quot;&gt;
+              &lt;path d&#x3D;&quot;M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z&quot;/&gt;
+            &lt;/svg&gt;
+            &lt;div&gt;An example alert with an icon&lt;/div&gt;
+          &lt;/c-alert&gt;
+
+          &lt;hr&gt;
+          
+          &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; class&#x3D;&quot;d-none&quot;&gt;
+            &lt;symbol id&#x3D;&quot;check-circle-fill&quot; fill&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 16 16&quot;&gt;
+              &lt;path d&#x3D;&quot;M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z&quot;/&gt;
+            &lt;/symbol&gt;
+            &lt;symbol id&#x3D;&quot;info-fill&quot; fill&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 16 16&quot;&gt;
+              &lt;path d&#x3D;&quot;M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z&quot;/&gt;
+            &lt;/symbol&gt;
+            &lt;symbol id&#x3D;&quot;exclamation-triangle-fill&quot; fill&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 16 16&quot;&gt;
+              &lt;path d&#x3D;&quot;M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z&quot;/&gt;
+            &lt;/symbol&gt;
+          &lt;/svg&gt;
+
+          &lt;c-alert color&#x3D;&quot;primary&quot; class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+            &lt;svg class&#x3D;&quot;bi flex-shrink-0 me-2&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Info:&quot;&gt;&lt;use xlink:href&#x3D;&quot;#info-fill&quot;/&gt;&lt;/svg&gt;
+            &lt;div&gt;An example primary alert with an icon&lt;/div&gt;
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;success&quot; class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+            &lt;svg class&#x3D;&quot;bi flex-shrink-0 me-2&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Info:&quot;&gt;&lt;use xlink:href&#x3D;&quot;#check-circle-fill&quot;/&gt;&lt;/svg&gt;
+            &lt;div&gt;An example success alert with an icon&lt;/div&gt;
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;warning&quot; class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+            &lt;svg class&#x3D;&quot;bi flex-shrink-0 me-2&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Info:&quot;&gt;&lt;use xlink:href&#x3D;&quot;#exclamation-triangle-fill&quot;/&gt;&lt;/svg&gt;
+            &lt;div&gt;An example warning alert with an icon&lt;/div&gt;
+          &lt;/c-alert&gt;
+          &lt;c-alert color&#x3D;&quot;danger&quot; class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+            &lt;svg class&#x3D;&quot;bi flex-shrink-0 me-2&quot; width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Info:&quot;&gt;&lt;use xlink:href&#x3D;&quot;#exclamation-triangle-fill&quot;/&gt;&lt;/svg&gt;
+            &lt;div&gt;An example danger alert with an icon&lt;/div&gt;
+          &lt;/c-alert&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+  &lt;c-col xs&#x3D;&quot;12&quot;&gt;
+    &lt;c-card class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;c-card-header ngPreserveWhitespaces&gt;
+        &lt;strong&gt;Angular Alert&lt;/strong&gt; &lt;small&gt;Dismissing&lt;/small&gt;
+      &lt;/c-card-header&gt;
+      &lt;c-card-body&gt;
+        &lt;p class&#x3D;&quot;text-medium-emphasis small&quot;&gt;
+          Alerts can also be easily dismissed. Just add the &lt;code&gt;dismissible&lt;/code&gt; prop.
+        &lt;/p&gt;
+        &lt;app-docs-example href&#x3D;&quot;components/alert#dismissing&quot;&gt;
+          &lt;c-alert [(visible)]&#x3D;&quot;visible[0]&quot; dismissible color&#x3D;&quot;warning&quot; fade *ngIf&#x3D;&quot;visible[0]&quot;&gt;
+            &lt;strong&gt;Go right ahead&lt;/strong&gt; and click that dismiss over there on the right.
+          &lt;/c-alert&gt;
+          &lt;c-alert #alertWithButtonCloseTemplate&#x3D;&quot;cAlert&quot;
+                   [dismissible]&#x3D;&quot;dismissible&quot;
+                   [visible]&#x3D;&quot;visible[1]&quot;
+                   (visibleChange)&#x3D;&quot;onAlertVisibleChange($event)&quot;
+                   color&#x3D;&quot;dark&quot;
+                   fade
+                   variant&#x3D;&quot;solid&quot;&gt;
+            &lt;ng-template [ngIf]&#x3D;&quot;alertWithButtonCloseTemplate.dismissible&quot; cTemplateId&#x3D;&quot;alertButtonCloseTemplate&quot;&gt;
+              &lt;button (click)&#x3D;&quot;visible[1]&#x3D;false&quot; cButtonClose white&gt;&lt;/button&gt;
+            &lt;/ng-template&gt;
+            &lt;strong&gt;Go right ahead&lt;/strong&gt; and click that dismiss over there on the right.
+          &lt;/c-alert&gt;
+          &lt;hr&gt;
+          &lt;button (click)&#x3D;&quot;onToggleDismiss()&quot; cButton class&#x3D;&quot;&#x27;me-1&#x27;&quot; color&#x3D;&quot;primary&quot;&gt;Toggle&lt;/button&gt;
+          &lt;button (click)&#x3D;&quot;onResetDismiss()&quot; cButton color&#x3D;&quot;secondary&quot;&gt;Reset&lt;/button&gt;
+        &lt;/app-docs-example&gt;
+      &lt;/c-card-body&gt;
+    &lt;/c-card&gt;
+  &lt;/c-col&gt;
+&lt;/c-row&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./alerts.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><c-row>  <c-col xs="12">    <app-docs-callout href="components/alert" name="Alert"></app-docs-callout>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header>        <strong>Angular Alert</strong>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Angular Alert is prepared for any length of text, as well as an optional close button.          For a styling, use one of the <strong>required</strong> contextual <code>color</code>          props (e.g., <code>primary</code>). For inline dismissal, use the          <a href="https://coreui.io/angular/docs/4.0/components/alert#dismissing">            dismissing prop          </a>          .        </p>        <app-docs-example href="components/alert">          <c-alert color="primary">A simple primary alert—check it out!</c-alert>          <c-alert color="secondary">A simple secondary alert—check it out!</c-alert>          <c-alert color="success">A simple success alert—check it out!</c-alert>          <c-alert color="danger">A simple danger alert—check it out!</c-alert>          <c-alert color="warning">A simple warning alert—check it out!</c-alert>          <c-alert color="info">A simple info alert—check it out!</c-alert>          <c-alert color="light">A simple light alert—check it out!</c-alert>          <c-alert color="dark">A simple dark alert—check it out!</c-alert>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Alert</strong> <small>solid variant</small>      </c-card-header>      <c-card-body>        <app-docs-example href="components/alert">          <c-alert color="primary" variant="solid">A solid primary alert—check it out!</c-alert>          <c-alert color="secondary" variant="solid">A solid secondary alert—check it out!</c-alert>          <c-alert color="success" variant="solid">A solid success alert—check it out!</c-alert>          <c-alert color="danger" variant="solid">A solid danger alert—check it out!</c-alert>          <c-alert color="warning" variant="solid">A solid warning alert—check it out!</c-alert>          <c-alert color="info" variant="solid">A solid info alert—check it out!</c-alert>          <c-alert color="light" variant="solid">A solid light alert—check it out!</c-alert>          <c-alert color="dark" variant="solid">A solid dark alert—check it out!</c-alert>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Alert</strong> <small>Link color</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Use the <code>cAlertLink</code> directive to immediately give matching colored          links inside any alert.        </p>        <app-docs-example href="components/alert#link-color">          <c-alert color="primary">            A simple primary alert with <a cAlertLink routerLink="./">an example link</a>. Give            it a click if you like.          </c-alert>          <c-alert color="secondary">            A simple secondary alert with <a cAlertLink routerLink="./">an example link</a>.            Give it a click if you like.          </c-alert>          <c-alert color="success">            A simple success alert with <a cAlertLink routerLink="./">an example link</a>. Give            it a click if you like.          </c-alert>          <c-alert color="danger">            A simple danger alert with <a cAlertLink routerLink="./">an example link</a>. Give            it a click if you like.          </c-alert>          <c-alert color="warning">            A simple warning alert with <a cAlertLink routerLink="./">an example link</a>. Give            it a click if you like.          </c-alert>          <c-alert color="info">            A simple info alert with <a cAlertLink routerLink="./">an example link</a>. Give it            a click if you like.          </c-alert>          <c-alert color="light">            A simple light alert with <a cAlertLink routerLink="./">an example link</a>. Give it            a click if you like.          </c-alert>          <c-alert color="dark">            A simple dark alert with <a cAlertLink routerLink="./">an example link</a>. Give it            a click if you like.          </c-alert>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Alert</strong> <small>Additional content</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Alert can also incorporate supplementary components &amp; elements like heading,          paragraph, and divider.        </p>        <app-docs-example href="components/alert#additional-content">          <c-alert color="success">            <h4 cAlertHeading>Well done!</h4>            <p>              Aww yeah, you successfully read this important alert message. This example text is              going to run a bit longer so that you can see how spacing within an alert works              with this kind of content.            </p>            <hr/>            <p class="mb-0">              Whenever you need to, be sure to use margin utilities to keep things nice and              tidy.            </p>          </c-alert>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Alert</strong>  <small>Icons</small>      </c-card-header>      <c-card-body>        <app-docs-example href="components/alert">          <c-alert color="dark" class="d-flex align-items-center">            <svg cIcon name="cilCheck" class="flex-shrink-0 me-2" size="xl"></svg>            <div>An example alert with an icon</div>          </c-alert>          <c-alert color="secondary" class="d-flex align-items-center">            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>            </svg>            <div>An example alert with an icon</div>          </c-alert>          <hr>                    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>            </symbol>            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>            </symbol>            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>            </symbol>          </svg>          <c-alert color="primary" class="d-flex align-items-center">            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>            <div>An example primary alert with an icon</div>          </c-alert>          <c-alert color="success" class="d-flex align-items-center">            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#check-circle-fill"/></svg>            <div>An example success alert with an icon</div>          </c-alert>          <c-alert color="warning" class="d-flex align-items-center">            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#exclamation-triangle-fill"/></svg>            <div>An example warning alert with an icon</div>          </c-alert>          <c-alert color="danger" class="d-flex align-items-center">            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#exclamation-triangle-fill"/></svg>            <div>An example danger alert with an icon</div>          </c-alert>        </app-docs-example>      </c-card-body>    </c-card>  </c-col>  <c-col xs="12">    <c-card class="mb-4">      <c-card-header ngPreserveWhitespaces>        <strong>Angular Alert</strong> <small>Dismissing</small>      </c-card-header>      <c-card-body>        <p class="text-medium-emphasis small">          Alerts can also be easily dismissed. Just add the <code>dismissible</code> prop.        </p>        <app-docs-example href="components/alert#dismissing">          <c-alert [(visible)]="visible[0]" dismissible color="warning" fade *ngIf="visible[0]">            <strong>Go right ahead</strong> and click that dismiss over there on the right.          </c-alert>          <c-alert #alertWithButtonCloseTemplate="cAlert"                   [dismissible]="dismissible"                   [visible]="visible[1]"                   (visibleChange)="onAlertVisibleChange($event)"                   color="dark"                   fade                   variant="solid">            <ng-template [ngIf]="alertWithButtonCloseTemplate.dismissible" cTemplateId="alertButtonCloseTemplate">              <button (click)="visible[1]=false" cButtonClose white></button>            </ng-template>            <strong>Go right ahead</strong> and click that dismiss over there on the right.          </c-alert>          <hr>          <button (click)="onToggleDismiss()" cButton class="\'me-1\'" color="primary">Toggle</button>          <button (click)="onResetDismiss()" cButton color="secondary">Reset</button>        </app-docs-example>      </c-card-body>    </c-card>  </c-col></c-row></div>'
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToastComponent', 'selector': 'app-toast-simple'},{'name': 'BadgesComponent', 'selector': 'app-badges'},{'name': 'ChartSample', 'selector': 'app-chart-sample'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DocsCalloutComponent', 'selector': 'app-docs-callout'},{'name': 'DocsExampleComponent', 'selector': 'app-docs-example'},{'name': 'DocsLinkComponent', 'selector': 'app-docs-link'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesManagementComponent', 'selector': 'grades-management'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalsComponent', 'selector': 'app-modals'},{'name': 'Page404Component', 'selector': 'app-page404'},{'name': 'Page500Component', 'selector': 'app-page500'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SchedulesManagement', 'selector': 'schedules-management'},{'name': 'SchoolYearManagementComponent', 'selector': 'school-year-management'},{'name': 'SectionsManagementComponent', 'selector': 'sections-management'},{'name': 'StudentManagementComponent', 'selector': 'student-management'},{'name': 'SubjectManagementComponent', 'selector': 'subject-management'},{'name': 'ThemeColorComponent', 'selector': 'app-theme-color'},{'name': 'ToastersComponent', 'selector': 'app-toasters'},{'name': 'ToastSampleIconComponent', 'selector': 'toast-sample-icon'},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserManagementComponent', 'selector': 'user-management'},{'name': 'WidgetsBrandComponent', 'selector': 'app-widgets-brand'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'},{'name': 'WidgetsDropdownComponent', 'selector': 'app-widgets-dropdown'},{'name': 'WidgetsEComponent', 'selector': 'app-widgets-e'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AlertsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AlertsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

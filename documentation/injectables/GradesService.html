@@ -1,0 +1,1290 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >GradesService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/data/services/grades/grades.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#grades" >grades</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addGrade" >addGrade</a>
+                            </li>
+                            <li>
+                                <a href="#getData" >getData</a>
+                            </li>
+                            <li>
+                                <a href="#getGrades" >getGrades</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addGrade"></a>
+                    <span class="name">
+                        <span ><b>addGrade</b></span>
+                        <a href="#addGrade"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addGrade(grade: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="841"
+                                    class="link-to-prism">src/app/data/services/grades/grades.service.ts:841</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>grade</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getData"></a>
+                    <span class="name">
+                        <span ><b>getData</b></span>
+                        <a href="#getData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="7"
+                                    class="link-to-prism">src/app/data/services/grades/grades.service.ts:7</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGrades"></a>
+                    <span class="name">
+                        <span ><b>getGrades</b></span>
+                        <a href="#getGrades"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getGrades()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="837"
+                                    class="link-to-prism">src/app/data/services/grades/grades.service.ts:837</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="grades"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>grades</b></span>
+                        <a href="#grades"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.getData()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/data/services/grades/grades.service.ts:5</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+@Injectable()
+export class GradesService {
+  private grades &#x3D; this.getData(); 
+
+  getData() {
+    return [
+       // matemática
+       {
+        id: 1010,
+        name: &#x27;Taller Avanzado&#x27;,
+        date: &#x27;15-01-2024&#x27;,
+        status: &#x27;08&#x27;,
+        schoolYear: &#x27;2024-2025&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+        username: &#x27;ycontreras&#x27;,
+      },
+      {
+        id: 1020,
+        name: &#x27;Exámen Semestral&#x27;,
+        date: &#x27;20-02-2024&#x27;,
+        status: &#x27;12&#x27;,
+        schoolYear: &#x27;2024-2025&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+        username: &#x27;ycontreras&#x27;,
+      },
+
+      // historia
+      {
+        id: 2010,
+        name: &#x27;Investigación Documental&#x27;,
+        date: &#x27;10-01-2024&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2024-2025&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+      {
+        id: 2020,
+        name: &#x27;Debate Histórico&#x27;,
+        date: &#x27;15-03-2024&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2024-2025&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+        username: &#x27;ycontreras&#x27;,
+      },
+
+      // religion
+      {
+        id: 2020,
+        name: &#x27;Presentación Oral&#x27;,
+        date: &#x27;09-03-2025&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2024-2025&#x27;,
+        representative: {
+          name: &#x27;Religión IV&#x27;,
+        },
+        username: &#x27;ycontreras&#x27;,
+      },
+      
+       // matemática
+       {
+        id: 1010,
+        name: &#x27;Taller Avanzado&#x27;,
+        date: &#x27;15-01-2023&#x27;,
+        status: &#x27;09&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+      },
+      {
+        id: 1020,
+        name: &#x27;Exámen Semestral&#x27;,
+        date: &#x27;20-02-2023&#x27;,
+        status: &#x27;12&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+      },
+
+      // historia
+      {
+        id: 2010,
+        name: &#x27;Investigación Documental&#x27;,
+        date: &#x27;10-01-2023&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+      {
+        id: 2020,
+        name: &#x27;Debate Histórico&#x27;,
+        date: &#x27;15-03-2023&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+
+      // biología
+      {
+        id: 3010,
+        name: &#x27;Práctica de Laboratorio&#x27;,
+        date: &#x27;25-01-2023&#x27;,
+        status: &#x27;13&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Biología&#x27;,
+        },
+      },
+      {
+        id: 3020,
+        name: &#x27;Proyecto Ambiental&#x27;,
+        date: &#x27;12-03-2023&#x27;,
+        status: &#x27;17&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Biología&#x27;,
+        },
+      },
+
+      // química
+      {
+        id: 4010,
+        name: &#x27;Taller de Química&#x27;,
+        date: &#x27;18-02-2023&#x27;,
+        status: &#x27;11&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Química&#x27;,
+        },
+      },
+      {
+        id: 4020,
+        name: &#x27;Exposición Científica&#x27;,
+        date: &#x27;28-03-2023&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Química&#x27;,
+        },
+      },
+
+      // inglés
+      {
+        id: 5010,
+        name: &#x27;Presentación Oral&#x27;,
+        date: &#x27;14-02-2023&#x27;,
+        status: &#x27;15&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Inglés&#x27;,
+        },
+      },
+      {
+        id: 5020,
+        name: &#x27;Proyecto Cultural&#x27;,
+        date: &#x27;30-03-2023&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Inglés&#x27;,
+        },
+      },
+
+      // arte
+      {
+        id: 6010,
+        name: &#x27;Escultura Básica&#x27;,
+        date: &#x27;05-01-2023&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Arte&#x27;,
+        },
+      },
+      {
+        id: 6020,
+        name: &#x27;Exposición Colectiva&#x27;,
+        date: &#x27;22-03-2023&#x27;,
+        status: &#x27;19&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Arte&#x27;,
+        },
+      },
+
+      // música
+      {
+        id: 7010,
+        name: &#x27;Taller de Guitarra&#x27;,
+        date: &#x27;12-02-2023&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Música&#x27;,
+        },
+      },
+      {
+        id: 7020,
+        name: &#x27;Concierto Final&#x27;,
+        date: &#x27;28-03-2023&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Música&#x27;,
+        },
+      },
+
+      // informática
+      {
+        id: 8010,
+        name: &#x27;Diseño de Página Web&#x27;,
+        date: &#x27;18-01-2023&#x27;,
+        status: &#x27;19&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Informática&#x27;,
+        },
+      },
+      {
+        id: 8020,
+        name: &#x27;Simulación Computacional&#x27;,
+        date: &#x27;10-03-2023&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2022-2023&#x27;,
+        representative: {
+          name: &#x27;Informática&#x27;,
+        },
+      },
+      // matemática
+      {
+        id: 1000,
+        name: &#x27;Taller I&#x27;,
+        date: &#x27;06-01-2024&#x27;,
+        status: &#x27;05&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+      },
+      {
+        id: 2000,
+        name: &#x27;Trabajo corto&#x27;,
+        date: &#x27;12-02-2024&#x27;,
+        status: &#x27;10&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+      },
+      {
+        id: 3000,
+        name: &#x27;Taller II&#x27;,
+        date: &#x27;06-03-2024&#x27;,
+        status: &#x27;13&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Matemática&#x27;,
+        },
+      },
+
+      // historia
+      {
+        id: 4000,
+        name: &#x27;Exámen I&#x27;,
+        date: &#x27;07-01-2024&#x27;,
+        status: &#x27;10&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+      {
+        id: 5000,
+        name: &#x27;Exposición I&#x27;,
+        date: &#x27;10-02-2024&#x27;,
+        status: &#x27;17&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+      {
+        id: 6000,
+        name: &#x27;Exposición II&#x27;,
+        date: &#x27;20-02-2024&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+      {
+        id: 7000,
+        name: &#x27;Maqueta&#x27;,
+        date: &#x27;04-03-2024&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Historia&#x27;,
+        },
+      },
+
+      // biología
+      {
+        id: 8000,
+        name: &#x27;Exámen I&#x27;,
+        date: &#x27;10-01-2024&#x27;,
+        status: &#x27;07&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Biología&#x27;,
+        },
+      },
+      {
+        id: 9000,
+        name: &#x27;Exámen II&#x27;,
+        date: &#x27;10-02-2024&#x27;,
+        status: &#x27;09&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Biología&#x27;,
+        },
+      },
+      {
+        id: 10000,
+        name: &#x27;Exámen III&#x27;,
+        date: &#x27;20-02-2024&#x27;,
+        status: &#x27;13&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Biología&#x27;,
+        },
+      },
+
+      // química
+      {
+        id: 11000,
+        name: &#x27;Laboratorio I&#x27;,
+        date: &#x27;15-01-2024&#x27;,
+        status: &#x27;12&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Química&#x27;,
+        },
+      },
+      {
+        id: 12000,
+        name: &#x27;Exámen I&#x27;,
+        date: &#x27;25-02-2024&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Química&#x27;,
+        },
+      },
+      {
+        id: 13000,
+        name: &#x27;Trabajo en grupo&#x27;,
+        date: &#x27;05-03-2024&#x27;,
+        status: &#x27;15&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Química&#x27;,
+        },
+      },
+
+      // física
+      {
+        id: 14000,
+        name: &#x27;Práctica I&#x27;,
+        date: &#x27;10-01-2024&#x27;,
+        status: &#x27;10&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Física&#x27;,
+        },
+      },
+      {
+        id: 15000,
+        name: &#x27;Exámen I&#x27;,
+        date: &#x27;12-02-2024&#x27;,
+        status: &#x27;12&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Física&#x27;,
+        },
+      },
+      {
+        id: 16000,
+        name: &#x27;Laboratorio&#x27;,
+        date: &#x27;18-03-2024&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Física&#x27;,
+        },
+      },
+
+      // inglés
+      {
+        id: 17000,
+        name: &#x27;Examen Oral I&#x27;,
+        date: &#x27;08-01-2024&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Inglés&#x27;,
+        },
+      },
+      {
+        id: 18000,
+        name: &#x27;Ensayo&#x27;,
+        date: &#x27;18-02-2024&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Inglés&#x27;,
+        },
+      },
+      {
+        id: 19000,
+        name: &#x27;Examen Final&#x27;,
+        date: &#x27;22-03-2024&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Inglés&#x27;,
+        },
+      },
+
+      // literatura
+      {
+        id: 20000,
+        name: &#x27;Ensayo Literario&#x27;,
+        date: &#x27;10-01-2024&#x27;,
+        status: &#x27;15&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Literatura&#x27;,
+        },
+      },
+      {
+        id: 21000,
+        name: &#x27;Lectura Crítica&#x27;,
+        date: &#x27;14-02-2024&#x27;,
+        status: &#x27;12&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Literatura&#x27;,
+        },
+      },
+      {
+        id: 22000,
+        name: &#x27;Exposición&#x27;,
+        date: &#x27;24-03-2024&#x27;,
+        status: &#x27;17&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Literatura&#x27;,
+        },
+      },
+
+      // geografía
+      {
+        id: 23000,
+        name: &#x27;Mapa Conceptual&#x27;,
+        date: &#x27;05-01-2024&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Geografía&#x27;,
+        },
+      },
+      {
+        id: 24000,
+        name: &#x27;Proyecto de Investigación&#x27;,
+        date: &#x27;20-02-2024&#x27;,
+        status: &#x27;19&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Geografía&#x27;,
+        },
+      },
+      {
+        id: 25000,
+        name: &#x27;Exámen Final&#x27;,
+        date: &#x27;15-03-2024&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Geografía&#x27;,
+        },
+      },
+
+      // educación física
+      {
+        id: 26000,
+        name: &#x27;Evaluación Física I&#x27;,
+        date: &#x27;12-01-2024&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Educación Física&#x27;,
+        },
+      },
+      {
+        id: 27000,
+        name: &#x27;Prueba de Resistencia&#x27;,
+        date: &#x27;22-02-2024&#x27;,
+        status: &#x27;17&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Educación Física&#x27;,
+        },
+      },
+      {
+        id: 28000,
+        name: &#x27;Torneo Deportivo&#x27;,
+        date: &#x27;25-03-2024&#x27;,
+        status: &#x27;19&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Educación Física&#x27;,
+        },
+      },
+
+      // arte
+      {
+        id: 29000,
+        name: &#x27;Dibujo I&#x27;,
+        date: &#x27;07-01-2024&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Arte&#x27;,
+        },
+      },
+      {
+        id: 30000,
+        name: &#x27;Pintura&#x27;,
+        date: &#x27;28-02-2024&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Arte&#x27;,
+        },
+      },
+      {
+        id: 31000,
+        name: &#x27;Exposición de Arte&#x27;,
+        date: &#x27;20-03-2024&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Arte&#x27;,
+        },
+      },
+
+      // música
+      {
+        id: 32000,
+        name: &#x27;Concierto&#x27;,
+        date: &#x27;11-01-2024&#x27;,
+        status: &#x27;19&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Música&#x27;,
+        },
+      },
+      {
+        id: 33000,
+        name: &#x27;Composición Musical&#x27;,
+        date: &#x27;15-02-2024&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Música&#x27;,
+        },
+      },
+      {
+        id: 34000,
+        name: &#x27;Examen Práctico&#x27;,
+        date: &#x27;28-03-2024&#x27;,
+        status: &#x27;17&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Música&#x27;,
+        },
+      },
+
+      // informática
+      {
+        id: 35000,
+        name: &#x27;Proyecto de Software&#x27;,
+        date: &#x27;20-01-2024&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Informática&#x27;,
+        },
+      },
+      {
+        id: 36000,
+        name: &#x27;Exámen Teórico&#x27;,
+        date: &#x27;25-02-2024&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Informática&#x27;,
+        },
+      },
+      {
+        id: 37000,
+        name: &#x27;Taller de Programación&#x27;,
+        date: &#x27;30-03-2024&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2023-2024&#x27;,
+        representative: {
+          name: &#x27;Informática&#x27;,
+        },
+      },
+            // filosofía
+      {
+        id: 101,
+        name: &#x27;Ensayo Filosófico&#x27;,
+        date: &#x27;20-01-2022&#x27;,
+        status: &#x27;08&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Filosofía&#x27;,
+        },
+      },
+      {
+        id: 102,
+        name: &#x27;Debate Ético&#x27;,
+        date: &#x27;10-02-2022&#x27;,
+        status: &#x27;07&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Filosofía&#x27;,
+        },
+      },
+
+      // sociología
+      {
+        id: 201,
+        name: &#x27;Proyecto Comunitario&#x27;,
+        date: &#x27;25-01-2022&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Sociología&#x27;,
+        },
+      },
+      {
+        id: 202,
+        name: &#x27;Estudio de Caso&#x27;,
+        date: &#x27;15-03-2022&#x27;,
+        status: &#x27;12&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Sociología&#x27;,
+        },
+      },
+
+      // tecnología
+      {
+        id: 301,
+        name: &#x27;Diseño de Prototipos&#x27;,
+        date: &#x27;30-01-2022&#x27;,
+        status: &#x27;16&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Tecnología&#x27;,
+        },
+      },
+      {
+        id: 302,
+        name: &#x27;Taller de Innovación&#x27;,
+        date: &#x27;28-03-2022&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Tecnología&#x27;,
+        },
+      },
+
+      // economía
+      {
+        id: 401,
+        name: &#x27;Análisis Financiero&#x27;,
+        date: &#x27;12-02-2022&#x27;,
+        status: &#x27;09&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Economía&#x27;,
+        },
+      },
+      {
+        id: 402,
+        name: &#x27;Estudio de Mercados&#x27;,
+        date: &#x27;15-03-2022&#x27;,
+        status: &#x27;15&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Economía&#x27;,
+        },
+      },
+
+      // educación cívica
+      {
+        id: 501,
+        name: &#x27;Simulación Parlamentaria&#x27;,
+        date: &#x27;18-01-2022&#x27;,
+        status: &#x27;06&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Educación Cívica&#x27;,
+        },
+      },
+      {
+        id: 502,
+        name: &#x27;Foro de Derechos Humanos&#x27;,
+        date: &#x27;20-02-2022&#x27;,
+        status: &#x27;08&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Educación Cívica&#x27;,
+        },
+      },
+
+      // artes escénicas
+      {
+        id: 601,
+        name: &#x27;Obra Teatral&#x27;,
+        date: &#x27;05-02-2022&#x27;,
+        status: &#x27;17&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Artes Escénicas&#x27;,
+        },
+      },
+      {
+        id: 602,
+        name: &#x27;Presentación Coreográfica&#x27;,
+        date: &#x27;10-03-2022&#x27;,
+        status: &#x27;20&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Artes Escénicas&#x27;,
+        },
+      },
+
+      // educación ambiental
+      {
+        id: 701,
+        name: &#x27;Taller de Reciclaje&#x27;,
+        date: &#x27;18-01-2022&#x27;,
+        status: &#x27;09&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Educación Ambiental&#x27;,
+        },
+      },
+      {
+        id: 702,
+        name: &#x27;Campaña Ecológica&#x27;,
+        date: &#x27;20-03-2022&#x27;,
+        status: &#x27;13&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Educación Ambiental&#x27;,
+        },
+      },
+
+      // literatura universal
+      {
+        id: 801,
+        name: &#x27;Análisis de Obras Clásicas&#x27;,
+        date: &#x27;12-01-2022&#x27;,
+        status: &#x27;11&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Literatura Universal&#x27;,
+        },
+      },
+      {
+        id: 802,
+        name: &#x27;Presentación Literaria&#x27;,
+        date: &#x27;28-03-2022&#x27;,
+        status: &#x27;19&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Literatura Universal&#x27;,
+        },
+      },
+
+      // estadística
+      {
+        id: 901,
+        name: &#x27;Encuesta Social&#x27;,
+        date: &#x27;25-02-2022&#x27;,
+        status: &#x27;14&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Estadística&#x27;,
+        },
+      },
+      {
+        id: 902,
+        name: &#x27;Análisis de Datos&#x27;,
+        date: &#x27;10-03-2022&#x27;,
+        status: &#x27;18&#x27;,
+        schoolYear: &#x27;2021-2022&#x27;,
+        representative: {
+          name: &#x27;Estadística&#x27;,
+        },
+      },
+    ];
+  }
+
+  getGrades() {
+    return Promise.resolve(this.getData());
+  }
+
+  addGrade(grade: any) {
+    this.grades &#x3D; [grade, ...this.grades]; 
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'GradesService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

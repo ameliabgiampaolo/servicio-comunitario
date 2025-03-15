@@ -1,0 +1,599 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >StudentService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/data/services/student/student.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getProductsMini" >getProductsMini</a>
+                            </li>
+                            <li>
+                                <a href="#getProductsSmall" >getProductsSmall</a>
+                            </li>
+                            <li>
+                                <a href="#getStudent" >getStudent</a>
+                            </li>
+                            <li>
+                                <a href="#getStudentData" >getStudentData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsMini"></a>
+                    <span class="name">
+                        <span ><b>getProductsMini</b></span>
+                        <a href="#getProductsMini"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsMini()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">src/app/data/services/student/student.service.ts:179</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsSmall"></a>
+                    <span class="name">
+                        <span ><b>getProductsSmall</b></span>
+                        <a href="#getProductsSmall"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsSmall()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/app/data/services/student/student.service.ts:183</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStudent"></a>
+                    <span class="name">
+                        <span ><b>getStudent</b></span>
+                        <a href="#getStudent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStudent()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="187"
+                                    class="link-to-prism">src/app/data/services/student/student.service.ts:187</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStudentData"></a>
+                    <span class="name">
+                        <span ><b>getStudentData</b></span>
+                        <a href="#getStudentData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStudentData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="5"
+                                    class="link-to-prism">src/app/data/services/student/student.service.ts:5</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+@Injectable()
+export class StudentService {
+    getStudentData() {
+        return [
+            // Primer Año - Sección A
+            { id: &#x27;1001&#x27;, name: &#x27;Pedro Jesús&#x27;, surname: &#x27;Gomez Perez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;pgomez&#x27; },
+            { id: &#x27;1002&#x27;, name: &#x27;Lucia&#x27;, surname: &#x27;Martinez López&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;lmartinez&#x27; },
+            { id: &#x27;1003&#x27;, name: &#x27;Carlos Andrés&#x27;, surname: &#x27;Hernandez Ruiz&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;chernandez&#x27; },
+            { id: &#x27;1004&#x27;, name: &#x27;Ana&#x27;, surname: &#x27;Jimenez Torres&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;ajimenez&#x27; },
+            { id: &#x27;1005&#x27;, name: &#x27;Luis Carlos&#x27;, surname: &#x27;Sanchez Mendez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;lsanchez&#x27; },
+            { id: &#x27;1006&#x27;, name: &#x27;Maria Andreina&#x27;, surname: &#x27;Diaz Muñoz&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;mdiaz&#x27; },
+            { id: &#x27;1007&#x27;, name: &#x27;Juan&#x27;, surname: &#x27;Ramirez Garcia&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;jramirez&#x27; },
+            { id: &#x27;1008&#x27;, name: &#x27;Elena de la Cruz&#x27;, surname: &#x27;Morales Gonzalez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;emorales&#x27; },
+            { id: &#x27;1009&#x27;, name: &#x27;Jorge&#x27;, surname: &#x27;Vargas Reyes&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;jvargas&#x27; },
+            { id: &#x27;1010&#x27;, name: &#x27;Sofia&#x27;, surname: &#x27;Lopez Fernandez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;slopez&#x27; },
+            { id: &#x27;1011&#x27;, name: &#x27;Raul Jesús&#x27;, surname: &#x27;Ortega Alvarez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;rortega&#x27; },
+            { id: &#x27;1012&#x27;, name: &#x27;Patricia&#x27;, surname: &#x27;Perez Gutierrez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;pperez&#x27; },
+            { id: &#x27;1013&#x27;, name: &#x27;Miguel de la Cruz&#x27;, surname: &#x27;Molina Rojas&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;mmolina&#x27; },
+            { id: &#x27;1014&#x27;, name: &#x27;Cristina&#x27;, surname: &#x27;Torres Nunez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;ctorres&#x27; },
+            { id: &#x27;1015&#x27;, name: &#x27;Luis Alberto&#x27;, surname: &#x27;Medina Castillo&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;lmedina&#x27; },
+    
+            // Primer Año - Sección B
+            { id: &#x27;1016&#x27;, name: &#x27;Pablo&#x27;, surname: &#x27;Aguilar Soto&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;paguilar&#x27; },
+            { id: &#x27;1017&#x27;, name: &#x27;Isabel Andreina&#x27;, surname: &#x27;Reyes Jimenez&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;ireyes&#x27; },
+            { id: &#x27;1018&#x27;, name: &#x27;Javier Moises&#x27;, surname: &#x27;Navarro Vargas&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;jnavarro&#x27; },
+            { id: &#x27;1019&#x27;, name: &#x27;Sara&#x27;, surname: &#x27;Peña Delgado&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;spena&#x27; },
+            { id: &#x27;1020&#x27;, name: &#x27;Fernando&#x27;, surname: &#x27;Castillo Molina&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;fcastillo&#x27; },
+            { id: &#x27;1021&#x27;, name: &#x27;Ana Paula&#x27;, surname: &#x27;Gil Romero&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;agil&#x27; },
+            { id: &#x27;1022&#x27;, name: &#x27;Diana&#x27;, surname: &#x27;Marquez Pardo&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;dmarquez&#x27; },
+            { id: &#x27;1023&#x27;, name: &#x27;Emilio&#x27;, surname: &#x27;Soto Herrera&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;esoto&#x27; },
+            { id: &#x27;1024&#x27;, name: &#x27;Lorena&#x27;, surname: &#x27;Mora Rivas&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;lmora&#x27; },
+            { id: &#x27;1025&#x27;, name: &#x27;Gabriel&#x27;, surname: &#x27;Campos Ortega&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;gcampos&#x27; },
+            { id: &#x27;1026&#x27;, name: &#x27;Beatriz&#x27;, surname: &#x27;Espinoza Salazar&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;bespinoza&#x27; },
+            { id: &#x27;1027&#x27;, name: &#x27;Martin&#x27;, surname: &#x27;Serrano Montes&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;mserrano&#x27; },
+            { id: &#x27;1028&#x27;, name: &#x27;Laura&#x27;, surname: &#x27;Guzman Mora&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;lguzman&#x27; },
+            { id: &#x27;1029&#x27;, name: &#x27;Sergio&#x27;, surname: &#x27;Medina Aguilera&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;smedina&#x27; },
+            { id: &#x27;1030&#x27;, name: &#x27;Gloria&#x27;, surname: &#x27;Ramos Herrera&#x27;, course: &#x27;Primer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;gramos&#x27; },
+            
+            // Segundo Año - Sección A
+            { id: &#x27;2001&#x27;, name: &#x27;Andrea Sofía&#x27;, surname: &#x27;Perez Silva&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;aperez&#x27; },
+            { id: &#x27;2002&#x27;, name: &#x27;Daniel Jesús&#x27;, surname: &#x27;Torres Jimenez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;dtorres&#x27; },
+            { id: &#x27;2003&#x27;, name: &#x27;Camila&#x27;, surname: &#x27;Gomez Hernandez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;cgomez&#x27; },
+            { id: &#x27;2004&#x27;, name: &#x27;Esteban&#x27;, surname: &#x27;Flores Mendoza&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;eflores&#x27; },
+            { id: &#x27;2005&#x27;, name: &#x27;Valentina Daniela&#x27;, surname: &#x27;Rivera Guzman&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;vrivera&#x27; },
+            { id: &#x27;2006&#x27;, name: &#x27;Rodrigo&#x27;, surname: &#x27;Herrera Lopez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;rherrera&#x27; },
+            { id: &#x27;2007&#x27;, name: &#x27;Gabriela&#x27;, surname: &#x27;Romero Ruiz&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;gromero&#x27; },
+            { id: &#x27;2008&#x27;, name: &#x27;Antonio&#x27;, surname: &#x27;Vargas Diaz&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;avargas&#x27; },
+            { id: &#x27;2009&#x27;, name: &#x27;Natalia&#x27;, surname: &#x27;Castro Sanchez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;ncastro&#x27; },
+            { id: &#x27;2010&#x27;, name: &#x27;Lucas&#x27;, surname: &#x27;Martinez Fernandez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;lmartinez&#x27; },
+            { id: &#x27;2011&#x27;, name: &#x27;Carla Valentina&#x27;, surname: &#x27;Ortiz Pineda&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;cortiz&#x27; },
+            { id: &#x27;2012&#x27;, name: &#x27;Emilio&#x27;, surname: &#x27;Sosa Morales&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;esosa&#x27; },
+            { id: &#x27;2013&#x27;, name: &#x27;Fernanda del Valle&#x27;, surname: &#x27;Luna Aguilar&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;fluna&#x27; },
+            { id: &#x27;2014&#x27;, name: &#x27;Oscar&#x27;, surname: &#x27;Reyes Vera&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;oreyes&#x27; },
+            { id: &#x27;2015&#x27;, name: &#x27;Sofia&#x27;, surname: &#x27;Delgado Perez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;sdelgado&#x27; },
+            
+            // Segundo Año - Sección B
+            { id: &#x27;2016&#x27;, name: &#x27;Isabela Paola&#x27;, surname: &#x27;Jimenez Alvarez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;ijimenez&#x27; },
+            { id: &#x27;2017&#x27;, name: &#x27;Mateo&#x27;, surname: &#x27;Castillo Nunez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;mcastillo&#x27; },
+            { id: &#x27;2018&#x27;, name: &#x27;Victoria&#x27;, surname: &#x27;Figueroa Salinas&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;vfigueroa&#x27; },
+            { id: &#x27;2019&#x27;, name: &#x27;Julian José&#x27;, surname: &#x27;Padilla Rosas&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;jpadilla&#x27; },
+            { id: &#x27;2020&#x27;, name: &#x27;Ariana Gabriela&#x27;, surname: &#x27;Cruz Garcia&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;acruz&#x27; },
+            { id: &#x27;2021&#x27;, name: &#x27;Samuel&#x27;, surname: &#x27;Mendez Ramos&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;smendez&#x27; },
+            { id: &#x27;2022&#x27;, name: &#x27;Irene&#x27;, surname: &#x27;Montes Perez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;imontes&#x27; },
+            { id: &#x27;2023&#x27;, name: &#x27;Dario&#x27;, surname: &#x27;Lopez Ortega&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;dlopez&#x27; },
+            { id: &#x27;2024&#x27;, name: &#x27;Valeria&#x27;, surname: &#x27;Gonzalez Ruiz&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;vgonzalez&#x27; },
+            { id: &#x27;2025&#x27;, name: &#x27;Ricardo&#x27;, surname: &#x27;Marquez Herrera&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;rmarquez&#x27; },
+            { id: &#x27;2026&#x27;, name: &#x27;Noelia Thalia&#x27;, surname: &#x27;Saenz Soto&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;nsaenz&#x27; },
+            { id: &#x27;2027&#x27;, name: &#x27;Leonardo&#x27;, surname: &#x27;Ruiz Vargas&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;lruiz&#x27; },
+            { id: &#x27;2028&#x27;, name: &#x27;Carolina&#x27;, surname: &#x27;Lara Gomez&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;clara&#x27; },
+            { id: &#x27;2029&#x27;, name: &#x27;Ivan&#x27;, surname: &#x27;Pacheco Salinas&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;ipacheco&#x27; },
+            { id: &#x27;2030&#x27;, name: &#x27;Marta&#x27;, surname: &#x27;Dominguez Delgado&#x27;, course: &#x27;Segundo Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;mdominguez&#x27; },
+            
+            // Tercer Año - Sección A
+            { id: &#x27;3001&#x27;, name: &#x27;Luisa&#x27;, surname: &#x27;Quintero Diaz&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;luisaquintero&#x27; },
+            { id: &#x27;3002&#x27;, name: &#x27;Santiago Ricardo&#x27;, surname: &#x27;Moreno Jimenez&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;santiagomoreno&#x27; },
+            { id: &#x27;3003&#x27;, name: &#x27;Raquel&#x27;, surname: &#x27;Arce Martinez&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;raquelarce&#x27; },
+            { id: &#x27;3004&#x27;, name: &#x27;David&#x27;, surname: &#x27;Lopez Castillo&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;davidlopez&#x27; },
+            { id: &#x27;3005&#x27;, name: &#x27;Luciana&#x27;, surname: &#x27;Velasco Ortega&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;lucianavelasco&#x27; },
+            { id: &#x27;3006&#x27;, name: &#x27;Felipe Lucio&#x27;, surname: &#x27;Ortega Vargas&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;felipeortega&#x27; },
+            { id: &#x27;3007&#x27;, name: &#x27;Marta&#x27;, surname: &#x27;Ramirez Montes&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;martaramirez&#x27; },
+            { id: &#x27;3008&#x27;, name: &#x27;Miguel Angel&#x27;, surname: &#x27;Gomez Suarez&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;miguelgomez&#x27; },
+            { id: &#x27;3009&#x27;, name: &#x27;Jimena&#x27;, surname: &#x27;Rios Morales&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;jimenarios&#x27; },
+            { id: &#x27;3010&#x27;, name: &#x27;Alvaro&#x27;, surname: &#x27;Hernandez Cordero&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;alvarohernandez&#x27; },
+            { id: &#x27;3011&#x27;, name: &#x27;Pilar del Carmen&#x27;, surname: &#x27;Medina Torres&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;pilarmedina&#x27; },
+            { id: &#x27;3012&#x27;, name: &#x27;Benjamin&#x27;, surname: &#x27;Fuentes Ramos&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;benjaminfuentes&#x27; },
+            { id: &#x27;3013&#x27;, name: &#x27;Angela&#x27;, surname: &#x27;Cardenas Pineda&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;angelacardenas&#x27; },
+            { id: &#x27;3014&#x27;, name: &#x27;Adrian&#x27;, surname: &#x27;Rodriguez Leon&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;adrianrodriguez&#x27; },
+            { id: &#x27;3015&#x27;, name: &#x27;Julia Lorena&#x27;, surname: &#x27;Carmona Luna&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;juliacarmona&#x27; },
+
+            // Tercer Año - Sección B
+            { id: &#x27;3016&#x27;, name: &#x27;Hugo Rafael&#x27;, surname: &#x27;Paredes Ruiz&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;hugoparedes&#x27; },
+            { id: &#x27;3017&#x27;, name: &#x27;Claudia&#x27;, surname: &#x27;Vega Gonzalez&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;claudiavega&#x27; },
+            { id: &#x27;3018&#x27;, name: &#x27;Diego Rafael&#x27;, surname: &#x27;Espinoza Marquez&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;diegoespinoza&#x27; },
+            { id: &#x27;3019&#x27;, name: &#x27;Emma&#x27;, surname: &#x27;Padilla Castro&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;emmapadilla&#x27; },
+            { id: &#x27;3020&#x27;, name: &#x27;Bruno Emilio&#x27;, surname: &#x27;Gonzalez Medina&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;brunogonzalez&#x27; },
+            { id: &#x27;3021&#x27;, name: &#x27;Alicia Sofia&#x27;, surname: &#x27;Santos Herrera&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;aliciasantos&#x27; },
+            { id: &#x27;3022&#x27;, name: &#x27;Joaquin&#x27;, surname: &#x27;Carrillo Silva&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;joaquincarrillo&#x27; },
+            { id: &#x27;3023&#x27;, name: &#x27;Lorena Paola&#x27;, surname: &#x27;Perez Torres&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;lorenaperez&#x27; },
+            { id: &#x27;3024&#x27;, name: &#x27;Ignacio&#x27;, surname: &#x27;Ramirez Soto&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;ignacioramirez&#x27; },
+            { id: &#x27;3025&#x27;, name: &#x27;Veronica Andreina&#x27;, surname: &#x27;Nunez Serrano&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;veronicanunez&#x27; },
+            { id: &#x27;3026&#x27;, name: &#x27;Estela&#x27;, surname: &#x27;Alvarez Guzman&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;estelaalvarez&#x27; },
+            { id: &#x27;3027&#x27;, name: &#x27;Luis Andrés&#x27;, surname: &#x27;Salinas Flores&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;luissalinas&#x27; },
+            { id: &#x27;3028&#x27;, name: &#x27;Fabiola&#x27;, surname: &#x27;Maldonado Pardo&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;fabiolamaldonado&#x27; },
+            { id: &#x27;3029&#x27;, name: &#x27;Ruben&#x27;, surname: &#x27;Suarez Vargas&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;rubensuarez&#x27; },
+            { id: &#x27;3030&#x27;, name: &#x27;Olivia&#x27;, surname: &#x27;Ordonez Marin&#x27;, course: &#x27;Tercer Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;oliviaordonez&#x27; },
+
+            // Cuarto Año - Sección A
+            { id: &#x27;4001&#x27;, name: &#x27;Yicel Astrid&#x27;, surname: &#x27;Contreras Marquez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;ycontreras&#x27; },
+            { id: &#x27;4002&#x27;, name: &#x27;Maria Fernanda&#x27;, surname: &#x27;Perez Ruiz&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;mariaf_perez&#x27; },
+            { id: &#x27;4003&#x27;, name: &#x27;Andres&#x27;, surname: &#x27;Gonzalez Herrera&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;andres_gonzalez&#x27; },
+            { id: &#x27;4004&#x27;, name: &#x27;Ana Isabel&#x27;, surname: &#x27;Sanchez Diaz&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;ana_sanchez&#x27; },
+            { id: &#x27;4005&#x27;, name: &#x27;Jose Manuel&#x27;, surname: &#x27;Martinez Ramirez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;josem_martinez&#x27; },
+            { id: &#x27;4006&#x27;, name: &#x27;Elena&#x27;, surname: &#x27;Castro Ponce&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;elena_castro&#x27; },
+            { id: &#x27;4007&#x27;, name: &#x27;Luis Alberto&#x27;, surname: &#x27;Vega Torres&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;luisvega&#x27; },
+            { id: &#x27;4008&#x27;, name: &#x27;Julia Patricia&#x27;, surname: &#x27;Navarro Rivas&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;juliapatricia_nav&#x27; },
+            { id: &#x27;4009&#x27;, name: &#x27;Rafael&#x27;, surname: &#x27;Vargas Soto&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;rafael_vargas&#x27; },
+            { id: &#x27;4010&#x27;, name: &#x27;Sofia&#x27;, surname: &#x27;Ortega Mejia&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;sofia_ortega&#x27; },
+            { id: &#x27;4011&#x27;, name: &#x27;Fernando&#x27;, surname: &#x27;Mora Gutierrez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;fer_mora&#x27; },
+            { id: &#x27;4012&#x27;, name: &#x27;Daniela&#x27;, surname: &#x27;Ruiz Padilla&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;daniela_ruiz&#x27; },
+            { id: &#x27;4013&#x27;, name: &#x27;Cesar Augusto&#x27;, surname: &#x27;Salazar Marin&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;cesar_salazar&#x27; },
+            { id: &#x27;4014&#x27;, name: &#x27;Emilia&#x27;, surname: &#x27;Rosales Sanchez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;emilia_rosales&#x27; },
+            { id: &#x27;4015&#x27;, name: &#x27;Miguel Angel&#x27;, surname: &#x27;Campos Nunez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección A&#x27;, username: &#x27;miguel_campos&#x27; },
+
+            // Cuarto Año - Sección B
+            { id: &#x27;4016&#x27;, name: &#x27;Laura Sofia&#x27;, surname: &#x27;Jimenez Pineda&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;laura_jimenez&#x27; },
+            { id: &#x27;4017&#x27;, name: &#x27;Juan Pablo&#x27;, surname: &#x27;Rojas Perez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;juanpablo_rojas&#x27; },
+            { id: &#x27;4018&#x27;, name: &#x27;Sara&#x27;, surname: &#x27;Aguilar Morales&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;sara_aguilar&#x27; },
+            { id: &#x27;4019&#x27;, name: &#x27;Diego&#x27;, surname: &#x27;Hernandez Montoya&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;diego_hernandez&#x27; },
+            { id: &#x27;4020&#x27;, name: &#x27;Lucia&#x27;, surname: &#x27;Mendez Robles&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;lucia_mendez&#x27; },
+            { id: &#x27;4021&#x27;, name: &#x27;Jorge Ivan&#x27;, surname: &#x27;Lopez Ortiz&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;jorgeivan_lopez&#x27; },
+            { id: &#x27;4022&#x27;, name: &#x27;Natalia&#x27;, surname: &#x27;Gutierrez Silva&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;natalia_gutierrez&#x27; },
+            { id: &#x27;4023&#x27;, name: &#x27;Mauricio&#x27;, surname: &#x27;Dominguez Vargas&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;mauricio_dominguez&#x27; },
+            { id: &#x27;4024&#x27;, name: &#x27;Paula Andrea&#x27;, surname: &#x27;Romero Garcia&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;paula_romero&#x27; },
+            { id: &#x27;4025&#x27;, name: &#x27;Raul&#x27;, surname: &#x27;Figueroa Pardo&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;raul_figueroa&#x27; },
+            { id: &#x27;4026&#x27;, name: &#x27;Andrea Carolina&#x27;, surname: &#x27;Espinoza Torres&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;andrea_espinoza&#x27; },
+            { id: &#x27;4027&#x27;, name: &#x27;Francisco Javier&#x27;, surname: &#x27;Luna Suarez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;francisco_luna&#x27; },
+            { id: &#x27;4028&#x27;, name: &#x27;Camila&#x27;, surname: &#x27;Mora Fuentes&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;camila_mora&#x27; },
+            { id: &#x27;4029&#x27;, name: &#x27;Julio Cesar&#x27;, surname: &#x27;Serrano Lopez&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;julio_serrano&#x27; },
+            { id: &#x27;4030&#x27;, name: &#x27;Alicia Beatriz&#x27;, surname: &#x27;Ponce Ortega&#x27;, course: &#x27;Cuarto Año&#x27;, section: &#x27;Sección B&#x27;, username: &#x27;alicia_ponce&#x27; },
+
+            // Quinto Año - Sección A
+            { id: &#x27;5001&#x27;, username: &#x27;LuisFGomez&#x27;, name: &#x27;Luis Fernando&#x27;, surname: &#x27;Gomez Perez&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5002&#x27;, username: &#x27;MariaJDiaz&#x27;, name: &#x27;Maria Jose&#x27;, surname: &#x27;Diaz Morales&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5003&#x27;, username: &#x27;CarlosEOtiz&#x27;, name: &#x27;Carlos Eduardo&#x27;, surname: &#x27;Ortiz Herrera&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5004&#x27;, username: &#x27;SofiaVMendez&#x27;, name: &#x27;Sofia Valentina&#x27;, surname: &#x27;Mendez Ramirez&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5005&#x27;, username: &#x27;MiguelCastro&#x27;, name: &#x27;Miguel&#x27;, surname: &#x27;Castro Garcia&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5006&#x27;, username: &#x27;LuciaHHernandez&#x27;, name: &#x27;Lucia&#x27;, surname: &#x27;Hernandez Vargas&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5007&#x27;, username: &#x27;GabrielSosa&#x27;, name: &#x27;Gabriel&#x27;, surname: &#x27;Sosa Martinez&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5008&#x27;, username: &#x27;ElenaPRamirez&#x27;, name: &#x27;Elena Patricia&#x27;, surname: &#x27;Ramirez Luna&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5009&#x27;, username: &#x27;EstebanPRios&#x27;, name: &#x27;Esteban&#x27;, surname: &#x27;Paredes Rios&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5010&#x27;, username: &#x27;AnaMLopez&#x27;, name: &#x27;Ana Maria&#x27;, surname: &#x27;Lopez Rojas&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5011&#x27;, username: &#x27;DiegoAAguilar&#x27;, name: &#x27;Diego Andres&#x27;, surname: &#x27;Aguilar Serrano&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5012&#x27;, username: &#x27;PaolaMora&#x27;, name: &#x27;Paola&#x27;, surname: &#x27;Mora Suarez&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5013&#x27;, username: &#x27;JorgeLVega&#x27;, name: &#x27;Jorge Luis&#x27;, surname: &#x27;Vega Torres&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5014&#x27;, username: &#x27;CamilaMejia&#x27;, name: &#x27;Camila&#x27;, surname: &#x27;Mejia Arce&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+            { id: &#x27;5015&#x27;, username: &#x27;RaulECardenas&#x27;, name: &#x27;Raul Esteban&#x27;, surname: &#x27;Cardenas Navarro&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección A&#x27; },
+
+            // Quinto Año - Sección B
+            { id: &#x27;5016&#x27;, username: &#x27;IsabelaMendez&#x27;, name: &#x27;Isabela&#x27;, surname: &#x27;Mendez Pineda&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5017&#x27;, username: &#x27;SamuelLozano&#x27;, name: &#x27;Samuel&#x27;, surname: &#x27;Lozano Cruz&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5018&#x27;, username: &#x27;FernandoDDiaz&#x27;, name: &#x27;Fernando&#x27;, surname: &#x27;Diaz Medina&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5019&#x27;, username: &#x27;ValeriaAMontoya&#x27;, name: &#x27;Valeria Andrea&#x27;, surname: &#x27;Montoya Vargas&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5020&#x27;, username: &#x27;RobertoGutierrez&#x27;, name: &#x27;Roberto&#x27;, surname: &#x27;Gutierrez Aguilar&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5021&#x27;, username: &#x27;CristinaRamos&#x27;, name: &#x27;Cristina&#x27;, surname: &#x27;Ramos Castillo&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5022&#x27;, username: &#x27;PabloGarcía&#x27;, name: &#x27;Pablo&#x27;, surname: &#x27;Garcia Silva&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5023&#x27;, username: &#x27;SusanaPonce&#x27;, name: &#x27;Susana&#x27;, surname: &#x27;Ponce Soto&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5024&#x27;, username: &#x27;OscarREscobar&#x27;, name: &#x27;Oscar Rene&#x27;, surname: &#x27;Escobar Reyes&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5025&#x27;, username: &#x27;VeronicaDominguez&#x27;, name: &#x27;Veronica&#x27;, surname: &#x27;Dominguez Ramos&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5026&#x27;, username: &#x27;JuanCFuentes&#x27;, name: &#x27;Juan Carlos&#x27;, surname: &#x27;Fuentes Herrera&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5027&#x27;, username: &#x27;LauraPSaenz&#x27;, name: &#x27;Laura Patricia&#x27;, surname: &#x27;Saenz Guzman&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5028&#x27;, username: &#x27;EmilioVasquez&#x27;, name: &#x27;Emilio&#x27;, surname: &#x27;Vasquez Perez&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5029&#x27;, username: &#x27;MonicaVillanueva&#x27;, name: &#x27;Monica&#x27;, surname: &#x27;Villanueva Pardo&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+            { id: &#x27;5030&#x27;, username: &#x27;HectorJCabrera&#x27;, name: &#x27;Hector Javier&#x27;, surname: &#x27;Cabrera Flores&#x27;, course: &#x27;Quinto Año&#x27;, section: &#x27;Sección B&#x27; },
+        ];
+    }
+    
+    getProductsMini() {
+        return Promise.resolve(this.getStudentData().slice(0, 5));
+    }
+
+    getProductsSmall() {
+        return Promise.resolve(this.getStudentData().slice(0, 10));
+    }
+
+    getStudent() {
+        return Promise.resolve(this.getStudentData());
+    }
+};
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'StudentService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

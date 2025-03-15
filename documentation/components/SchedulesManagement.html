@@ -1,0 +1,1188 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SchedulesManagement</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/schedules-management/schedules-management.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/SubjectService.html" target="_self" >SubjectService</a></code>
+                            <code>ConfirmationService</code>
+                            <code>MessageService</code>
+                                <code><a href="../injectables/SchedulesManagementService.html" target="_self" >SchedulesManagementService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>schedules-management</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./schedules-management.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./schedules-management.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calendarOptions" >calendarOptions</a>
+                            </li>
+                            <li>
+                                <a href="#groupedCourses" >groupedCourses</a>
+                            </li>
+                            <li>
+                                <a href="#selectedCourse" >selectedCourse</a>
+                            </li>
+                            <li>
+                                <a href="#subjects" >subjects</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#eventsFirstYear" >eventsFirstYear</a>
+                            </li>
+                            <li>
+                                <a href="#generateCourseEvents" >generateCourseEvents</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(appConfig: <a href="../injectables/AppConfig.html" target="_self">AppConfig</a>, subjectService: <a href="../injectables/SubjectService.html" target="_self">SubjectService</a>, schedulesManagementService: <a href="../injectables/SchedulesManagementService.html" target="_self">SchedulesManagementService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:82</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>appConfig</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AppConfig.html" target="_self" >AppConfig</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>subjectService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SubjectService.html" target="_self" >SubjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>schedulesManagementService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SchedulesManagementService.html" target="_self" >SchedulesManagementService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventsFirstYear"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>eventsFirstYear</b></span>
+                        <a href="#eventsFirstYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>eventsFirstYear(SUBJECT_COLOR_MAP)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>SUBJECT_COLOR_MAP</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateCourseEvents"></a>
+                    <span class="name">
+                        <span ><b>generateCourseEvents</b></span>
+                        <a href="#generateCourseEvents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateCourseEvents()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calendarOptions"></a>
+                    <span class="name">
+                        <span ><b>calendarOptions</b></span>
+                        <a href="#calendarOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CalendarOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    initialView: &#x27;timeGridWeek&#x27;,
+    plugins: [timeGridPlugin, interactionPlugin, bootstrap5Plugin],
+    locale: &#x27;en&#x27;, // Establece inglés como idioma global
+    slotMinTime: &#x27;06:00:00&#x27;,
+    slotMaxTime: &#x27;23:00:00&#x27;,
+    hiddenDays: [0, 6], // Oculta domingo y sábado
+    initialDate: &#x27;2024-11-04T05:00:00&#x27;, // Fecha de inicio predefinida    
+    headerToolbar: false, // Oculta el header completo
+    dayHeaderContent: (info) &#x3D;&gt; { // Personaliza el formato del día de la semana
+      const dayInSpanish &#x3D; new Intl.DateTimeFormat(&#x27;es&#x27;, { weekday: &#x27;long&#x27; }).format(info.date);
+      return dayInSpanish.charAt(0).toUpperCase() + dayInSpanish.slice(1); // Capitaliza la primera letra
+    },
+    themeSystem: &#x27;standard&#x27;,
+    events: this.eventsFirstYear(SUBJECT_COLOR_MAP),
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupedCourses"></a>
+                    <span class="name">
+                        <span ><b>groupedCourses</b></span>
+                        <a href="#groupedCourses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCourse"></a>
+                    <span class="name">
+                        <span ><b>selectedCourse</b></span>
+                        <a href="#selectedCourse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;seccion_a_1&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subjects"></a>
+                    <span class="name">
+                        <span ><b>subjects</b></span>
+                        <a href="#subjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/views/schedules-management/schedules-management.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, OnInit } from &#x27;@angular/core&#x27;;
+import { SchedulesManagementService } from &#x27;../../data/services/schedules-management/schedules-management.service&#x27;;
+import { CalendarOptions } from &#x27;@fullcalendar/core&#x27;;
+import timeGridPlugin from &#x27;@fullcalendar/timegrid&#x27;;
+import interactionPlugin from &#x27;@fullcalendar/interaction&#x27;;
+
+import bootstrap5Plugin from &#x27;@fullcalendar/bootstrap5&#x27;;
+import { AppConfig } from &#x27;../../data/services/tools/app-config.service&#x27;
+import { ConfirmationService, MessageService } from &#x27;primeng/api&#x27;;
+import { SubjectService } from &#x27;../../../app/data/services/subjects/subjects.service&#x27;;
+
+export interface Subject {
+  id?: string;
+  name?: string;
+  hours_per_week?: number;
+  hours_per_year?: number;
+  course?: number;
+}
+
+const SUBJECT_COLOR_MAP &#x3D; {
+  &#x27;Matemática&#x27;: &#x27;#99b3cc&#x27;, // Azul claro degradado
+  &#x27;Inglés&#x27;: &#x27;#a0b8d6&#x27;,     // Azul claro ligeramente más oscuro
+  &#x27;RECESO&#x27;: &#x27;#2c384af2&#x27;,   // Azul original (destacado)
+  &#x27;Ed. Física y Deporte&#x27;: &#x27;#8ba3c5&#x27;, // Azul claro intermedio
+  &#x27;Informática (Educ. Trab.)&#x27;: &#x27;#b3c8e1&#x27;, // Azul claro suave
+  &#x27;Hª de Venezuela&#x27;: &#x27;#7f97b5&#x27;, // Azul medio
+  &#x27;Est. de la Naturaleza&#x27;: &#x27;#adc3de&#x27;, // Azul claro pastel
+  &#x27;Geografía General&#x27;: &#x27;#5f7692&#x27;, // Azul más intenso para contraste
+  &#x27;Castellano y Literatura&#x27;: &#x27;#99acc1&#x27;, // Azul claro degradado
+  &#x27;Educación Artística&#x27;: &#x27;#87a1bf&#x27;, // Azul suave
+  &#x27;Religión&#x27;: &#x27;#a8bad1&#x27;, // Azul pastel más claro
+  &#x27;Ed. Familiar y Ciud.&#x27;: &#x27;#6d8098&#x27;, // Azul grisáceo intermedio
+  &#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;: &#x27;#a4b5cf&#x27;, // Azul claro degradado
+  &#x27;Historia Universal&#x27;: &#x27;#8da6c8&#x27;,     // Azul suave
+  &#x27;Dibujo Técnico (Educ. Trab.)&#x27;: &#x27;#7f94b3&#x27;, // Azul medio
+  &#x27;Ciencias Biológicas&#x27;: &#x27;#b0c4d8&#x27;,    // Azul pastel claro
+  &#x27;Educ. para la Salud&#x27;: &#x27;#95b1c6&#x27;,      // Azul más claro
+  &#x27;Física&#x27;: &#x27;#6e8ca6&#x27;,             // Azul ligeramente más oscuro
+  &#x27;Química&#x27;: &#x27;#94afc4&#x27;,            // Azul suave
+  &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;: &#x27;#8799af&#x27;, // Azul intermedio
+  &#x27;Geograf. de Venezuela&#x27;: &#x27;#7094b1&#x27;, // Azul claro
+  &#x27;Hª de Venezuela (C.B.)&#x27;: &#x27;#68819e&#x27;, // Azul más oscuro
+  &#x27;Met. Investigación&#x27;: &#x27;#94b8d1&#x27;,  // Azul pastel claro
+  &#x27;Dibujo Técnico&#x27;: &#x27;#8ea3bc&#x27;,      // Azul claro intermedio
+  &#x27;Francés&#x27;: &#x27;#7a96b3&#x27;,             // Azul medio
+  &#x27;Latín y Griego&#x27;: &#x27;#9ab2c9&#x27;,      // Azul más claro
+  &#x27;Historia del Arte&#x27;: &#x27;#8099b0&#x27;,   // Azul suave
+  &#x27;Filosofía&#x27;: &#x27;#8eacc1&#x27;,           // Azul pastel suave
+  &#x27;Instrucción Premilitar&#x27;: &#x27;#768b9e&#x27;, // Azul intermedio
+  &#x27;Ed. Física&#x27;: &#x27;#a5bed3&#x27;, // Azul claro
+  &#x27;Ciencias de la Tierra&#x27;: &#x27;#7d98b3&#x27;,  // Azul medio claro
+  &#x27;Sociología&#x27;: &#x27;#94afc4&#x27;,            // Azul pastel claro
+};
+@Component({
+    selector: &#x27;schedules-management&#x27;,
+    templateUrl: &#x27;./schedules-management.html&#x27;,
+    styleUrls: [&#x27;./schedules-management.scss&#x27;],
+    providers: [SubjectService, ConfirmationService, MessageService, SchedulesManagementService],
+})
+export class SchedulesManagement implements OnInit {
+  groupedCourses: any;
+  selectedCourse: string &#x3D; &#x27;seccion_a_1&#x27;;
+
+  subjects: Subject[];
+
+  // calendar
+  calendarOptions: CalendarOptions &#x3D; {
+    initialView: &#x27;timeGridWeek&#x27;,
+    plugins: [timeGridPlugin, interactionPlugin, bootstrap5Plugin],
+    locale: &#x27;en&#x27;, // Establece inglés como idioma global
+    slotMinTime: &#x27;06:00:00&#x27;,
+    slotMaxTime: &#x27;23:00:00&#x27;,
+    hiddenDays: [0, 6], // Oculta domingo y sábado
+    initialDate: &#x27;2024-11-04T05:00:00&#x27;, // Fecha de inicio predefinida    
+    headerToolbar: false, // Oculta el header completo
+    dayHeaderContent: (info) &#x3D;&gt; { // Personaliza el formato del día de la semana
+      const dayInSpanish &#x3D; new Intl.DateTimeFormat(&#x27;es&#x27;, { weekday: &#x27;long&#x27; }).format(info.date);
+      return dayInSpanish.charAt(0).toUpperCase() + dayInSpanish.slice(1); // Capitaliza la primera letra
+    },
+    themeSystem: &#x27;standard&#x27;,
+    events: this.eventsFirstYear(SUBJECT_COLOR_MAP),
+  };
+
+  
+  constructor(
+    private appConfig: AppConfig,
+    private subjectService: SubjectService,
+    private schedulesManagementService: SchedulesManagementService
+  ) {
+    this.groupedCourses &#x3D; this.appConfig.subjects;
+  }
+
+  ngOnInit() {
+    this.subjectService.getsubject().then((data) &#x3D;&gt; {
+      this.subjects &#x3D; data;
+    });
+  };
+
+  generateCourseEvents() {
+    if (this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_a_1&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_b_1&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_c_1&#x27; || 
+      this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_d_1&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_e_1&#x27;) {
+        this.calendarOptions.events &#x3D; this.schedulesManagementService.eventsFirstYear(SUBJECT_COLOR_MAP);
+    } else if (this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_a_2&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_b_2&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_c_2&#x27; || 
+      this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_d_2&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_e_2&#x27;) {
+      this.calendarOptions.events &#x3D; this.schedulesManagementService.eventsSecondYear(SUBJECT_COLOR_MAP);
+    } else if (this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_a_3&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_b_3&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_c_3&#x27; || 
+      this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_d_3&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_e_3&#x27;) {
+      this.calendarOptions.events &#x3D; this.schedulesManagementService.eventsThirdYear(SUBJECT_COLOR_MAP);
+    } else if (this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_a_4&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_b_4&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_c_4&#x27; || 
+      this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_d_4&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_e_4&#x27;) {
+      this.calendarOptions.events &#x3D; this.schedulesManagementService.eventsFourthYear(SUBJECT_COLOR_MAP);
+    } else if (this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_a_5&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_b_5&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_c_5&#x27; || 
+      this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_d_5&#x27; || this.selectedCourse &#x3D;&#x3D;&#x3D; &#x27;seccion_e_5&#x27;) {
+      this.calendarOptions.events &#x3D; this.schedulesManagementService.eventsFiveYear(SUBJECT_COLOR_MAP);
+    }
+  }
+
+  private eventsFirstYear(SUBJECT_COLOR_MAP) {
+    let events;
+    events &#x3D; [
+      //lunes
+      {
+        title: &#x27;Matemática&#x27;,
+        start: &#x27;2024-11-04T07:00:00&#x27;,
+        end: &#x27;2024-11-04T08:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-04T08:30:00&#x27;,
+        end: &#x27;2024-11-04T08:55:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Inglés&#x27;,
+        start: &#x27;2024-11-04T08:55:00&#x27;,
+        end: &#x27;2024-11-04T10:20:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+      },
+      {
+        title: &#x27;Ed. Física y Deporte&#x27;,
+        start: &#x27;2024-11-04T10:20:00&#x27;,
+        end: &#x27;2024-11-04T11:05:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+      },
+      {
+        title: &#x27;Informática (Educ. Trab.)&#x27;,
+        start: &#x27;2024-11-04T10:20:00&#x27;,
+        end: &#x27;2024-11-04T11:05:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-04T11:05:00&#x27;,
+        end: &#x27;2024-11-04T11:30:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Ed. Física y Deporte&#x27;,
+        start: &#x27;2024-11-04T11:30:00&#x27;,
+        end: &#x27;2024-11-04T12:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Física y Deporte&#x27;]
+      },
+      {
+        title: &#x27;Informática (Educ. Trab.)&#x27;,
+        start: &#x27;2024-11-04T11:30:00&#x27;,
+        end: &#x27;2024-11-04T12:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+      },
+      {
+        title: &#x27;Matemática&#x27;,
+        start: &#x27;2024-11-04T12:30:00&#x27;,
+        end: &#x27;2024-11-04T13:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+      },
+      //martes
+      {
+        title: &#x27;Hª de Venezuela&#x27;,
+        start: &#x27;2024-11-05T07:00:00&#x27;,
+        end: &#x27;2024-11-05T08:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-05T08:30:00&#x27;,
+        end: &#x27;2024-11-05T08:55:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Est. de la Naturaleza&#x27;,
+        start: &#x27;2024-11-05T08:55:00&#x27;,
+        end: &#x27;2024-11-05T10:20:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;]
+      },
+      {
+        title: &#x27;Geografía General&#x27;,
+        start: &#x27;2024-11-05T10:20:00&#x27;,
+        end: &#x27;2024-11-05T11:05:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-05T11:05:00&#x27;,
+        end: &#x27;2024-11-05T11:30:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Geografía General&#x27;,
+        start: &#x27;2024-11-05T11:30:00&#x27;,
+        end: &#x27;2024-11-05T12:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;]
+      },
+      {
+        title: &#x27;Castellano y Literatura&#x27;,
+        start: &#x27;2024-11-05T12:30:00&#x27;,
+        end: &#x27;2024-11-05T13:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+      },
+      //miercoles
+      {
+        title: &#x27;Matemática&#x27;,
+        start: &#x27;2024-11-06T07:00:00&#x27;,
+        end: &#x27;2024-11-06T08:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Matemática&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-06T08:30:00&#x27;,
+        end: &#x27;2024-11-06T08:55:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;,
+        start: &#x27;2024-11-06T08:55:00&#x27;,
+        end: &#x27;2024-11-06T10:20:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;]
+      },
+      {
+        title: &#x27;Castellano y Literatura&#x27;,
+        start: &#x27;2024-11-06T10:20:00&#x27;,
+        end: &#x27;2024-11-06T11:05:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-06T11:05:00&#x27;,
+        end: &#x27;2024-11-06T11:30:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Castellano y Literatura&#x27;,
+        start: &#x27;2024-11-06T11:30:00&#x27;,
+        end: &#x27;2024-11-06T12:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+      },
+      {
+        title: &#x27;Educación Artística&#x27;,
+        start: &#x27;2024-11-06T12:30:00&#x27;,
+        end: &#x27;2024-11-05T13:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+      },
+      // jueves
+      {
+        title: &#x27;Religión&#x27;,
+        start: &#x27;2024-11-07T07:00:00&#x27;,
+        end: &#x27;2024-11-07T07:45:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Religión&#x27;]
+      },
+      {
+        title: &#x27;Educación Artística&#x27;,
+        start: &#x27;2024-11-07T07:45:00&#x27;,
+        end: &#x27;2024-11-07T08:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-07T08:30:00&#x27;,
+        end: &#x27;2024-11-07T08:55:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Educación Artística&#x27;,
+        start: &#x27;2024-11-07T08:55:00&#x27;,
+        end: &#x27;2024-11-07T09:35:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+      },
+      {
+        title: &#x27;Castellano y Literatura&#x27;,
+        start: &#x27;2024-11-07T09:35:00&#x27;,
+        end: &#x27;2024-11-07T10:20:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Castellano y Literatura&#x27;]
+      },
+      {
+        title: &#x27;Inglés&#x27;,
+        start: &#x27;2024-11-07T10:20:00&#x27;,
+        end: &#x27;2024-11-07T11:05:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Inglés&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-07T11:05:00&#x27;,
+        end: &#x27;2024-11-07T11:30:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Educación Artística&#x27;,
+        start: &#x27;2024-11-07T11:30:00&#x27;,
+        end: &#x27;2024-11-07T12:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Educación Artística&#x27;]
+      },
+      {
+        title: &#x27;Informática (Educ. Trab.)&#x27;,
+        start: &#x27;2024-11-07T12:30:00&#x27;,
+        end: &#x27;2024-11-07T13:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Informática (Educ. Trab.)&#x27;]
+      },
+      // viernes
+      {
+        title: &#x27;Geografía General&#x27;,
+        start: &#x27;2024-11-08T07:00:00&#x27;,
+        end: &#x27;2024-11-08T07:45:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Geografía General&#x27;]
+      },
+      {
+        title: &#x27;Hª de Venezuela	&#x27;,
+        start: &#x27;2024-11-08T07:45:00&#x27;,
+        end: &#x27;2024-11-08T08:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Hª de Venezuela&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-08T08:30:00&#x27;,
+        end: &#x27;2024-11-08T08:55:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Est. de la Naturaleza&#x27;,
+        start: &#x27;2024-11-08T08:55:00&#x27;,
+        end: &#x27;2024-11-08T10:20:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Est. de la Naturaleza&#x27;]
+      },
+      {
+        title: &#x27;Ed. Familiar y Ciud.&#x27;,
+        start: &#x27;2024-11-08T10:20:00&#x27;,
+        end: &#x27;2024-11-08T11:05:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;]
+      },
+      {
+        title: &#x27;RECESO&#x27;,
+        start: &#x27;2024-11-08T11:05:00&#x27;,
+        end: &#x27;2024-11-08T11:30:00&#x27;,
+        className: &#x27;highlight-recess&#x27;
+      },
+      {
+        title: &#x27;Ed. Familiar y Ciud.&#x27;,
+        start: &#x27;2024-11-08T11:30:00&#x27;,
+        end: &#x27;2024-11-08T12:30:00&#x27;,
+        backgroundColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;],
+        borderColor: SUBJECT_COLOR_MAP[&#x27;Ed. Familiar y Ciud.&#x27;]
+      },
+    ];
+
+    return events;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p-toast&gt;&lt;/p-toast&gt;
+&lt;p-toolbar class&#x3D;&quot;mb-4 gap-2&quot;&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-start align-items-center w-full&quot;&gt;
+        &lt;p-dropdown 
+            [options]&#x3D;&quot;groupedCourses&quot;  
+            [(ngModel)]&#x3D;&quot;selectedCourse&quot; 
+            placeholder&#x3D;&quot;Selecciona un curso...&quot; 
+            (onChange)&#x3D;&quot;generateCourseEvents()&quot; 
+            [group]&#x3D;&quot;true&quot;&gt;
+            &lt;ng-template let-group pTemplate&#x3D;&quot;group&quot;&gt;
+                &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                    &lt;span&gt;{{ group.course }}&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/ng-template&gt;
+        
+            &lt;ng-template let-option pTemplate&#x3D;&quot;item&quot;&gt;
+                &lt;div class&#x3D;&quot;ml-4&quot;&gt;
+                    &lt;span&gt;{{ option.section }}&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/ng-template&gt;
+        
+            &lt;ng-template pTemplate&#x3D;&quot;selectedItem&quot; let-selected&gt;
+                &lt;span&gt;{{ selected.year }} - {{ selected.section }}&lt;/span&gt;
+            &lt;/ng-template&gt;
+        &lt;/p-dropdown&gt;
+    &lt;/div&gt;
+&lt;/p-toolbar&gt;
+
+
+&lt;full-calendar [options]&#x3D;&quot;calendarOptions&quot;&gt;&lt;/full-calendar&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./schedules-management.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">::ng-deep .p-dropdown-panel .p-dropdown-items {
+    margin-left: 0 !important;
+}
+
+::ng-deep .p-dropdown-item {
+    padding-left: 0.5rem !important; 
+}
+
+::ng-deep .p-dropdown-panel ul, 
+::ng-deep .p-dropdown-panel ol {
+    padding-left: 0 !important;
+}
+
+.highlight-recess {
+    min-height: 50px !important; /* Ajusta el valor según sea necesario */
+    font-size: 1.2em;            /* Aumenta el tamaño del texto */
+    line-height: 1.5em;         /* Ajusta el espaciado del texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+  
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p-toast></p-toast><p-toolbar class="mb-4 gap-2">    <div class="flex justify-content-start align-items-center w-full">        <p-dropdown             [options]="groupedCourses"              [(ngModel)]="selectedCourse"             placeholder="Selecciona un curso..."             (onChange)="generateCourseEvents()"             [group]="true">            <ng-template let-group pTemplate="group">                <div class="flex align-items-center">                    <span>{{ group.course }}</span>                </div>            </ng-template>                    <ng-template let-option pTemplate="item">                <div class="ml-4">                    <span>{{ option.section }}</span>                </div>            </ng-template>                    <ng-template pTemplate="selectedItem" let-selected>                <span>{{ selected.year }} - {{ selected.section }}</span>            </ng-template>        </p-dropdown>    </div></p-toolbar><full-calendar [options]="calendarOptions"></full-calendar></div>'
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppToastComponent', 'selector': 'app-toast-simple'},{'name': 'BadgesComponent', 'selector': 'app-badges'},{'name': 'ChartSample', 'selector': 'app-chart-sample'},{'name': 'ChartsComponent', 'selector': 'app-charts'},{'name': 'ColorsComponent', 'selector': ''},{'name': 'CoreUIIconsComponent', 'selector': ''},{'name': 'DashboardComponent', 'selector': ''},{'name': 'DefaultHeaderComponent', 'selector': 'app-default-header'},{'name': 'DefaultLayoutComponent', 'selector': 'app-dashboard'},{'name': 'DocsCalloutComponent', 'selector': 'app-docs-callout'},{'name': 'DocsExampleComponent', 'selector': 'app-docs-example'},{'name': 'DocsLinkComponent', 'selector': 'app-docs-link'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesManagementComponent', 'selector': 'grades-management'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalsComponent', 'selector': 'app-modals'},{'name': 'Page404Component', 'selector': 'app-page404'},{'name': 'Page500Component', 'selector': 'app-page500'},{'name': 'ScheduleComponent', 'selector': 'app-schedule'},{'name': 'SchedulesManagement', 'selector': 'schedules-management'},{'name': 'SchoolYearManagementComponent', 'selector': 'school-year-management'},{'name': 'SectionsManagementComponent', 'selector': 'sections-management'},{'name': 'StudentManagementComponent', 'selector': 'student-management'},{'name': 'SubjectManagementComponent', 'selector': 'subject-management'},{'name': 'ThemeColorComponent', 'selector': 'app-theme-color'},{'name': 'ToastersComponent', 'selector': 'app-toasters'},{'name': 'ToastSampleIconComponent', 'selector': 'toast-sample-icon'},{'name': 'TypographyComponent', 'selector': ''},{'name': 'UserManagementComponent', 'selector': 'user-management'},{'name': 'WidgetsBrandComponent', 'selector': 'app-widgets-brand'},{'name': 'WidgetsComponent', 'selector': 'app-widgets'},{'name': 'WidgetsDropdownComponent', 'selector': 'app-widgets-dropdown'},{'name': 'WidgetsEComponent', 'selector': 'app-widgets-e'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SchedulesManagement'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SchedulesManagement.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

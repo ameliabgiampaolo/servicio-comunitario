@@ -1,0 +1,992 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>coreui-free-angular-admin-template documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">coreui-free-angular-admin-template documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SubjectService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/data/services/subjects/subjects.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getProductsMini" >getProductsMini</a>
+                            </li>
+                            <li>
+                                <a href="#getProductsSmall" >getProductsSmall</a>
+                            </li>
+                            <li>
+                                <a href="#getSectionData" >getSectionData</a>
+                            </li>
+                            <li>
+                                <a href="#getSections" >getSections</a>
+                            </li>
+                            <li>
+                                <a href="#getsubject" >getsubject</a>
+                            </li>
+                            <li>
+                                <a href="#getSubjectData" >getSubjectData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsMini"></a>
+                    <span class="name">
+                        <span ><b>getProductsMini</b></span>
+                        <a href="#getProductsMini"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsMini()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="488"
+                                    class="link-to-prism">src/app/data/services/subjects/subjects.service.ts:488</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProductsSmall"></a>
+                    <span class="name">
+                        <span ><b>getProductsSmall</b></span>
+                        <a href="#getProductsSmall"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProductsSmall()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="492"
+                                    class="link-to-prism">src/app/data/services/subjects/subjects.service.ts:492</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSectionData"></a>
+                    <span class="name">
+                        <span ><b>getSectionData</b></span>
+                        <a href="#getSectionData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSectionData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="458"
+                                    class="link-to-prism">src/app/data/services/subjects/subjects.service.ts:458</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSections"></a>
+                    <span class="name">
+                        <span ><b>getSections</b></span>
+                        <a href="#getSections"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSections()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="500"
+                                    class="link-to-prism">src/app/data/services/subjects/subjects.service.ts:500</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getsubject"></a>
+                    <span class="name">
+                        <span ><b>getsubject</b></span>
+                        <a href="#getsubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getsubject()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="496"
+                                    class="link-to-prism">src/app/data/services/subjects/subjects.service.ts:496</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSubjectData"></a>
+                    <span class="name">
+                        <span ><b>getSubjectData</b></span>
+                        <a href="#getSubjectData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSubjectData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="5"
+                                    class="link-to-prism">src/app/data/services/subjects/subjects.service.ts:5</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+@Injectable()
+export class SubjectService {
+    getSubjectData() {
+        return [
+            {
+                id: &#x27;1000&#x27;,
+                name: &#x27;Castellano y Literatura I&#x27;,
+                hours_per_week: 5,
+                hours_per_year: 180,
+                course: 1
+            },
+            {
+                id: &#x27;1000&#x27;,
+                name: &#x27;Castellano y Literatura II&#x27;,
+                hours_per_week: 5,
+                hours_per_year: 180,
+                course: 2
+            },
+            {
+                id: &#x27;1000&#x27;,
+                name: &#x27;Castellano y Literatura III&#x27;,
+                hours_per_week: 5,
+                hours_per_year: 180,
+                course: 3
+            },
+            {
+                id: &#x27;1000&#x27;,
+                name: &#x27;Castellano y Literatura IV&#x27;,
+                hours_per_week: 5,
+                hours_per_year: 180,
+                course: 4
+            },
+            {
+                id: &#x27;1000&#x27;,
+                name: &#x27;Castellano y Literatura V&#x27;,
+                hours_per_week: 5,
+                hours_per_year: 180,
+                course: 5
+            },
+            {
+                id: &#x27;1001&#x27;,
+                name: &#x27;Inglés I&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 1
+            },
+            {
+                id: &#x27;1001&#x27;,
+                name: &#x27;Inglés II&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 2
+            },
+            {
+                id: &#x27;1001&#x27;,
+                name: &#x27;Inglés III&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 3
+            },
+            {
+                id: &#x27;1001&#x27;,
+                name: &#x27;Inglés IV&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 4
+            },
+            {
+                id: &#x27;1001&#x27;,
+                name: &#x27;Inglés V&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 5
+            },
+            {
+                id: &#x27;1002&#x27;,
+                name: &#x27;Matemática I&#x27;,
+                hours_per_week: 4,
+                hours_per_year: 144,
+                course: 1
+            },
+            {
+                id: &#x27;1002&#x27;,
+                name: &#x27;Matemática II&#x27;,
+                hours_per_week: 4,
+                hours_per_year: 144,
+                course: 2
+            },
+            {
+                id: &#x27;1002&#x27;,
+                name: &#x27;Matemática III&#x27;,
+                hours_per_week: 4,
+                hours_per_year: 144,
+                course: 3
+            },
+            {
+                id: &#x27;1002&#x27;,
+                name: &#x27;Matemática IV&#x27;,
+                hours_per_week: 4,
+                hours_per_year: 144,
+                course: 4
+            },
+            {
+                id: &#x27;1002&#x27;,
+                name: &#x27;Matemática V&#x27;,
+                hours_per_week: 4,
+                hours_per_year: 144,
+                course: 5
+            },
+            {
+                id: &#x27;1003&#x27;,
+                name: &#x27;Ed. Familiar y Ciud.&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 1
+            },
+            {
+                id: &#x27;1004&#x27;,
+                name: &#x27;Est. de la Naturaleza I&#x27;,
+                hours_per_week: 4,
+                hours_per_year: 144,
+                course: 1
+            },
+            {
+                id: &#x27;1005&#x27;,
+                name: &#x27;Hª de Venezuela I&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 1
+            },
+            {
+                id: &#x27;1005&#x27;,
+                name: &#x27;Hª de Venezuela II&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 2
+            },
+            {
+                id: &#x27;1005&#x27;,
+                name: &#x27;Hª de Venezuela III&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 4
+            },
+            {
+                id: &#x27;1006&#x27;,
+                name: &#x27;Geografía General&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 1
+            },
+            {
+                id: &#x27;1007&#x27;,
+                name: &#x27;Educación Artística I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 1
+            },
+            {
+                id: &#x27;1007&#x27;,
+                name: &#x27;Educación Artística II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 2
+            },
+            {
+                id: &#x27;1008&#x27;,
+                name: &#x27;Ed. Física y Deporte I&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 1
+            },
+            {
+                id: &#x27;1008&#x27;,
+                name: &#x27;Ed. Física y Deporte II&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 2
+            },
+            {
+                id: &#x27;1008&#x27;,
+                name: &#x27;Ed. Física y Deporte III&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 3
+            },
+            {
+                id: &#x27;1009&#x27;,
+                name: &#x27;Inic. Dibujo Técnico (Educ. Trab.)&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 1
+            },
+            {
+                id: &#x27;1010&#x27;,
+                name: &#x27;Informática (Educ. Trab.) I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 1
+            },
+            {
+                id: &#x27;1010&#x27;,
+                name: &#x27;Informática (Educ. Trab.) II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 2
+            },
+            {
+                id: &#x27;1010&#x27;,
+                name: &#x27;Informática (Educ. Trab.) III&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 3
+            },
+            {
+                id: &#x27;1011&#x27;,
+                name: &#x27;Religión I&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 1
+            },
+            {
+                id: &#x27;1011&#x27;,
+                name: &#x27;Religión II&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 2
+            },
+            {
+                id: &#x27;1011&#x27;,
+                name: &#x27;Religión III&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 3
+            },
+            {
+                id: &#x27;1011&#x27;,
+                name: &#x27;Religión IV&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 4
+            },
+            {
+                id: &#x27;1011&#x27;,
+                name: &#x27;Religión IV&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 5
+            },
+            {
+                id: &#x27;1012&#x27;,
+                name: &#x27;Dibujo Técnico (Educ. Trab.)&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 2
+            },
+            {
+                id: &#x27;1012&#x27;,
+                name: &#x27;Dibujo Técnico Aplic. (Educ. Trab.)&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 3
+            },
+            {
+                id: &#x27;1012&#x27;,
+                name: &#x27;Historia Universal&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 2
+            },
+            {
+                id: &#x27;1013&#x27;,
+                name: &#x27;Ciencias Biológicas I&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 2
+            },
+            {
+                id: &#x27;1013&#x27;,
+                name: &#x27;Ciencias Biológicas II&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 3
+            },
+            {
+                id: &#x27;1013&#x27;,
+                name: &#x27;Ciencias Biológicas IV&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 4
+            },
+            {
+                id: &#x27;1013&#x27;,
+                name: &#x27;Ciencias Biológicas V&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 5
+            },
+            {
+                id: &#x27;1014&#x27;,
+                name: &#x27;Física I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 3
+            },
+            {
+                id: &#x27;1014&#x27;,
+                name: &#x27;Física II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 4
+            },
+            {
+                id: &#x27;1015&#x27;,
+                name: &#x27;Química I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 3
+            },
+            {
+                id: &#x27;1015&#x27;,
+                name: &#x27;Química II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 4
+            },
+            {
+                id: &#x27;1016&#x27;,
+                name: &#x27;Hª de Venezuela (C.B.)&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 3
+            },
+            {
+                id: &#x27;1017&#x27;,
+                name: &#x27;Geograf. de Venezuela I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 3
+            },
+            {
+                id: &#x27;1017&#x27;,
+                name: &#x27;Geograf. de Venezuela II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 5
+            },
+            {
+                id: &#x27;1018&#x27;,
+                name: &#x27;Hª de Venezuela II&#x27;,
+                hours_per_week: 3,
+                hours_per_year: 108,
+                course: 4
+            },
+            {
+                id: &#x27;1019&#x27;,
+                name: &#x27;Dibujo&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 4
+            },
+            {
+                id: &#x27;1020&#x27;,
+                name: &#x27;Filosofía I&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 4
+            },
+            {
+                id: &#x27;1020&#x27;,
+                name: &#x27;Filosofía II&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 5
+            },
+            {
+                id: &#x27;1021&#x27;,
+                name: &#x27;Ed. Física I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 4
+            },
+            {
+                id: &#x27;1021&#x27;,
+                name: &#x27;Ed. Física II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 5
+            },
+            {
+                id: &#x27;1022&#x27;,
+                name: &#x27;Instrucción Premilitar I&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 4
+            },
+            {
+                id: &#x27;1022&#x27;,
+                name: &#x27;Instrucción Premilitar II&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 5
+            },
+            {
+                id: &#x27;1023&#x27;,
+                name: &#x27;Met. Investigación I&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 4
+            },
+            {
+                id: &#x27;1023&#x27;,
+                name: &#x27;Met. Investigación II&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 5
+            },
+            {
+                id: &#x27;1024&#x27;,
+                name: &#x27;Francés&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 5
+            },
+            {
+                id: &#x27;1025&#x27;,
+                name: &#x27;Latín y Griego&#x27;,
+                hours_per_week: 1,
+                hours_per_year: 36,
+                course: 5
+            },
+            {
+                id: &#x27;1026&#x27;,
+                name: &#x27;Historia del Arte&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 4
+            },
+            {
+                id: &#x27;1027&#x27;,
+                name: &#x27;Ciencias de la Tierra&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 5
+            },
+            {
+                id: &#x27;1028&#x27;,
+                name: &#x27;Sociología&#x27;,
+                hours_per_week: 2,
+                hours_per_year: 72,
+                course: 5
+            },
+        ];
+    }
+
+    getSectionData() {
+        return [
+            {
+                section: &#x27;Sección A&#x27;,
+                value: &#x27;seccion_a_&#x27;,
+                year: &#x27;&#x27;,
+            },
+            {
+                section: &#x27;Sección B&#x27;,
+                value: &#x27;seccion_b_&#x27;,
+                year: &#x27;&#x27;,
+            },
+            {
+                section: &#x27;Sección C&#x27;,
+                value: &#x27;seccion_c_&#x27;,
+                year: &#x27;&#x27;,
+            },
+            {
+                section: &#x27;Sección D&#x27;,
+                value: &#x27;seccion_d_&#x27;,
+                year: &#x27;&#x27;,
+            },
+            {
+                section: &#x27;Sección E&#x27;,
+                value: &#x27;seccion_e_&#x27;,
+                year: &#x27;&#x27;,
+            },
+        ];
+    }
+
+    getProductsMini() {
+        return Promise.resolve(this.getSubjectData().slice(0, 5));
+    }
+
+    getProductsSmall() {
+        return Promise.resolve(this.getSubjectData().slice(0, 10));
+    }
+
+    getsubject() {
+        return Promise.resolve(this.getSubjectData());
+    }
+
+    getSections() {
+        return Promise.resolve(this.getSectionData());
+    }
+};
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SubjectService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
