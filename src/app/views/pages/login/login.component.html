@@ -37,18 +37,14 @@
                     (keydown.enter)="login()"
                   />
                 </c-input-group>
-                <c-row>
+                <c-row style="width: 10px;">
                   <c-col xs="6">
                     <button (click)="login()" cButton class="px-4" color="primary">
                       Acceder
                     </button>
                   </c-col>
-                  <c-col class="text-right" xs="6" style="text-align: end;">
-                    <button cButton class="px-0" color="link">
-                      ¿Olvidó Contraseña?
-                    </button>
-                  </c-col>
                 </c-row>
+                <img [src]="icons.logo" class="logo"/>
               </form>
             </c-card-body>
           </c-card>
