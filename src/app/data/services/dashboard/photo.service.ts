@@ -7,7 +7,7 @@ export class PhotoService {
   private imagePaths: any[] = [];
 
   constructor() {
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 10; i++) {
       this.imagePaths.push({
         itemImageSrc: `assets/img/mab/dashboard/image${i}.jpeg`,
         thumbnailImageSrc: `assets/img/mab/dashboard/image${i}.jpeg`,

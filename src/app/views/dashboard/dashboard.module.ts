@@ -5,8 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   AvatarModule,
   ButtonGroupModule,
-  ButtonModule,
-  CardModule,
   FormModule,
   GridModule,
   NavModule,
@@ -22,6 +20,8 @@ import { DashboardComponent } from './dashboard.component';
 
 import { WidgetsModule } from '../widgets/widgets.module';
 import { GalleriaModule } from 'primeng/galleria';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   imports: [

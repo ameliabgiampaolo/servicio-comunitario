@@ -1,10 +1,12 @@
-<!-- <div class="card">
-  <p-galleria [(value)]="images" [containerStyle]="{ 'max-width': '640px' }" [numVisible]="5">
-      <ng-template #item let-item>
-          <img [src]="item.itemImageSrc" style="width:100%" />
-      </ng-template>
-      <ng-template #thumbnail let-item>
-          <img [src]="item.thumbnailImageSrc" />
-      </ng-template>
-  </p-galleria>
-</div> -->
+<div class="dashboard-header">
+  <div class="header-content">
+    <h1 class="title">Sistema académico y administrativo</h1>
+    <p class="subtitle">Unidad Educativa Colegio María Antonia Bolivar.</p>
+  </div>
+</div>
+
+<p-galleria [(value)]="images" [showIndicators]="true" [showThumbnails]="false" [changeItemOnIndicatorHover]="true" >
+  <ng-template pTemplate="item" let-item>
+      <img [src]="item.itemImageSrc" style="width: 1000px; height: 569px; display: block;" />
+  </ng-template>
+</p-galleria>

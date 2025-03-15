@@ -11,7 +11,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.photoService.getImages().then((images) => {
-      console.log(images)
       this.images = images;
   });
   }

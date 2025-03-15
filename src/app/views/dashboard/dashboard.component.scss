@@ -1,7 +1,34 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+.dashboard-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #3a7bd5, #3a6073);
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 118px;
+}
+
+.header-content {
+  max-width: 800px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
