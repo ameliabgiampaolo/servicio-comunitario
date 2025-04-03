@@ -29,6 +29,7 @@ export class GradesManagementComponent {
 
   activity: string = '';
   note: number | null = null;
+  gradePct: number | null = null;
 
   allGrades: any;
 
@@ -121,5 +122,6 @@ export class GradesManagementComponent {
   clearFields() {
     this.activity = '';
     this.note = null;
+    this.gradePct = null;
   }
 }
