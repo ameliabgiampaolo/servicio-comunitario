@@ -53,6 +53,12 @@
                 <th pSortableColumn="name" style="min-width:15rem">
                     Nombre <p-sortIcon field="name" />
                 </th>
+                <th pSortableColumn="surname" style="min-width:15rem">
+                    Apellido <p-sortIcon field="surname" />
+                </th>
+                <th pSortableColumn="ci" style="min-width:10rem">
+                    Nº. Cédula <p-sortIcon field="ci" />
+                </th>
                 <th pSortableColumn="category" style="min-width:10rem">
                     Rol <p-sortIcon field="category" />
                 </th>
@@ -69,6 +75,12 @@
                 </td>
                 <td>
                     {{ user.name }}
+                </td>
+                <td>
+                    {{ user.surname }}
+                </td>
+                <td>
+                    {{ user.ci }}
                 </td>
                 <td>
                     {{ user.category }}
@@ -107,7 +119,7 @@
         styleClass="p-fluid">
             <ng-template pTemplate="content">
                 <div class="field">
-                    <label for="name">Nombre</label>
+                    <label for="name">Nombre(s)</label>
                     <input 
                         type="text" 
                         pInputText 
@@ -117,6 +129,32 @@
                         autofocus />
                     <small class="p-error" *ngIf="submitted && !user.name">
                         El nombre es requerido.
+                    </small>
+                </div>
+                <div class="field">
+                    <label for="name">Apellido(s)</label>
+                    <input 
+                        type="text" 
+                        pInputText 
+                        id="surname" 
+                        [(ngModel)]="user.surname" 
+                        required 
+                        autofocus />
+                    <small class="p-error" *ngIf="submitted && !user.surname">
+                        El apellido es requerido.
+                    </small>
+                </div>
+                <div class="field">
+                    <label for="name">Nº. Cédula</label>
+                    <input 
+                        type="text" 
+                        pInputText 
+                        id="ci" 
+                        [(ngModel)]="user.ci" 
+                        required 
+                        autofocus />
+                    <small class="p-error" *ngIf="submitted && !user.ci">
+                        La Cédula de identidad es requerida.
                     </small>
                 </div>
                 <div class="field">

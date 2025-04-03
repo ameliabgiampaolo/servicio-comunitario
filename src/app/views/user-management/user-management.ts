@@ -4,6 +4,8 @@ import { UsersService } from '../../data/services/users/users.service'
 export interface User {
     id?: string;
     name?: string;
+    surname?: string;
+    ci?: number;
     status?: string;
     category?: string;
 }
